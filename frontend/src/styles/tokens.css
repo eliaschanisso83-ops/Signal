@@ -1,0 +1,124 @@
+/* ============================================================
+   Signal — Design Tokens
+   Identidade: inteligência + evidência + confiança + clareza
+   Editorial / research / competitive intelligence
+   ============================================================ */
+
+:root {
+  /* --- Paleta base (neutros editoriais) --- */
+  --c-bg: #f5f6f7;
+  --c-surface: #ffffff;
+  --c-surface-alt: #fafbfc;
+  --c-ink: #12161c;
+  --c-ink-2: #333b47;
+  --c-muted: #667085;
+  --c-muted-2: #8a93a3;
+  --c-border: #e3e6ea;
+  --c-border-strong: #cdd2da;
+
+  /* --- Acento --- */
+  --c-accent: #2547d0;
+  --c-accent-hover: #1d3ab0;
+  --c-accent-soft: #eef1fd;
+  --c-accent-ink: #1a2f8a;
+
+  /* --- Semântica de evidência (núcleo do produto) --- */
+  --c-observed: #344054;      /* observação — neutro escuro */
+  --c-evidence: #175cd3;      /* evidência — azul */
+  --c-evidence-soft: #eff5ff;
+  --c-hypothesis: #b54708;    /* hipótese — âmbar */
+  --c-hypothesis-soft: #fdf6ec;
+  --c-action: #067647;        /* ação — verde */
+  --c-action-soft: #ecfdf3;
+  --c-gap: #b42318;           /* gap / alerta */
+  --c-gap-soft: #fdf2f1;
+
+  /* --- Status --- */
+  --c-success: #067647;
+  --c-success-soft: #ecfdf3;
+  --c-warning: #b54708;
+  --c-warning-soft: #fdf6ec;
+  --c-danger: #b42318;
+  --c-danger-soft: #fdf2f1;
+  --c-info: #175cd3;
+  --c-info-soft: #eff5ff;
+
+  /* --- Tipografia --- */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  --fs-display: clamp(2.1rem, 1.4rem + 2.6vw, 3.4rem);
+  --fs-h1: clamp(1.6rem, 1.2rem + 1.4vw, 2.2rem);
+  --fs-h2: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --fs-h3: 1.0625rem;
+  --fs-body: 0.9375rem;
+  --fs-sm: 0.8125rem;
+  --fs-xs: 0.75rem;
+  --fs-metric: clamp(1.75rem, 1.3rem + 1.6vw, 2.5rem);
+
+  /* --- Espaçamento (base 4px) --- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+
+  /* --- Radius --- */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 16px;
+  --r-full: 999px;
+
+  /* --- Sombras --- */
+  --sh-1: 0 1px 2px rgba(16, 24, 40, 0.06);
+  --sh-2: 0 1px 3px rgba(16, 24, 40, 0.08), 0 1px 2px rgba(16, 24, 40, 0.04);
+  --sh-3: 0 4px 12px rgba(16, 24, 40, 0.08), 0 2px 4px rgba(16, 24, 40, 0.04);
+  --sh-focus: 0 0 0 3px rgba(37, 71, 208, 0.28);
+
+  /* --- Layout --- */
+  --shell-max: 1200px;
+  --shell-wide: 1440px;
+  --topbar-h: 60px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-bg: #0e1116;
+    --c-surface: #151a21;
+    --c-surface-alt: #1a2029;
+    --c-ink: #eef1f5;
+    --c-ink-2: #ccd2db;
+    --c-muted: #98a1b0;
+    --c-muted-2: #79828f;
+    --c-border: #262d37;
+    --c-border-strong: #39414d;
+    --c-accent: #6d8bff;
+    --c-accent-hover: #8ba4ff;
+    --c-accent-soft: #1a2342;
+    --c-accent-ink: #aab9ff;
+    --c-evidence: #6aa5ff;
+    --c-evidence-soft: #14213a;
+    --c-hypothesis: #f0a35c;
+    --c-hypothesis-soft: #2c2015;
+    --c-action: #47cd89;
+    --c-action-soft: #12291f;
+    --c-gap: #f97066;
+    --c-gap-soft: #2d1614;
+    --c-observed: #ccd2db;
+    --c-success-soft: #12291f;
+    --c-warning-soft: #2c2015;
+    --c-danger-soft: #2d1614;
+    --c-info-soft: #14213a;
+    --sh-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --sh-2: 0 1px 3px rgba(0, 0, 0, 0.45);
+    --sh-3: 0 4px 14px rgba(0, 0, 0, 0.5);
+  }
+}
