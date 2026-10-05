@@ -1,11 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, type CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import { Badge, ConfidenceBadge, LinkButton, Meter } from '../design-system/components';
 import { CausalChain, ScoreGauge } from '../design-system/visuals';
-
-/* Sistemas de descoberta segmentados pela metodologia
-   (DOCUMENTO-3 §53 — Model Effect). Lista real, sem clientes inventados. */
-const DISCOVERY_SYSTEMS = ['ChatGPT', 'Gemini', 'Perplexity', 'Google AI'];
+import { DISCOVERY_LOGOS } from '../assets/logos';
 
 const FUNNEL = [
   { n: '01', name: 'Encontrado', en: 'Found', desc: 'O produto entra no conjunto de candidatos que o sistema de descoberta considera.' },
@@ -162,22 +159,32 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* ---------- Marquee: sistemas de descoberta (cobertura real) ---------- */}
+      {/* ---------- Marquee: logos oficiais dos sistemas de descoberta ---------- */}
       <div className="lp-marquee" role="group" aria-label="Sistemas de descoberta cobertos pela metodologia">
         <div className="lp-marquee-label">Segmentação por sistema</div>
         <div className="lp-marquee-view">
           <div className="lp-marquee-track">
             <div className="lp-marquee-group">
-              {DISCOVERY_SYSTEMS.map((s) => (
-                <span key={s} className="lp-marquee-item">
-                  {s}
+              {DISCOVERY_LOGOS.map((b) => (
+                <span
+                  key={b.key}
+                  className="lp-marquee-item"
+                  style={{ '--brand': `#${b.hex}` } as CSSProperties}
+                >
+                  <svg className="lp-marquee-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d={b.path} />
+                  </svg>
+                  <span className="lp-marquee-name">{b.name}</span>
                 </span>
               ))}
             </div>
             <div className="lp-marquee-group" aria-hidden="true">
-              {DISCOVERY_SYSTEMS.map((s) => (
-                <span key={s} className="lp-marquee-item">
-                  {s}
+              {DISCOVERY_LOGOS.map((b) => (
+                <span key={b.key} className="lp-marquee-item" style={{ '--brand': `#${b.hex}` } as CSSProperties}>
+                  <svg className="lp-marquee-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d={b.path} />
+                  </svg>
+                  <span className="lp-marquee-name">{b.name}</span>
                 </span>
               ))}
             </div>

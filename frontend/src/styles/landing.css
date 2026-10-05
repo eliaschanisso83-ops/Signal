@@ -353,11 +353,14 @@
   overflow: hidden;
   display: flex;
   align-items: center;
+  /* fade nas extremidades para acabamento de faixa infinita */
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 48px, #000 calc(100% - 48px), transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 48px, #000 calc(100% - 48px), transparent);
 }
 .lp-marquee-track {
   display: flex;
   width: max-content;
-  animation: lp-scroll 36s linear infinite;
+  animation: lp-scroll 44s linear infinite;
 }
 .lp-marquee-group {
   display: flex;
@@ -367,6 +370,7 @@
 .lp-marquee-item {
   display: flex;
   align-items: center;
+  gap: 10px;
   padding: 13px 0;
   font-family: var(--font-mono);
   font-size: 12px;
@@ -374,6 +378,26 @@
   text-transform: uppercase;
   color: var(--lp-ink-2);
   white-space: nowrap;
+  transition: color 0.2s ease;
+}
+/* Logo oficial integrado (paths de simple-icons) — neutro por padrão,
+   revela a cor de marca no hover, sem alterar o desenho. */
+.lp-marquee-icon {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+  fill: currentColor;
+  color: var(--lp-ink);
+  opacity: 0.42;
+  transition: opacity 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.lp-marquee-item:hover .lp-marquee-icon {
+  opacity: 1;
+  color: var(--brand, var(--lp-blue));
+  transform: translateY(-1px);
+}
+.lp-marquee-item:hover {
+  color: var(--lp-ink);
 }
 .lp-marquee-item::after {
   content: '';
@@ -684,5 +708,5 @@ html:has(.lp) { scroll-behavior: smooth; }
   }
   .lp-marquee-group[aria-hidden='true'] { display: none; }
   .lp-marquee-group { flex-wrap: wrap; justify-content: center; }
-  .lp-marquee-view { overflow: visible; }
+  .lp-marquee-view { overflow: visible; -webkit-mask-image: none; mask-image: none; }
 }
