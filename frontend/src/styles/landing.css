@@ -54,10 +54,25 @@
 }
 
 /* ============================================================
-   HERO — split 6/6, produto real à direita
+   HERO — split 6/6, produto real à direita.
+   Arte "signal field" (criada no Canva) como camada de fundo:
+   campo vazio à esquerda (texto), densidade à direita (card).
    ============================================================ */
-.lp-hero { padding: clamp(40px, 6vh, 72px) 0 clamp(48px, 7vh, 80px); }
+.lp-hero {
+  position: relative;
+  padding: clamp(40px, 6vh, 72px) 0 clamp(48px, 7vh, 80px);
+}
+.lp-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: url('../assets/img/hero_bg.webp') no-repeat right center / cover;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 46%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 46%);
+}
 .lp-hero-grid {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
   gap: clamp(28px, 4vw, 64px);
@@ -65,6 +80,7 @@
 }
 @media (max-width: 960px) {
   .lp-hero-grid { grid-template-columns: minmax(0, 1fr); }
+  .lp-hero::before { opacity: 0.4; }
 }
 
 .lp-eyebrow {
@@ -122,9 +138,10 @@
   color: var(--lp-muted);
 }
 
-/* ---------- Card premium: showcase do relatório (componentes reais) ----------
-   Hierarquia deliberada: N1 identidade+status → N2 score (protagonista)
-   → KPIs (ranking + métricas) → CTA → metadata/transparência. */
+/* ---------- Card premium — referência visual construída no Canva ----------
+   Hierarquia: contexto+status → score (protagonista) → confiança/posição
+   → métricas → CTA → metadata. Sem chrome de browser, sem gauge circular:
+   número + barra comunicam 55/100 imediatamente. */
 .lp-preview {
   background: var(--lp-surface);
   border: 1px solid var(--lp-line);
@@ -142,24 +159,20 @@
   padding: var(--sp-5);
 }
 
-/* N1 — identidade do relatório + status com indicador */
+/* Contexto da auditoria + status com indicador */
 .lp-card-head {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--sp-3);
   padding-bottom: var(--sp-4);
   border-bottom: 1px solid var(--lp-line);
 }
-.lp-card-title {
-  font-weight: 700;
-  font-size: 1rem;
-  letter-spacing: -0.01em;
-}
-.lp-card-sub {
-  font-size: var(--fs-xs);
-  color: var(--lp-muted);
-  margin-top: 3px;
+.lp-card-context {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--lp-ink-2);
 }
 .lp-card-head .badge::before {
   content: '';
@@ -172,75 +185,125 @@
   vertical-align: 1px;
 }
 
-/* N2 — score protagonista, centrado, com contexto de confiança */
-.lp-card-hero {
+/* Score protagonista — número + barra (comunica 55/100 à primeira vista) */
+.lp-card-score {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--sp-3);
-  padding: var(--sp-5) 0 var(--sp-4);
+  padding: var(--sp-6) 0 var(--sp-5);
   border-bottom: 1px solid var(--lp-line);
 }
-.lp-preview .gauge-value {
-  font-size: 2.6rem;
-}
-.lp-card-conf {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-2);
-  font-size: var(--fs-sm);
-  color: var(--lp-muted);
-}
-
-/* KPIs — ranking (nº como tile) + barras secundárias */
-.lp-card-kpis {
-  display: grid;
-  grid-template-columns: minmax(0, 150px) minmax(0, 1fr);
-  gap: var(--sp-5);
-  align-items: center;
-  padding-top: var(--sp-4);
-}
-.lp-card-rank {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: var(--lp-bg);
-  border: 1px solid var(--lp-line);
-  border-radius: var(--r-md);
-  padding: var(--sp-3) var(--sp-4);
-  text-align: center;
-}
-.rank-num {
+.lp-score-num {
   font-family: var(--font-mono);
-  font-size: 1.9rem;
+  font-size: clamp(3.1rem, 6vw, 3.7rem);
   font-weight: 700;
   line-height: 1;
-  color: var(--lp-ink);
+  letter-spacing: -0.03em;
   font-variant-numeric: tabular-nums;
+  color: var(--lp-ink);
 }
-.rank-of {
-  font-size: 1.05rem;
+.lp-score-max {
+  font-size: 1.15rem;
   font-weight: 600;
   color: var(--lp-muted);
-  margin-left: 2px;
+  margin-left: 6px;
+  letter-spacing: 0;
 }
-.rank-cap {
+.lp-score-label {
+  margin-top: var(--sp-3);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lp-ink-2);
+}
+.lp-score-bar {
+  width: 100%;
+  height: 8px;
+  margin-top: var(--sp-4);
+  background: #edeff3;
+  border-radius: var(--r-full);
+  overflow: hidden;
+}
+.lp-score-fill {
   display: block;
-  margin-top: 7px;
+  height: 100%;
+  width: 55%;
+  background: var(--lp-blue);
+  border-radius: var(--r-full);
+  transform-origin: left center;
+  animation: lp-grow 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.7s backwards;
+}
+
+/* Confiança + posição — secundário, sem caixas extras */
+.lp-card-meta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--sp-4);
+  padding: var(--sp-4) 0;
+  border-bottom: 1px solid var(--lp-line);
+}
+.lp-meta-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
+}
+.lp-meta-right {
+  align-items: flex-end;
+  text-align: right;
+}
+.lp-meta-k {
   font-family: var(--font-mono);
   font-size: 9.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lp-muted);
+}
+.lp-rank {
+  font-family: var(--font-mono);
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: var(--lp-ink);
+}
+.lp-rank-of {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--lp-muted);
+  margin-left: 1px;
+}
+.lp-rank-cap {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--lp-muted);
 }
+
+/* Métricas secundárias — tabela enxuta */
 .lp-card-meters {
   display: flex;
   flex-direction: column;
   gap: var(--sp-3);
   min-width: 0;
+  padding-top: var(--sp-4);
 }
+.lp-card-meters .meter { gap: 5px; }
+.lp-card-meters .meter-label {
+  font-size: 12.5px;
+  color: var(--lp-ink-2);
+  font-weight: 600;
+}
+.lp-card-meters .meter-value { font-size: 12.5px; color: var(--lp-ink); }
 .lp-card-meters .meter-track {
-  height: 6px;
+  height: 5px;
+  background: #edeff3;
 }
 
 /* Ação — botão dominante na sua zona */
@@ -272,26 +335,18 @@
   background: var(--lp-surface);
 }
 
-/* Microanimações: anel do score desenha + barras crescem (uma vez, discretas) */
-@keyframes lp-ring {
-  from {
-    stroke-dashoffset: 490.1; /* ScoreGauge: r=78 → 2πr */
-  }
-}
+/* Microanimações: barra do score e barras das métricas crescem uma vez */
 @keyframes lp-grow {
   from {
     transform: scaleX(0);
   }
-}
-.lp-preview .gauge .fill {
-  animation: lp-ring 1s cubic-bezier(0.22, 1, 0.36, 1) 0.75s backwards;
 }
 .lp-preview .meter-fill {
   transform-origin: left center;
   animation: lp-grow 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.95s backwards;
 }
 @media (prefers-reduced-motion: reduce) {
-  .lp-preview .gauge .fill,
+  .lp-score-fill,
   .lp-preview .meter-fill {
     animation: none;
   }
@@ -303,24 +358,14 @@
   }
 }
 @media (max-width: 560px) {
-  .lp-card-kpis {
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--sp-4);
-  }
-  .lp-card-rank {
-    flex-direction: row;
-    justify-content: center;
-    gap: var(--sp-3);
-  }
-  .rank-cap {
-    margin-top: 0;
-    text-align: left;
-  }
-  .lp-preview .gauge-value {
-    font-size: 2.3rem;
+  .lp-score-num {
+    font-size: 3rem;
   }
   .lp-card-head {
     flex-wrap: wrap;
+  }
+  .lp-rank-cap {
+    max-width: 16ch;
   }
 }
 
@@ -499,7 +544,7 @@
 .lp-funnel-row .n {
   font-family: var(--font-mono);
   font-size: 12px;
-  color: var(--lp-muted);
+  color: var(--lp-blue);
 }
 .lp-funnel-row .name { font-weight: 600; font-size: 1rem; }
 .lp-funnel-row .name .en {
@@ -634,10 +679,15 @@
 .lp-chain-body { padding: clamp(16px, 2.5vw, 24px); }
 
 /* ============================================================
-   CTA final — bloco accent, um único próximo passo
+   CTA final — bloco accent com arte de ondas de sinal
+   (criada no Canva): campo sólido ao centro para leitura.
    ============================================================ */
 .lp-final {
-  background: var(--lp-blue);
+  background-color: var(--lp-blue);
+  background-image: url('../assets/img/cta_bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #fff;
   border-radius: var(--r-lg);
   padding: clamp(40px, 6vw, 72px) clamp(24px, 5vw, 64px);

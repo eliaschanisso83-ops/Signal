@@ -1,7 +1,7 @@
 import { useEffect, type CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import { Badge, ConfidenceBadge, LinkButton, Meter } from '../design-system/components';
-import { CausalChain, ScoreGauge } from '../design-system/visuals';
+import { CausalChain } from '../design-system/visuals';
 import { DISCOVERY_LOGOS } from '../assets/logos';
 
 const FUNNEL = [
@@ -108,40 +108,46 @@ export function LandingPage() {
             </p>
           </div>
 
-          {/* Card premium: showcase do relatório com componentes reais */}
+          {/* Card premium — referência visual construída no Canva */}
           <aside className="lp-preview anim anim-6" aria-label="Prévia da interface do relatório, dados simulados">
             <div className="lp-preview-body">
-              {/* N1 — identidade + status */}
+              {/* Contexto da auditoria + status */}
               <div className="lp-card-head">
-                <div>
-                  <div className="lp-card-title">Relatório de Discoverability</div>
-                  <div className="lp-card-sub">FluxoCaixa · mercado BR · pt-BR</div>
-                </div>
+                <span className="lp-card-context">FluxoCaixa · mercado BR · pt-BR</span>
                 <Badge tone="green">Concluída</Badge>
               </div>
 
-              {/* N2 — resultado principal (protagonista) */}
-              <div className="lp-card-hero">
-                <ScoreGauge value={55} label="Discoverability" />
-                <div className="lp-card-conf">
-                  <span>Confiança do score</span>
-                  <ConfidenceBadge value="MEDIUM" />
+              {/* N1 — score protagonista */}
+              <div className="lp-card-score">
+                <div className="lp-score-num">
+                  55<span className="lp-score-max">/100</span>
+                </div>
+                <div className="lp-score-label">Discoverability Score</div>
+                <div className="lp-score-bar" role="img" aria-label="Discoverability Score: 55 de 100">
+                  <span className="lp-score-fill" />
                 </div>
               </div>
 
-              {/* KPIs — ranking + métricas secundárias */}
-              <div className="lp-card-kpis">
-                <div className="lp-card-rank">
-                  <span className="rank-num">
-                    #3<span className="rank-of">/7</span>
+              {/* N2 — contexto secundário: confiança + posição */}
+              <div className="lp-card-meta">
+                <div className="lp-meta-cell">
+                  <span className="lp-meta-k">Confiança</span>
+                  <ConfidenceBadge value="MEDIUM" />
+                </div>
+                <div className="lp-meta-cell lp-meta-right">
+                  <span className="lp-meta-k">Posição</span>
+                  <span className="lp-rank">
+                    #3<span className="lp-rank-of">/7</span>
+                    <span className="lp-rank-cap">concorrentes observados</span>
                   </span>
-                  <span className="rank-cap">concorrentes observados</span>
                 </div>
-                <div className="lp-card-meters">
-                  <Meter label="Recommendation Share" value={24} displayValue="24%" tone="accent" />
-                  <Meter label="Intent Coverage" value={60} displayValue="60%" tone="accent" />
-                  <Meter label="Evidence Coverage" value={50} displayValue="50%" tone="muted" />
-                </div>
+              </div>
+
+              {/* N3 — métricas secundárias */}
+              <div className="lp-card-meters">
+                <Meter label="Recommendation Share" value={24} displayValue="24%" tone="accent" />
+                <Meter label="Intent Coverage" value={60} displayValue="60%" tone="accent" />
+                <Meter label="Evidence Coverage" value={50} displayValue="50%" tone="muted" />
               </div>
 
               {/* Ação principal do card */}
