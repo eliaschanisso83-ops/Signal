@@ -658,21 +658,11 @@
 .lp-legend .ac { color: #067647; border-color: #067647; background: #ecfdf3; }
 
 /* ---------- Evidence chain — extrato demo ----------
-   Upgrade do card: painel com wash suave + head identificado,
-   rail colorido ligando os 4 passos (a cadeia em si), chips
-   semânticos fortes e blocos com tinta da semântica. Tokens
-   fixados em light para o card não herdar o dark mode. */
+   O corpo do card é uma imagem gerada no Canva (export do
+   extrato) — o visual de produto não se reproduz bem em CSS.
+   Fundo branco do painel casando com a margem da imagem. */
 .lp-chain-panel {
-  --c-observed: #344054;
-  --c-observed-soft: #f2f4f7;
-  --c-evidence: #175cd3;
-  --c-evidence-soft: #eff5ff;
-  --c-hypothesis: #b54708;
-  --c-hypothesis-soft: #fdf6ec;
-  --c-action: #067647;
-  --c-action-soft: #ecfdf3;
-
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafd 55%, #f4f7fb 100%);
+  background: #fff;
   border: 1px solid var(--lp-line);
   border-radius: var(--r-lg);
   overflow: hidden;
@@ -710,82 +700,13 @@
   color: var(--lp-blue);
 }
 .lp-chain-body {
-  padding: clamp(16px, 2.5vw, 24px);
-}
-
-/* Rail: cada passo puxa o próximo — sem observação não há ação */
-.lp-chain-body .causal {
-  position: relative;
-  padding-left: 28px;
-}
-.lp-chain-body .causal-item {
-  position: relative;
-  background: var(--lp-chain-soft);
-  border: 1px solid var(--lp-line);
-  border-left: 4px solid var(--lp-chain-kind);
-  border-radius: var(--r-md);
-  padding: var(--sp-3) var(--sp-4);
-}
-.lp-chain-body .causal-item::before {
-  content: '';
-  position: absolute;
-  left: -27px;
-  top: 14px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--lp-chain-kind);
-  box-shadow: 0 0 0 3px #fff;
-  z-index: 1;
-}
-.lp-chain-body .causal-item:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  left: -23px;
-  top: 19px;
-  bottom: calc(-1 * var(--sp-3) - 19px);
-  width: 2px;
-  background: var(--lp-chain-kind);
-  opacity: 0.4;
-}
-.lp-chain-body .causal-item[data-kind='observed'] {
-  --lp-chain-kind: var(--c-observed);
-  --lp-chain-soft: var(--c-observed-soft);
-}
-.lp-chain-body .causal-item[data-kind='evidence'] {
-  --lp-chain-kind: var(--c-evidence);
-  --lp-chain-soft: var(--c-evidence-soft);
-}
-.lp-chain-body .causal-item[data-kind='hypothesis'] {
-  --lp-chain-kind: var(--c-hypothesis);
-  --lp-chain-soft: var(--c-hypothesis-soft);
-  border-style: dashed;
-  border-left-style: solid;
-}
-.lp-chain-body .causal-item[data-kind='action'] {
-  --lp-chain-kind: var(--c-action);
-  --lp-chain-soft: var(--c-action-soft);
-}
-
-/* Tag = chip sólido semântico (bandeira de cada etapa) */
-.lp-chain-body .causal-item[data-kind] .causal-tag {
-  display: inline-block;
-  background: var(--lp-chain-kind);
-  color: #fff;
-  border: none;
-  border-radius: var(--r-full);
-  padding: 3px 10px;
-  font-family: var(--font-mono);
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  margin-bottom: 7px;
-}
-.lp-chain-body .causal-item p {
   margin: 0;
-  font-size: var(--fs-sm);
-  line-height: 1.55;
-  color: var(--lp-ink-2);
+  padding: clamp(12px, 1.8vw, 18px);
+}
+.lp-chain-body img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* ============================================================

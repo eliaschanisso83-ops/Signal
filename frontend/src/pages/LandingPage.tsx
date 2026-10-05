@@ -1,8 +1,8 @@
 import { useEffect, type CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import { Badge, ConfidenceBadge, LinkButton, Meter } from '../design-system/components';
-import { CausalChain } from '../design-system/visuals';
 import { DISCOVERY_LOGOS } from '../assets/logos';
+import chainCard from '../assets/img/chain_card.webp';
 
 const FUNNEL = [
   { n: '01', name: 'Encontrado', en: 'Found', desc: 'O produto entra no conjunto de candidatos que o sistema de descoberta considera.' },
@@ -26,25 +26,6 @@ const FIGURES = [
   { v: '60%', k: 'Intent Coverage', d: 'Intents relevantes em que o produto aparece ao menos uma vez.' },
   { v: '50%', k: 'Evidence Coverage', d: 'Intents com evidência externa suficiente associada ao produto.' },
   { v: '40/100', k: 'Semantic Alignment', d: 'Posicionamento declarado vs. caracterização observada.' },
-];
-
-const CHAIN = [
-  {
-    kind: 'observed' as const,
-    text: 'O produto não apareceu em nenhuma das respostas observadas para “acompanhar fluxo de caixa”.',
-  },
-  {
-    kind: 'evidence' as const,
-    text: 'CaixaFácil e ContaSimples aparecem em 68% das respostas do intent, sustentados por artigo, página própria e thread de comunidade.',
-  },
-  {
-    kind: 'hypothesis' as const,
-    text: 'A ausência de associação explícita entre o produto e o termo “fluxo de caixa” nas fontes observadas pode estar reduzindo a presença.',
-  },
-  {
-    kind: 'action' as const,
-    text: 'Criar página específica de fluxo de caixa para pequenas empresas e reforçar a associação no store listing — validar em nova auditoria em 2–4 semanas.',
-  },
 ];
 
 export function LandingPage() {
@@ -312,9 +293,15 @@ export function LandingPage() {
                 <span>Evidence chain — extrato</span>
                 <span>demo</span>
               </div>
-              <div className="lp-chain-body">
-                <CausalChain steps={CHAIN} />
-              </div>
+              <figure className="lp-chain-body">
+                <img
+                  src={chainCard}
+                  width={1252}
+                  height={912}
+                  loading="lazy"
+                  alt="Extrato da evidence chain: observação — o produto não apareceu nas respostas observadas para “acompanhar fluxo de caixa”; evidência — CaixaFácil e ContaSimples aparecem em 68% das respostas do intent; hipótese — a ausência de associação explícita com o termo pode estar reduzindo a presença; ação — criar página de fluxo de caixa e reforçar a associação no store listing."
+                />
+              </figure>
             </div>
           </div>
         </div>
