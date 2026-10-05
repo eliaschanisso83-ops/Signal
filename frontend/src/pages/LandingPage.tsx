@@ -103,9 +103,7 @@ export function LandingPage() {
                 Como funciona ↓
               </a>
             </div>
-            <p className="lp-fine anim anim-5">
-              Auditoria completa em segundos · nenhum provider externo conectado nesta fase
-            </p>
+            <p className="lp-fine anim anim-5">Auditoria completa em segundos</p>
           </div>
 
           {/* Card premium — referência visual construída no Canva */}

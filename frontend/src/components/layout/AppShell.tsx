@@ -59,9 +59,6 @@ export function AppShell() {
       <a className="skip-link" href="#main">
         Pular para o conteúdo
       </a>
-      <div className="demo-banner" role="note">
-        Ambiente de demonstração — todos os dados são simulados; nenhum provider externo está conectado nesta fase.
-      </div>
       <header className="topbar">
         <div className="topbar-inner">
           <Link to="/" className="brand" aria-label="Signal — página inicial">

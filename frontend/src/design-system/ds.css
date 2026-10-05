@@ -639,16 +639,6 @@
   .brand .brand-domain { display: none; }
 }
 
-.demo-banner {
-  background: var(--c-warning-soft);
-  color: var(--c-warning);
-  font-size: var(--fs-xs);
-  font-weight: 600;
-  text-align: center;
-  padding: 6px var(--sp-4);
-  border-bottom: 1px solid color-mix(in srgb, var(--c-warning) 25%, transparent);
-}
-
 /* ---------- Shell / conteúdo ---------- */
 .shell {
   max-width: var(--shell-max);
