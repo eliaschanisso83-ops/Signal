@@ -111,48 +111,52 @@ export function LandingPage() {
             </p>
           </div>
 
-          {/* Prévia com os componentes reais do relatório */}
+          {/* Card premium: showcase do relatório com componentes reais */}
           <aside className="lp-preview anim anim-6" aria-label="Prévia da interface do relatório, dados simulados">
-            <div className="lp-preview-bar" aria-hidden="true">
-              <span className="dot" />
-              <span className="dot" />
-              <span className="dot" />
-              <span className="url">signal.biz-flow.cloud/audit/demo/report</span>
-            </div>
             <div className="lp-preview-body">
-              <div className="lp-preview-head">
+              {/* N1 — identidade + status */}
+              <div className="lp-card-head">
                 <div>
-                  <div className="lp-preview-title">Relatório de discoverability</div>
-                  <div className="lp-preview-sub">FluxoCaixa · mercado BR · pt-BR</div>
+                  <div className="lp-card-title">Relatório de Discoverability</div>
+                  <div className="lp-card-sub">FluxoCaixa · mercado BR · pt-BR</div>
                 </div>
                 <Badge tone="green">Concluída</Badge>
               </div>
 
-              <div className="lp-preview-score">
+              {/* N2 — resultado principal (protagonista) */}
+              <div className="lp-card-hero">
                 <ScoreGauge value={55} label="Discoverability" />
-                <div className="lp-preview-scoreinfo">
-                  <span className="pi-label">Discoverability Score</span>
-                  <div className="pi-row">
-                    <ConfidenceBadge value="MEDIUM" />
-                    <span className="pi-pos">3º de 7 concorrentes</span>
-                  </div>
+                <div className="lp-card-conf">
+                  <span>Confiança do score</span>
+                  <ConfidenceBadge value="MEDIUM" />
                 </div>
               </div>
 
-              <div className="lp-preview-meters">
-                <Meter label="Recommendation Share" value={24} displayValue="24%" tone="accent" />
-                <Meter label="Intent Coverage" value={60} displayValue="60%" tone="accent" />
-                <Meter label="Evidence Coverage" value={50} displayValue="50%" tone="muted" />
+              {/* KPIs — ranking + métricas secundárias */}
+              <div className="lp-card-kpis">
+                <div className="lp-card-rank">
+                  <span className="rank-num">
+                    #3<span className="rank-of">/7</span>
+                  </span>
+                  <span className="rank-cap">concorrentes observados</span>
+                </div>
+                <div className="lp-card-meters">
+                  <Meter label="Recommendation Share" value={24} displayValue="24%" tone="accent" />
+                  <Meter label="Intent Coverage" value={60} displayValue="60%" tone="accent" />
+                  <Meter label="Evidence Coverage" value={50} displayValue="50%" tone="muted" />
+                </div>
               </div>
 
-              <Link to="/audit/new" className="lp-preview-action">
+              {/* Ação principal do card */}
+              <LinkButton to="/audit/new" size="md" className="lp-card-cta btn-block">
                 Executar esta auditoria →
-              </Link>
+              </LinkButton>
+            </div>
 
-              <div className="lp-preview-foot">
-                <span>fórmula v0.3 · metodologia v1.0</span>
-                <span>dados simulados</span>
-              </div>
+            {/* Metadata / transparência */}
+            <div className="lp-preview-foot">
+              <span>fórmula v0.3 · metodologia v1.0</span>
+              <span className="lp-sim-pill">dados simulados</span>
             </div>
           </aside>
         </div>
