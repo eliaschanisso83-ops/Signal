@@ -679,11 +679,77 @@
 }
 .page-actions.between { justify-content: space-between; }
 
+/* ---------- Rodapé ---------- */
 .footer {
   border-top: 1px solid var(--c-border);
-  padding: var(--sp-6);
-  text-align: center;
+  padding: var(--sp-8) var(--sp-6) var(--sp-5);
+  background: var(--c-surface);
+  font-size: var(--fs-sm);
+  color: var(--c-muted);
+}
+.footer-inner {
+  max-width: var(--shell-wide);
+  margin: 0 auto;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--sp-6);
+  padding-bottom: var(--sp-6);
+  border-bottom: 1px solid var(--c-border);
+}
+.footer-brand .brand { margin-bottom: var(--sp-3); }
+.footer-desc {
+  max-width: 46ch;
+  line-height: 1.6;
+  margin: 0 0 var(--sp-4);
+  font-size: var(--fs-sm);
+  color: var(--c-muted);
+}
+.footer-title {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin: 0 0 var(--sp-3);
+}
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.footer-links a {
+  display: inline-block;
+  padding: 6px 0;
+  color: var(--c-ink-2);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  text-decoration: none;
+}
+.footer-links a:hover {
+  color: var(--c-accent);
+  text-decoration: underline;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+  padding-top: var(--sp-4);
   font-size: var(--fs-xs);
   color: var(--c-muted);
-  background: var(--c-surface);
+}
+@media (max-width: 760px) {
+  .footer { padding: var(--sp-6) var(--sp-4) var(--sp-4); }
+  .footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--sp-5);
+  }
+  .footer-bottom { align-items: flex-start; flex-direction: column; gap: var(--sp-2); }
 }

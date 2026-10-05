@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import { Badge, ConfidenceBadge, LinkButton, Meter } from '../design-system/components';
 import { CausalChain, ScoreGauge } from '../design-system/visuals';
 
+/* Sistemas de descoberta segmentados pela metodologia
+   (DOCUMENTO-3 §53 — Model Effect). Lista real, sem clientes inventados. */
+const DISCOVERY_SYSTEMS = ['ChatGPT', 'Gemini', 'Perplexity', 'Google AI'];
+
 const FUNNEL = [
   { n: '01', name: 'Encontrado', en: 'Found', desc: 'O produto entra no conjunto de candidatos que o sistema de descoberta considera.' },
   { n: '02', name: 'Compreendido', en: 'Understood', desc: 'Categoria, público e problema são associados ao produto de forma correta.' },
@@ -123,28 +127,59 @@ export function LandingPage() {
                 </div>
                 <Badge tone="green">Concluída</Badge>
               </div>
-              <div className="lp-preview-main">
-                <div className="lp-preview-gauge">
-                  <ScoreGauge value={55} label="Discoverability" />
-                </div>
-                <div className="lp-preview-meters">
-                  <Meter label="Recommendation Share" value={24} displayValue="24%" tone="accent" />
-                  <Meter label="Intent Coverage" value={60} displayValue="60%" tone="accent" />
-                  <Meter label="Evidence Coverage" value={50} displayValue="50%" tone="muted" />
-                  <div className="lp-preview-conf">
-                    <span className="muted">Confiança do score</span>
-                    <ConfidenceBadge value="HIGH" />
+
+              <div className="lp-preview-score">
+                <ScoreGauge value={55} label="Discoverability" />
+                <div className="lp-preview-scoreinfo">
+                  <span className="pi-label">Discoverability Score</span>
+                  <div className="pi-row">
+                    <ConfidenceBadge value="MEDIUM" />
+                    <span className="pi-pos">3º de 7 concorrentes</span>
                   </div>
                 </div>
               </div>
+
+              <div className="lp-preview-meters">
+                <Meter label="Recommendation Share" value={24} displayValue="24%" tone="accent" />
+                <Meter label="Intent Coverage" value={60} displayValue="60%" tone="accent" />
+                <Meter label="Evidence Coverage" value={50} displayValue="50%" tone="muted" />
+              </div>
+
+              <Link to="/audit/new" className="lp-preview-action">
+                Executar esta auditoria →
+              </Link>
+
               <div className="lp-preview-foot">
-                <span>metodologia v1.3.0 · fórmula v1.2</span>
-                <span>pos. 3/7</span>
+                <span>fórmula v0.3 · metodologia v1.0</span>
+                <span>dados simulados</span>
               </div>
             </div>
           </aside>
         </div>
       </section>
+
+      {/* ---------- Marquee: sistemas de descoberta (cobertura real) ---------- */}
+      <div className="lp-marquee" role="group" aria-label="Sistemas de descoberta cobertos pela metodologia">
+        <div className="lp-marquee-label">Segmentação por sistema</div>
+        <div className="lp-marquee-view">
+          <div className="lp-marquee-track">
+            <div className="lp-marquee-group">
+              {DISCOVERY_SYSTEMS.map((s) => (
+                <span key={s} className="lp-marquee-item">
+                  {s}
+                </span>
+              ))}
+            </div>
+            <div className="lp-marquee-group" aria-hidden="true">
+              {DISCOVERY_SYSTEMS.map((s) => (
+                <span key={s} className="lp-marquee-item">
+                  {s}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* ---------- Faixa de fatos (prova real do produto) ---------- */}
       <div className="lp-strip">
@@ -159,7 +194,7 @@ export function LandingPage() {
           </div>
           <div className="lp-fact">
             <div className="k">Metodologia</div>
-            <div className="v">v1.3.0 versionada e documentada</div>
+            <div className="v">v1.0 versionada e documentada</div>
           </div>
           <div className="lp-fact">
             <div className="k">Demonstração</div>
@@ -196,7 +231,7 @@ export function LandingPage() {
       </section>
 
       {/* ---------- Solução: pipeline horizontal ---------- */}
-      <section className="lp-section" id="como-funciona" aria-labelledby="flow-title">
+      <section className="lp-section alt" id="como-funciona" aria-labelledby="flow-title">
         <div className="shell">
           <header className="lp-section-head reveal">
             <div className="lp-eyebrow">Como funciona</div>
