@@ -68,14 +68,14 @@ export function AppShell() {
             )}
             {onLanding && (
               <>
-                <a className="nav-link" href="#metricas">
-                  Métricas
+                <a className="nav-link lp-anchor" href="#problema">
+                  Problema
                 </a>
-                <a className="nav-link" href="#principio">
-                  Método
-                </a>
-                <a className="nav-link" href="#como-funciona">
+                <a className="nav-link lp-anchor" href="#como-funciona">
                   Como funciona
+                </a>
+                <a className="nav-link lp-anchor" href="#metricas">
+                  Métricas
                 </a>
               </>
             )}

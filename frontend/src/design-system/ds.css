@@ -634,6 +634,11 @@
 .topnav a.nav-link:hover { background: var(--c-surface-alt); text-decoration: none; }
 .topnav a.nav-link[aria-current='page'] { color: var(--c-accent-ink); background: var(--c-accent-soft); }
 
+@media (max-width: 760px) {
+  /* header compacto: domínio sai para não comprimir CTA em telas pequenas */
+  .brand .brand-domain { display: none; }
+}
+
 .demo-banner {
   background: var(--c-warning-soft);
   color: var(--c-warning);
