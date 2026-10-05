@@ -4,6 +4,7 @@ import './styles/tokens.css';
 import './styles/base.css';
 import './design-system/ds.css';
 import './styles/pages.css';
+import './styles/landing.css';
 import App from './App.tsx';
 
 createRoot(document.getElementById('root')!).render(

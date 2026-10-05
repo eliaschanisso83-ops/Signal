@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuditSession } from '../../state/session';
 import { Button } from '../../design-system/components';
@@ -27,13 +28,25 @@ export function AppShell() {
   const cont = continueUrl();
   const onLanding = location.pathname === '/';
 
+  useEffect(() => {
+    const topbar = document.querySelector('.topbar');
+    if (!topbar) return;
+    const onScroll = () => topbar.classList.toggle('is-scrolled', window.scrollY > 6);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      topbar.classList.remove('is-scrolled');
+    };
+  }, []);
+
   function startNew() {
     resetSession();
     navigate('/audit/new');
   }
 
   return (
-    <>
+    <div className={onLanding ? 'lp-chrome' : undefined}>
       <a className="skip-link" href="#main">
         Pular para o conteúdo
       </a>
@@ -52,6 +65,19 @@ export function AppShell() {
               <Link className="nav-link" to={cont}>
                 {completed ? 'Meu relatório' : 'Continuar auditoria'}
               </Link>
+            )}
+            {onLanding && (
+              <>
+                <a className="nav-link" href="#metricas">
+                  Métricas
+                </a>
+                <a className="nav-link" href="#principio">
+                  Método
+                </a>
+                <a className="nav-link" href="#como-funciona">
+                  Como funciona
+                </a>
+              </>
             )}
             {onLanding ? (
               <Button onClick={startNew}>Iniciar auditoria</Button>
@@ -74,6 +100,6 @@ export function AppShell() {
           {hasDraft && ' · Dados simulados para demonstração'}
         </p>
       </footer>
-    </>
+    </div>
   );
 }

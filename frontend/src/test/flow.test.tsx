@@ -8,7 +8,9 @@ function click(text: string) {
 }
 
 async function expectHeading(name: string, level?: 1 | 2 | 3) {
-  return screen.findByRole('heading', level ? { name, level } : { name });
+  /* cobre latências simuladas do mock: criação (~700ms), pipeline (~6,8s)
+     e redirect automático (1,8s) — acima do timeout padrão de 1s */
+  return screen.findByRole('heading', level ? { name, level } : { name }, { timeout: 15000 });
 }
 
 describe('Fluxo completo da auditoria', () => {
