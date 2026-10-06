@@ -1,11 +1,46 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 84" width="340" height="84" role="img" aria-label="Signal — signal.biz-flow.cloud">
+  <style>
+    .sig-wave { animation: sig-wave 3s ease-out infinite; }
+    .sig-w1 { animation-delay: 0s; }
+    .sig-w2 { animation-delay: 0.3s; }
+    .sig-w3 { animation-delay: 0.6s; }
+    .sig-ping {
+      animation: sig-ping 3s ease-out infinite;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+    .sig-dot {
+      animation: sig-dot 3s ease-in-out infinite;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+    @keyframes sig-wave {
+      0% { opacity: 0.22; }
+      16% { opacity: 1; }
+      64%, 100% { opacity: 0.22; }
+    }
+    @keyframes sig-ping {
+      0% { opacity: 0.45; transform: scale(0.5); }
+      45%, 100% { opacity: 0; transform: scale(2.1); }
+    }
+    @keyframes sig-dot {
+      0%, 100% { transform: scale(1); }
+      12% { transform: scale(1.16); }
+      32% { transform: scale(1); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .sig-wave, .sig-dot { animation: none; }
+      .sig-ping { display: none; }
+    }
+  </style>
   <g transform="translate(6 10)">
+    <circle class="sig-ping" cx="14" cy="50" r="10" fill="none" stroke="#2547d0" stroke-width="2.5" />
     <g fill="none" stroke="#2547d0" stroke-width="7" stroke-linecap="round">
-      <path d="M14 34 A16 16 0 0 1 30 50" opacity="1" />
-      <path d="M14 23 A27 27 0 0 1 41 50" opacity="0.7" />
-      <path d="M14 12 A38 38 0 0 1 52 50" opacity="0.42" />
+      <path class="sig-wave sig-w1" d="M14 34 A16 16 0 0 1 30 50" opacity="1" />
+      <path class="sig-wave sig-w2" d="M14 23 A27 27 0 0 1 41 50" opacity="0.7" />
+      <path class="sig-wave sig-w3" d="M14 12 A38 38 0 0 1 52 50" opacity="0.42" />
     </g>
-    <circle cx="14" cy="50" r="7.5" fill="#2547d0" />
+    <circle class="sig-dot" cx="14" cy="50" r="7.5" fill="#2547d0" />
   </g>
   <text x="86" y="50" font-family="Georgia, 'Iowan Old Style', 'Palatino Linotype', Palatino, serif" font-size="40" font-weight="600" fill="#12161c">Signal</text>
   <text x="87" y="72" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15" fill="#667085">signal.biz-flow.cloud</text>

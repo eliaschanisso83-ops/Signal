@@ -138,6 +138,45 @@
   color: var(--lp-muted);
 }
 
+/* ---------- Botões — acabamento da landing ----------
+   Mesma família do app; aqui: raio maior, sombra em camadas,
+   elevação sutil no hover. Escopado em .lp — o app não muda. */
+.lp .btn {
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(18, 22, 28, 0.06);
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+.lp .btn:hover:not(:disabled) { transform: translateY(-1px); }
+.lp .btn:active:not(:disabled) { transform: translateY(0); transition-duration: 0.06s; }
+.lp .btn-primary {
+  box-shadow:
+    0 1px 2px rgba(26, 47, 138, 0.28),
+    0 10px 22px -10px rgba(37, 71, 208, 0.55);
+}
+.lp .btn-primary:hover:not(:disabled) {
+  box-shadow:
+    0 1px 2px rgba(26, 47, 138, 0.28),
+    0 16px 32px -12px rgba(37, 71, 208, 0.6);
+}
+.lp .btn-primary:active:not(:disabled) {
+  box-shadow: 0 1px 2px rgba(26, 47, 138, 0.28);
+}
+.lp .btn-secondary { box-shadow: 0 1px 2px rgba(18, 22, 28, 0.05); }
+.lp .btn-secondary:hover:not(:disabled) {
+  box-shadow: 0 8px 18px -8px rgba(18, 22, 28, 0.2);
+}
+.lp .btn-lg { padding: 14px 26px; border-radius: 12px; }
+.lp .lp-card-cta { padding-top: 13px; padding-bottom: 13px; }
+@media (prefers-reduced-motion: reduce) {
+  .lp .btn { transition: none; }
+  .lp .btn:hover:not(:disabled) { transform: none; }
+}
+
 /* ---------- Card premium — referência visual construída no Canva ----------
    Hierarquia: contexto+status → score (protagonista) → confiança/posição
    → métricas → CTA → metadata. Sem chrome de browser, sem gauge circular:
@@ -146,14 +185,20 @@
   background: var(--lp-surface);
   border: 1px solid var(--lp-line);
   border-top: 3px solid var(--lp-blue);
-  border-radius: var(--r-lg);
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 12px 32px rgba(18, 22, 28, 0.08), 0 2px 6px rgba(18, 22, 28, 0.04);
+  box-shadow:
+    0 1px 2px rgba(18, 22, 28, 0.05),
+    0 6px 14px -8px rgba(18, 22, 28, 0.08),
+    0 24px 48px -16px rgba(18, 22, 28, 0.16);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .lp-preview:hover {
   transform: translateY(-2px);
-  box-shadow: 0 18px 40px rgba(18, 22, 28, 0.1), 0 4px 10px rgba(18, 22, 28, 0.05);
+  box-shadow:
+    0 1px 2px rgba(18, 22, 28, 0.05),
+    0 8px 18px -8px rgba(18, 22, 28, 0.1),
+    0 32px 60px -18px rgba(18, 22, 28, 0.2);
 }
 .lp-preview-body {
   padding: var(--sp-5);
@@ -229,17 +274,17 @@
   display: block;
   height: 100%;
   width: 55%;
-  background: var(--lp-blue);
+  background: linear-gradient(90deg, var(--lp-blue) 0%, #4a6ae2 100%);
   border-radius: var(--r-full);
   transform-origin: left center;
   animation: lp-grow 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.7s backwards;
 }
 
-/* Confiança + posição — secundário, sem caixas extras */
+/* Confiança + posição — tiles suaves, hierarquia secundária */
 .lp-card-meta {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: var(--sp-4);
+  gap: 10px;
   padding: var(--sp-4) 0;
   border-bottom: 1px solid var(--lp-line);
 }
@@ -247,8 +292,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px;
+  gap: 7px;
   min-width: 0;
+  background: #f7f8fa;
+  border: 1px solid var(--lp-line);
+  border-radius: 10px;
+  padding: 10px 12px;
 }
 .lp-meta-right {
   align-items: flex-end;
@@ -302,7 +351,7 @@
 }
 .lp-card-meters .meter-value { font-size: 12.5px; color: var(--lp-ink); }
 .lp-card-meters .meter-track {
-  height: 5px;
+  height: 6px;
   background: #edeff3;
 }
 
@@ -317,9 +366,9 @@
   justify-content: space-between;
   align-items: center;
   gap: var(--sp-3);
-  padding: 10px var(--sp-5);
+  padding: 11px var(--sp-5);
   border-top: 1px solid var(--lp-line);
-  background: var(--lp-bg);
+  background: #fafbfc;
   font-family: var(--font-mono);
   font-size: 10.5px;
   color: var(--lp-muted);
@@ -674,9 +723,12 @@
 
   background: linear-gradient(180deg, #ffffff 0%, #f8fafd 55%, #f4f7fb 100%);
   border: 1px solid var(--lp-line);
-  border-radius: var(--r-lg);
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 12px 32px rgba(18, 22, 28, 0.08), 0 2px 6px rgba(18, 22, 28, 0.04);
+  box-shadow:
+    0 1px 2px rgba(18, 22, 28, 0.05),
+    0 6px 14px -8px rgba(18, 22, 28, 0.08),
+    0 24px 48px -16px rgba(18, 22, 28, 0.16);
 }
 .lp-chain-head {
   display: flex;
@@ -723,7 +775,8 @@
   background: var(--lp-chain-soft);
   border: 1px solid var(--lp-line);
   border-left: 4px solid var(--lp-chain-kind);
-  border-radius: var(--r-md);
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(18, 22, 28, 0.04);
   padding: var(--sp-3) var(--sp-4);
 }
 .lp-chain-body .causal-item::before {
