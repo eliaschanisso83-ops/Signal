@@ -87,6 +87,59 @@
   --shell-max: 1200px;
   --shell-wide: 1440px;
   --topbar-h: 60px;
+
+  /* ============================================================
+     Canvas interno (pós-login) — branco frio + superfícies em camada
+     Estes tokens só são usados sob .app-chrome; a landing não os lê.
+     ============================================================ */
+  --cv-bg: #f5f8fc;
+  --cv-bg-top: #f8fafd;
+  --cv-bg-wash: #e9effa;
+  --cv-ink: #101828;
+  --cv-ink-2: #35435a;
+  --cv-muted: #5d6b82;
+  --cv-muted-2: #8a97ab;
+
+  /* superfícies translúcidas (profundidade por camada, sem blur) */
+  --cv-surf: rgba(255, 255, 255, 0.84);
+  --cv-surf-2: rgba(255, 255, 255, 0.58);
+  --cv-surf-solid: #ffffff;
+  --cv-inset: #f2f5fa;
+
+  /* hairlines */
+  --cv-line: rgba(16, 24, 40, 0.09);
+  --cv-line-2: rgba(16, 24, 40, 0.16);
+
+  /* raios */
+  --r-card: 14px;
+  --r-ctl: 10px;
+  --r-tile: 12px;
+
+  /* sombras em camadas */
+  --cv-sh-1: 0 1px 2px rgba(16, 24, 40, 0.05);
+  --cv-sh-2: 0 1px 2px rgba(16, 24, 40, 0.05), 0 10px 26px -18px rgba(16, 24, 40, 0.35);
+  --cv-sh-3: 0 2px 6px rgba(16, 24, 40, 0.07), 0 24px 48px -26px rgba(16, 24, 40, 0.4);
+  --cv-sh-focus: 0 0 0 3px rgba(37, 71, 208, 0.24);
+
+  /* acento complementar (gradientes sutis de dados) */
+  --cv-accent-2: #4d7dfc;
+  --cv-accent-grad: linear-gradient(135deg, var(--c-accent), var(--cv-accent-2));
+
+  /* tipografia de dados */
+  --num: var(--font-sans);
+  --num-track: -0.03em;
+
+  /* movimento */
+  --d1: 0.16s;
+  --d2: 0.3s;
+  --d3: 0.55s;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  /* rede de processamento */
+  --net-line: rgba(37, 71, 208, 0.46);
+  --net-node: #ffffff;
+  --net-node-line: var(--c-accent);
+  --net-core: var(--c-accent);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -120,5 +173,30 @@
     --sh-1: 0 1px 2px rgba(0, 0, 0, 0.4);
     --sh-2: 0 1px 3px rgba(0, 0, 0, 0.45);
     --sh-3: 0 4px 14px rgba(0, 0, 0, 0.5);
+
+    /* canvas interno (dark) */
+    --cv-bg: #0d1117;
+    --cv-bg-top: #10151c;
+    --cv-bg-wash: #131b2b;
+    --cv-ink: #edf1f7;
+    --cv-ink-2: #c2cbd8;
+    --cv-muted: #939fb1;
+    --cv-muted-2: #737f92;
+    --cv-surf: rgba(20, 26, 35, 0.82);
+    --cv-surf-2: rgba(24, 31, 42, 0.6);
+    --cv-surf-solid: #141a23;
+    --cv-inset: #171e28;
+    --cv-line: rgba(255, 255, 255, 0.1);
+    --cv-line-2: rgba(255, 255, 255, 0.18);
+    --cv-sh-1: 0 1px 2px rgba(0, 0, 0, 0.5);
+    --cv-sh-2: 0 1px 2px rgba(0, 0, 0, 0.5), 0 12px 28px -18px rgba(0, 0, 0, 0.8);
+    --cv-sh-3: 0 2px 8px rgba(0, 0, 0, 0.55), 0 28px 52px -28px rgba(0, 0, 0, 0.9);
+    --cv-sh-focus: 0 0 0 3px rgba(109, 139, 255, 0.32);
+    --cv-accent-2: #6d8bff;
+    --cv-accent-grad: linear-gradient(135deg, var(--c-accent), var(--cv-accent-2));
+    --net-line: rgba(109, 139, 255, 0.52);
+    --net-node: #101722;
+    --net-node-line: var(--c-accent);
+    --net-core: var(--c-accent);
   }
 }

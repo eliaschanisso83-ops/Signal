@@ -74,7 +74,7 @@ function ReportSummary() {
   const positionRank = position.value;
 
   return (
-    <div className="stack stack-6">
+    <div className="stack stack-6 reveal-group">
       {/* ---- 1. Executive summary ---- */}
       <Card>
         <div className="row-between">

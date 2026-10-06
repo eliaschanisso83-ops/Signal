@@ -55,7 +55,7 @@ export function AppShell() {
   }
 
   return (
-    <div className={onLanding ? 'lp-chrome' : undefined}>
+    <div className={onLanding ? 'lp-chrome' : 'app-chrome'}>
       <a className="skip-link" href="#main">
         Pular para o conteúdo
       </a>

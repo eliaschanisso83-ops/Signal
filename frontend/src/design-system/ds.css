@@ -743,3 +743,720 @@
   }
   .footer-bottom { align-items: flex-start; flex-direction: column; gap: var(--sp-2); }
 }
+
+/* ============================================================
+   Signal — camada interna (.app-chrome)
+   Redesign pós-login: superfícies em camada, hairlines, raios
+   maiores, sombras mínimas, microinterações. A landing usa
+   .lp-chrome e não recebe nenhuma regra desta seção.
+   ============================================================ */
+
+/* ---------- Botões ---------- */
+.app-chrome .btn {
+  border-radius: var(--r-ctl);
+  transition:
+    background var(--d1) var(--ease),
+    border-color var(--d1) var(--ease),
+    color var(--d1) var(--ease),
+    box-shadow var(--d2) var(--ease),
+    transform var(--d1) var(--ease);
+}
+.app-chrome .btn-primary {
+  box-shadow: 0 6px 16px -10px rgba(37, 71, 208, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+.app-chrome .btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px -12px rgba(37, 71, 208, 0.95), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+.app-chrome .btn-primary:active:not(:disabled) { transform: translateY(0); }
+.app-chrome .btn-secondary {
+  background: var(--cv-surf-solid);
+  color: var(--cv-ink);
+  border-color: var(--cv-line-2);
+  box-shadow: var(--cv-sh-1);
+}
+.app-chrome .btn-secondary:hover:not(:disabled) {
+  background: var(--cv-surf-solid);
+  border-color: rgba(16, 24, 40, 0.3);
+  box-shadow: var(--cv-sh-2);
+}
+.app-chrome .btn-ghost:hover:not(:disabled) { background: rgba(16, 24, 40, 0.06); }
+.app-chrome .btn-danger { border-radius: var(--r-ctl); }
+.app-chrome .btn:focus-visible {
+  outline: none;
+  box-shadow: var(--cv-sh-focus);
+  border-color: var(--c-accent);
+}
+
+/* ---------- Campos ---------- */
+.app-chrome .field-label { color: var(--cv-ink-2); letter-spacing: 0.01em; }
+.app-chrome :is(.input, .select, .textarea) {
+  background: var(--cv-surf-solid);
+  border-color: var(--cv-line-2);
+  border-radius: var(--r-ctl);
+  transition: border-color var(--d1) var(--ease), box-shadow var(--d1) var(--ease), background var(--d1) var(--ease);
+}
+.app-chrome :is(.input, .select, .textarea):hover { border-color: rgba(16, 24, 40, 0.28); }
+.app-chrome :is(.input, .select, .textarea):focus {
+  border-color: var(--c-accent);
+  box-shadow: var(--cv-sh-focus);
+}
+.app-chrome .textarea { border-radius: var(--r-ctl); }
+.app-chrome .field-hint { color: var(--cv-muted); }
+
+/* ---------- Badges ---------- */
+.app-chrome .badge {
+  border-radius: var(--r-full);
+  padding: 3px 10px;
+  border: 1px solid transparent;
+}
+.app-chrome .badge-neutral { border-color: var(--cv-line); }
+.app-chrome .badge-blue { border-color: color-mix(in srgb, var(--c-info) 26%, transparent); }
+.app-chrome .badge-green { border-color: color-mix(in srgb, var(--c-success) 26%, transparent); }
+.app-chrome .badge-amber { border-color: color-mix(in srgb, var(--c-warning) 26%, transparent); }
+.app-chrome .badge-red { border-color: color-mix(in srgb, var(--c-danger) 24%, transparent); }
+.app-chrome .badge-accent { border-color: color-mix(in srgb, var(--c-accent) 26%, transparent); }
+.app-chrome .badge-outline { border-color: var(--cv-line-2); color: var(--cv-muted); }
+
+/* ---------- Cards (superfície em camada) ---------- */
+.app-chrome .card {
+  background: var(--cv-surf);
+  border: 1px solid var(--cv-line);
+  border-radius: var(--r-card);
+  box-shadow: var(--cv-sh-2);
+  transition: box-shadow var(--d2) var(--ease), border-color var(--d2) var(--ease), transform var(--d2) var(--ease);
+}
+.app-chrome .card-hover:hover {
+  box-shadow: var(--cv-sh-3);
+  border-color: var(--cv-line-2);
+  transform: translateY(-2px);
+}
+.app-chrome .card-title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--cv-ink);
+}
+.app-chrome .card-desc { color: var(--cv-muted); }
+.app-chrome .card-eyebrow { color: var(--c-accent); }
+
+/* ---------- Tabs ---------- */
+.app-chrome .tabs { border-bottom-color: var(--cv-line); gap: 4px; }
+.app-chrome .tab {
+  border-radius: var(--r-ctl) var(--r-ctl) 0 0;
+  color: var(--cv-muted);
+  transition: color var(--d1) var(--ease), background var(--d1) var(--ease);
+}
+.app-chrome .tab:hover { color: var(--cv-ink); background: rgba(16, 24, 40, 0.045); }
+.app-chrome .tab[aria-selected='true'] {
+  color: var(--c-accent);
+  border-bottom-color: var(--c-accent);
+  background: linear-gradient(180deg, transparent 40%, color-mix(in srgb, var(--c-accent) 8%, transparent));
+}
+
+/* ---------- Tabela ---------- */
+.app-chrome .table th {
+  color: var(--cv-muted);
+  border-bottom-color: var(--cv-line-2);
+  letter-spacing: 0.06em;
+}
+.app-chrome .table td { border-bottom-color: var(--cv-line); color: var(--cv-ink-2); }
+.app-chrome .table tbody tr { transition: background var(--d1) var(--ease); }
+.app-chrome .table tbody tr:hover { background: rgba(16, 24, 40, 0.035); }
+.app-chrome .table .num { color: var(--cv-ink); font-weight: 600; }
+
+/* badges longos quebram linha em telas estreitas */
+@media (max-width: 640px) {
+  .app-chrome .badge { white-space: normal; }
+}
+
+/* ---------- Estados ---------- */
+.app-chrome .state-block {
+  background: var(--cv-surf);
+  border: 1px dashed var(--cv-line-2);
+  border-radius: var(--r-card);
+  box-shadow: var(--cv-sh-1);
+}
+.app-chrome .state-block p { color: var(--cv-muted); }
+.app-chrome .state-error {
+  background: color-mix(in srgb, var(--c-danger-soft) 72%, var(--cv-surf-solid));
+  border-color: color-mix(in srgb, var(--c-danger) 45%, transparent);
+}
+.app-chrome .skeleton {
+  background: linear-gradient(90deg, var(--cv-inset) 25%, rgba(16, 24, 40, 0.08) 37%, var(--cv-inset) 63%);
+  background-size: 400% 100%;
+  border-radius: var(--r-ctl);
+}
+.app-chrome .spinner { border-color: color-mix(in srgb, var(--c-accent) 35%, transparent); border-right-color: transparent; }
+
+/* ---------- Etapas do wizard ---------- */
+.app-chrome .wizard-step {
+  border-radius: var(--r-full);
+  background: var(--cv-surf);
+  border-color: var(--cv-line);
+  color: var(--cv-muted);
+  transition: background var(--d1) var(--ease), border-color var(--d1) var(--ease), color var(--d1) var(--ease),
+    box-shadow var(--d1) var(--ease);
+}
+.app-chrome .wizard-step[data-state='current'] {
+  background: color-mix(in srgb, var(--c-accent) 10%, var(--cv-surf-solid));
+  border-color: color-mix(in srgb, var(--c-accent) 42%, transparent);
+  color: var(--c-accent-ink);
+  box-shadow: 0 4px 14px -10px rgba(37, 71, 208, 0.9);
+}
+.app-chrome .wizard-step[data-state='done'] {
+  background: color-mix(in srgb, var(--c-success) 9%, var(--cv-surf-solid));
+  border-color: color-mix(in srgb, var(--c-success) 32%, transparent);
+  color: var(--c-success);
+}
+.app-chrome .wizard-step .step-num { background: var(--cv-inset); color: var(--cv-muted); border: 1px solid var(--cv-line); }
+.app-chrome .wizard-step[data-state='current'] .step-num { background: var(--c-accent); color: #fff; border-color: transparent; }
+.app-chrome .wizard-step[data-state='done'] .step-num { background: var(--c-success); color: #fff; border-color: transparent; }
+
+/* ---------- Pipeline de execução (trilho + estados) ---------- */
+.app-chrome .pipeline li { padding: 9px 0; }
+.app-chrome .pipeline li::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 32px;
+  bottom: -8px;
+  width: 2px;
+  background: var(--cv-line);
+  border-radius: 2px;
+}
+.app-chrome .pipeline li:last-child::before { display: none; }
+.app-chrome .pipeline li[data-state='done']::before {
+  background: color-mix(in srgb, var(--c-success) 55%, transparent);
+}
+.app-chrome .pipeline .dot {
+  position: relative;
+  z-index: 1;
+  background: var(--cv-surf-solid);
+  border-color: var(--cv-line-2);
+  color: var(--cv-muted);
+  box-shadow: var(--cv-sh-1);
+  transition: background var(--d2) var(--ease), border-color var(--d2) var(--ease), color var(--d2) var(--ease);
+}
+.app-chrome .pipeline li[data-state='done'] .dot {
+  background: color-mix(in srgb, var(--c-success) 14%, var(--cv-surf-solid));
+  border-color: color-mix(in srgb, var(--c-success) 55%, transparent);
+  color: var(--c-success);
+}
+.app-chrome .pipeline li[data-state='current'] .dot {
+  background: var(--c-accent);
+  border-color: var(--c-accent);
+  color: #fff;
+  animation: dot-ping 1.9s var(--ease) infinite;
+}
+.app-chrome .pipeline li[data-state='current'] .label { color: var(--cv-ink); }
+.app-chrome .pipeline li[data-state='todo'] .label { color: var(--cv-muted-2); }
+@keyframes dot-ping {
+  0% { box-shadow: 0 0 0 0 rgba(37, 71, 208, 0.4); }
+  70% { box-shadow: 0 0 0 9px rgba(37, 71, 208, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 71, 208, 0); }
+}
+
+/* ---------- Barra de progresso ---------- */
+.app-chrome .progress-track {
+  background: var(--cv-inset);
+  box-shadow: inset 0 1px 2px rgba(16, 24, 40, 0.07);
+  border: 1px solid var(--cv-line);
+}
+.app-chrome .progress-fill {
+  background: var(--cv-accent-grad);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+/* ---------- Medidor (barra segmentada) ---------- */
+.app-chrome .meter-track {
+  background: var(--cv-inset);
+  box-shadow: inset 0 0 0 1px var(--cv-line);
+}
+.app-chrome .meter-fill {
+  border-radius: var(--r-full);
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0 4px,
+    rgba(255, 255, 255, 0.5) 4px 5px
+  );
+  transition: width var(--d3) var(--ease);
+}
+.app-chrome .meter-fill[data-tone='accent'] { background-color: var(--c-accent); }
+.app-chrome .meter-fill[data-tone='evidence'] { background-color: var(--c-evidence); }
+.app-chrome .meter-fill[data-tone='gap'] { background-color: var(--c-gap); }
+.app-chrome .meter-fill[data-tone='success'] { background-color: var(--c-success); }
+.app-chrome .meter-fill[data-tone='muted'] { background-color: var(--c-muted-2); }
+.app-chrome .meter-label { color: var(--cv-ink-2); }
+.app-chrome .meter-note { color: var(--cv-muted); }
+
+/* ---------- Gauge: instrumento de score ---------- */
+@keyframes gauge-draw {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: var(--gauge-off, 0); }
+}
+@keyframes marker-in {
+  from { opacity: 0; transform: scale(0.4); }
+  to { opacity: 1; transform: scale(1); }
+}
+.app-chrome .gauge { width: 216px; height: 216px; }
+.app-chrome .gauge svg { transform: none; overflow: visible; }
+.app-chrome .gauge .track {
+  stroke: color-mix(in srgb, var(--cv-ink) 12%, transparent);
+  stroke-linecap: round;
+}
+.app-chrome .gauge .fill {
+  stroke: var(--c-accent);
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  animation: gauge-draw 1.15s var(--ease) both;
+}
+.app-chrome .gauge .tick { stroke: color-mix(in srgb, var(--cv-ink) 28%, transparent); stroke-width: 1.5; }
+.app-chrome .gauge .tick.major { stroke: color-mix(in srgb, var(--cv-ink) 55%, transparent); stroke-width: 2; }
+.app-chrome .gauge .scale-label {
+  fill: var(--cv-muted-2);
+  font-family: var(--num);
+  font-size: 11px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+.app-chrome .gauge .marker {
+  fill: var(--c-accent);
+  stroke: var(--cv-surf-solid);
+  stroke-width: 3;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: marker-in 0.5s var(--ease) 0.85s both;
+}
+.app-chrome .gauge-center { inset: 0 0 26px 0; }
+.app-chrome .gauge-value {
+  font-family: var(--num);
+  font-size: 3.1rem;
+  font-weight: 700;
+  letter-spacing: var(--num-track);
+  font-variant-numeric: tabular-nums;
+  color: var(--cv-ink);
+}
+.app-chrome .gauge-of { font-size: var(--fs-sm); color: var(--cv-muted); font-variant-numeric: tabular-nums; }
+.app-chrome .gauge-label {
+  color: var(--c-accent);
+  letter-spacing: 0.1em;
+  font-size: 10.5px;
+  margin-top: 8px;
+}
+
+/* ---------- Evidence chain (trilho analítico) ---------- */
+.app-chrome .causal {
+  position: relative;
+  gap: var(--sp-3);
+  margin-top: var(--sp-4);
+  padding-left: 2px;
+}
+.app-chrome .causal-item {
+  position: relative;
+  margin-left: 34px;
+  padding: var(--sp-4) var(--sp-5);
+  border: 1px solid var(--cv-line);
+  border-left: none;
+  border-radius: var(--r-card);
+  background: var(--cv-surf-solid);
+  box-shadow: var(--cv-sh-1);
+  animation: reveal-up 0.5s var(--ease) both;
+  animation-delay: calc(var(--ci, 0) * 95ms);
+  transition: box-shadow var(--d2) var(--ease), border-color var(--d2) var(--ease), transform var(--d2) var(--ease);
+}
+.app-chrome .causal-item:hover {
+  box-shadow: var(--cv-sh-2);
+  border-color: var(--cv-line-2);
+  transform: translateX(2px);
+}
+/* nó da cadeia */
+.app-chrome .causal-item::before {
+  content: '';
+  position: absolute;
+  left: -37px;
+  top: 18px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--cv-surf-solid);
+  border: 3px solid var(--kind-c, var(--c-accent));
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--kind-c, var(--c-accent)) 15%, transparent);
+}
+/* conector para o próximo elo */
+.app-chrome .causal-item::after {
+  content: '';
+  position: absolute;
+  left: -31px;
+  top: 36px;
+  bottom: calc(-1 * var(--sp-3) - 2px);
+  width: 2px;
+  background: color-mix(in srgb, var(--kind-c, var(--c-accent)) 38%, transparent);
+}
+.app-chrome .causal-item:last-child::after { display: none; }
+.app-chrome .causal-item .causal-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--kind-c, var(--c-accent));
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+}
+.app-chrome .causal-item .causal-tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 1.5px;
+  background: currentColor;
+  transform: rotate(45deg);
+  opacity: 0.85;
+}
+.app-chrome .causal-item p { color: var(--cv-ink-2); line-height: 1.6; }
+.app-chrome .causal-item[data-kind='observed'] { --kind-c: var(--c-observed); }
+.app-chrome .causal-item[data-kind='evidence'] {
+  --kind-c: var(--c-evidence);
+  background: color-mix(in srgb, var(--c-evidence-soft) 65%, var(--cv-surf-solid));
+}
+.app-chrome .causal-item[data-kind='hypothesis'] {
+  --kind-c: var(--c-hypothesis);
+  background: color-mix(in srgb, var(--c-hypothesis-soft) 65%, var(--cv-surf-solid));
+  border-style: dashed;
+}
+.app-chrome .causal-item[data-kind='action'] {
+  --kind-c: var(--c-action);
+  background: color-mix(in srgb, var(--c-action-soft) 65%, var(--cv-surf-solid));
+}
+
+/* ---------- Tooltip (cartão flutuante) ---------- */
+.app-chrome .tooltip-trigger {
+  border-color: var(--cv-line-2);
+  background: var(--cv-surf-solid);
+  color: var(--cv-muted);
+  transition: color var(--d1) var(--ease), border-color var(--d1) var(--ease), box-shadow var(--d1) var(--ease);
+}
+.app-chrome .tooltip-trigger:hover {
+  color: var(--c-accent);
+  border-color: color-mix(in srgb, var(--c-accent) 45%, transparent);
+  box-shadow: var(--cv-sh-1);
+}
+.app-chrome .tooltip-bubble {
+  background: var(--cv-surf-solid);
+  color: var(--cv-ink-2);
+  border: 1px solid var(--cv-line);
+  border-radius: var(--r-ctl);
+  box-shadow: var(--cv-sh-3);
+  padding: 10px 12px;
+  line-height: 1.5;
+  transition: opacity var(--d1) var(--ease), transform var(--d1) var(--ease);
+  /* ancorado à direita do gatilho: não estoura o viewport no mobile */
+  left: auto;
+  right: 0;
+  max-width: min(260px, calc(100vw - 40px));
+  transform: translateY(3px);
+}
+.app-chrome .tooltip-wrap:hover .tooltip-bubble,
+.app-chrome .tooltip-wrap:focus-within .tooltip-bubble {
+  transform: translateY(0);
+}
+
+/* ---------- Listas / chips / pips ---------- */
+.app-chrome .kv dt { color: var(--cv-muted); }
+.app-chrome .kv dd { color: var(--cv-ink); }
+.app-chrome .chip {
+  background: var(--cv-surf-2);
+  border-color: var(--cv-line);
+  color: var(--cv-ink-2);
+  transition: background var(--d1) var(--ease), border-color var(--d1) var(--ease);
+}
+.app-chrome .chip:hover { border-color: var(--cv-line-2); background: var(--cv-surf-solid); }
+.app-chrome .relevance .pip { background: color-mix(in srgb, var(--cv-ink) 14%, transparent); }
+.app-chrome .relevance .pip[data-on='true'] { background: var(--c-accent); }
+
+/* ---------- Navegação do relatório ---------- */
+.app-chrome .report-nav {
+  background: color-mix(in srgb, var(--cv-surf-solid) 78%, transparent);
+  backdrop-filter: blur(8px);
+  border-color: var(--cv-line);
+  border-radius: var(--r-card);
+  box-shadow: var(--cv-sh-1);
+  padding: 6px;
+  gap: 4px;
+}
+.app-chrome .report-nav a {
+  border-radius: var(--r-ctl);
+  color: var(--cv-muted);
+  transition: background var(--d1) var(--ease), color var(--d1) var(--ease), box-shadow var(--d1) var(--ease);
+}
+.app-chrome .report-nav a:hover { background: rgba(16, 24, 40, 0.055); color: var(--cv-ink); }
+.app-chrome .report-nav a[aria-current='page'] {
+  background: var(--cv-surf-solid);
+  color: var(--c-accent-ink);
+  box-shadow: var(--cv-sh-1), 0 0 0 1px color-mix(in srgb, var(--c-accent) 26%, transparent);
+}
+
+/* ---------- Barra superior (interna) ---------- */
+.app-chrome .topbar {
+  background: color-mix(in srgb, var(--cv-surf-solid) 76%, transparent);
+  backdrop-filter: blur(10px) saturate(1.3);
+  border-bottom-color: var(--cv-line);
+}
+.app-chrome .topnav a.nav-link {
+  color: var(--cv-ink-2);
+  transition: background var(--d1) var(--ease), color var(--d1) var(--ease);
+}
+.app-chrome .topnav a.nav-link:hover { background: rgba(16, 24, 40, 0.06); }
+.app-chrome .topnav a.nav-link[aria-current='page'] {
+  background: color-mix(in srgb, var(--c-accent) 10%, transparent);
+  color: var(--c-accent-ink);
+}
+
+/* ---------- Rodapé (interno) ---------- */
+.app-chrome .footer {
+  background: color-mix(in srgb, var(--cv-surf-solid) 62%, transparent);
+  border-top-color: var(--cv-line);
+  color: var(--cv-muted);
+}
+.app-chrome .footer-links a { color: var(--cv-ink-2); transition: color var(--d1) var(--ease); }
+.app-chrome .footer-links a:hover { color: var(--c-accent); }
+.app-chrome .footer-title { color: var(--cv-muted-2); }
+
+/* ---------- Shell / títulos de página ---------- */
+.app-chrome .shell > * {
+  animation: reveal-up var(--d3) var(--ease) both;
+}
+.app-chrome .shell > *:nth-child(1) { animation-delay: 0.03s; }
+.app-chrome .shell > *:nth-child(2) { animation-delay: 0.1s; }
+.app-chrome .shell > *:nth-child(3) { animation-delay: 0.17s; }
+.app-chrome .shell > *:nth-child(4) { animation-delay: 0.24s; }
+.app-chrome .shell > *:nth-child(n + 5) { animation-delay: 0.3s; }
+.app-chrome .page-eyebrow { color: var(--c-accent); letter-spacing: 0.12em; }
+.app-chrome .page-head p { color: var(--cv-muted); }
+.app-chrome .section-head p { color: var(--cv-muted); }
+.app-chrome .muted { color: var(--cv-muted); }
+.app-chrome .xsmall.muted { color: var(--cv-muted); }
+
+/* ============================================================
+   Rede de processamento — animação nativa da identidade Signal
+   (arco-sinal + nós + pulsos). Nada de spinner genérico.
+   Estados: idle · processing · success · error
+   ============================================================ */
+.app-chrome .net {
+  position: relative;
+  background: var(--cv-surf);
+  border: 1px solid var(--cv-line);
+  border-radius: var(--r-card);
+  box-shadow: var(--cv-sh-2);
+  overflow: hidden;
+}
+.app-chrome .net svg { display: block; width: 100%; height: auto; max-height: 440px; margin: 0 auto; }
+.app-chrome .net-badge {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 11px;
+  border-radius: var(--r-full);
+  background: var(--cv-surf-solid);
+  border: 1px solid var(--cv-line);
+  box-shadow: var(--cv-sh-1);
+  color: var(--cv-muted);
+}
+.app-chrome .net-badge .net-led {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--cv-muted-2);
+}
+.app-chrome .net-step {
+  position: absolute;
+  right: 16px;
+  top: 14px;
+  max-width: 60%;
+  text-align: right;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--cv-ink-2);
+  background: color-mix(in srgb, var(--cv-surf-solid) 72%, transparent);
+  backdrop-filter: blur(4px);
+  padding: 5px 11px;
+  border-radius: var(--r-full);
+  border: 1px solid var(--cv-line);
+}
+.app-chrome .net-caption {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  font-size: var(--fs-xs);
+  color: var(--cv-muted);
+  background: color-mix(in srgb, var(--cv-surf-solid) 70%, transparent);
+  padding: 4px 10px;
+  border-radius: var(--r-full);
+  border: 1px solid var(--cv-line);
+}
+
+/* geometria base */
+.app-chrome .net .grid-line { stroke: var(--cv-line); stroke-width: 1; }
+.app-chrome .net .edge {
+  fill: none;
+  stroke: var(--net-line);
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-dasharray: 5 9;
+  animation: net-flow 1.5s linear infinite;
+}
+.app-chrome .net .arc {
+  fill: none;
+  stroke: var(--net-line);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-dasharray: 4 8;
+  animation: net-flow 1.9s linear infinite;
+}
+.app-chrome .net circle.node {
+  fill: var(--net-node);
+  stroke: var(--net-node-line);
+  stroke-width: 1.8;
+  transition: stroke var(--d2) var(--ease), fill var(--d2) var(--ease);
+}
+.app-chrome .net .node {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: node-breathe 2.8s ease-in-out infinite;
+}
+.app-chrome .net .core { fill: var(--net-core); }
+.app-chrome .net .core-halo {
+  fill: none;
+  stroke: var(--net-core);
+  stroke-width: 1.5;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: net-ring 2.6s var(--ease) infinite;
+}
+.app-chrome .net .core-ring {
+  fill: none;
+  stroke: color-mix(in srgb, var(--net-core) 45%, transparent);
+  stroke-width: 1.4;
+}
+/* núcleo do relatório (hub): anel + ponto central */
+.app-chrome .net .hub-ring {
+  fill: none;
+  stroke: color-mix(in srgb, var(--net-core) 34%, transparent);
+  stroke-width: 1.3;
+  stroke-dasharray: 3 7;
+  animation: net-flow 2.4s linear infinite;
+}
+.app-chrome .net .hub-core { fill: var(--net-core); }
+.app-chrome .net[data-state='idle'] .hub-ring {
+  animation-play-state: paused;
+  stroke: var(--cv-line-2);
+}
+.app-chrome .net[data-state='idle'] .hub-core { fill: var(--cv-muted-2); }
+.app-chrome .net[data-state='success'] .hub-ring {
+  animation-play-state: paused;
+  stroke: color-mix(in srgb, var(--c-success) 55%, transparent);
+}
+.app-chrome .net[data-state='success'] .hub-core,
+.app-chrome .net[data-state='error'] .hub-core { display: none; }
+.app-chrome .net[data-state='error'] .hub-ring {
+  animation: none;
+  stroke: color-mix(in srgb, var(--c-danger) 50%, transparent);
+}
+.app-chrome .net .mark { display: none; }
+.app-chrome .net .mark path {
+  fill: none;
+  stroke: var(--cv-muted);
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+  animation: mark-draw 0.7s var(--ease) 0.15s forwards;
+}
+.app-chrome .net[data-state='success'] .mark-ok path { stroke: var(--c-success); }
+.app-chrome .net[data-state='error'] .mark-err path { stroke: var(--c-danger); }
+
+@keyframes net-flow { to { stroke-dashoffset: -28; } }
+@keyframes node-breathe {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; }
+}
+@keyframes net-ring {
+  0% { transform: scale(0.55); opacity: 0.75; }
+  70% { transform: scale(1.7); opacity: 0; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+@keyframes mark-draw { to { stroke-dashoffset: 0; } }
+
+/* ---- idle ---- */
+.app-chrome .net[data-state='idle'] .edge,
+.app-chrome .net[data-state='idle'] .arc { animation-play-state: paused; stroke: var(--cv-line-2); }
+.app-chrome .net[data-state='idle'] .node { animation: none; }
+.app-chrome .net[data-state='idle'] circle.node { stroke: var(--cv-line-2); }
+.app-chrome .net[data-state='idle'] .core { fill: var(--cv-muted-2); }
+.app-chrome .net[data-state='idle'] .core-halo { animation: none; opacity: 0.25; }
+
+/* ---- processing ---- */
+.app-chrome .net[data-state='processing'] .net-led {
+  background: var(--c-accent);
+  animation: led-blink 1.4s ease-in-out infinite;
+}
+@keyframes led-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+/* ---- success ---- */
+.app-chrome .net[data-state='success'] .edge,
+.app-chrome .net[data-state='success'] .arc {
+  stroke: color-mix(in srgb, var(--c-success) 55%, transparent);
+  animation-play-state: paused;
+}
+.app-chrome .net[data-state='success'] .node { animation: none; }
+.app-chrome .net[data-state='success'] circle.node {
+  stroke: var(--c-success);
+  fill: color-mix(in srgb, var(--c-success) 12%, var(--net-node));
+}
+.app-chrome .net[data-state='success'] .core { fill: var(--c-success); }
+.app-chrome .net[data-state='success'] .core-halo,
+.app-chrome .net[data-state='success'] .core-ring { stroke: var(--c-success); animation: none; opacity: 0.35; }
+.app-chrome .net[data-state='success'] .net-badge { color: var(--c-success); border-color: color-mix(in srgb, var(--c-success) 35%, transparent); }
+.app-chrome .net[data-state='success'] .net-badge .net-led { background: var(--c-success); animation: none; }
+.app-chrome .net[data-state='success'] .mark-ok { display: block; }
+
+/* ---- error ---- */
+.app-chrome .net[data-state='error'] .edge,
+.app-chrome .net[data-state='error'] .arc {
+  stroke: color-mix(in srgb, var(--c-danger) 45%, transparent);
+  animation: none;
+  stroke-dasharray: 3 7;
+}
+.app-chrome .net[data-state='error'] .edge.broken { opacity: 0.3; }
+.app-chrome .net[data-state='error'] .node { animation: none; }
+.app-chrome .net[data-state='error'] circle.node {
+  stroke: color-mix(in srgb, var(--c-danger) 70%, transparent);
+  fill: color-mix(in srgb, var(--c-danger-soft) 70%, var(--net-node));
+}
+.app-chrome .net[data-state='error'] circle.node.degraded { stroke: var(--c-danger); fill: var(--c-danger-soft); }
+.app-chrome .net[data-state='error'] .core { fill: var(--c-danger); }
+.app-chrome .net[data-state='error'] .core-halo,
+.app-chrome .net[data-state='error'] .core-ring { stroke: var(--c-danger); animation: none; opacity: 0.4; }
+.app-chrome .net[data-state='error'] .net-badge { color: var(--c-danger); border-color: color-mix(in srgb, var(--c-danger) 35%, transparent); }
+.app-chrome .net[data-state='error'] .net-badge .net-led { background: var(--c-danger); animation: none; }
+.app-chrome .net[data-state='error'] .mark-err { display: block; }
+
+/* movimento reduzido: tudo estático, estados continuam legíveis */
+@media (prefers-reduced-motion: reduce) {
+  .app-chrome .net * { animation: none !important; }
+  .app-chrome .gauge .fill { animation: none !important; stroke-dashoffset: var(--gauge-off, 0) !important; }
+  .app-chrome .gauge .marker { animation: none !important; opacity: 1 !important; }
+  .app-chrome .causal-item,
+  .app-chrome .shell > * { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .app-chrome .pipeline li[data-state='current'] .dot { animation: none !important; }
+  .app-chrome .card-hover:hover,
+  .app-chrome .btn-primary:hover:not(:disabled),
+  .app-chrome .causal-item:hover { transform: none !important; }
+}

@@ -51,7 +51,7 @@ function EvidenceContent() {
   const coverage = bundle.scores.find((s) => s.id === 'score_evidence');
 
   return (
-    <div className="stack stack-8">
+    <div className="stack stack-8 reveal-group">
       <section aria-labelledby="landscape-title">
         <div className="section-head">
           <div className="page-eyebrow">Evidence landscape</div>

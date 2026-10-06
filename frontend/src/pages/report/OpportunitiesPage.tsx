@@ -32,7 +32,7 @@ function OpportunitiesContent() {
   const oppById = new Map(bundle.opportunities.map((o) => [o.id, o]));
 
   return (
-    <div className="stack stack-8">
+    <div className="stack stack-8 reveal-group">
       {/* ---- Top opportunities ---- */}
       <section aria-labelledby="opps-title">
         <div className="section-head">
