@@ -118,7 +118,7 @@ export function ScoreGauge({ value, label, max = 100 }: { value: number; label: 
 
 export type CausalKind = 'observed' | 'evidence' | 'hypothesis' | 'action';
 
-const CAUSAL_LABEL: Record<CausalKind, string> = {
+export const CAUSAL_LABEL: Record<CausalKind, string> = {
   observed: 'Observação',
   evidence: 'Evidência',
   hypothesis: 'Hipótese',

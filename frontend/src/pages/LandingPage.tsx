@@ -1,7 +1,7 @@
 import { useEffect, type CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
-import { Badge, ConfidenceBadge, LinkButton, Meter } from '../design-system/components';
-import { CausalChain } from '../design-system/visuals';
+import { Badge, LinkButton } from '../design-system/components';
+import { ConfidenceIndicator, EvidenceChain, MetricCard, RankingIndicator, ScoreCard } from '../components/landing-cards';
 import { DISCOVERY_LOGOS } from '../assets/logos';
 
 const FUNNEL = [
@@ -115,37 +115,20 @@ export function LandingPage() {
                 <Badge tone="green">Concluída</Badge>
               </div>
 
-              {/* N1 — score protagonista */}
-              <div className="lp-card-score">
-                <div className="lp-score-num">
-                  55<span className="lp-score-max">/100</span>
-                </div>
-                <div className="lp-score-label">Discoverability Score</div>
-                <div className="lp-score-bar" role="img" aria-label="Discoverability Score: 55 de 100">
-                  <span className="lp-score-fill" />
-                </div>
-              </div>
+              {/* N1 — score protagonista: arco + número */}
+              <ScoreCard value={55} label="Discoverability Score" />
 
               {/* N2 — contexto secundário: confiança + posição */}
               <div className="lp-card-meta">
-                <div className="lp-meta-cell">
-                  <span className="lp-meta-k">Confiança</span>
-                  <ConfidenceBadge value="MEDIUM" />
-                </div>
-                <div className="lp-meta-cell lp-meta-right">
-                  <span className="lp-meta-k">Posição</span>
-                  <span className="lp-rank">
-                    #3<span className="lp-rank-of">/7</span>
-                    <span className="lp-rank-cap">concorrentes observados</span>
-                  </span>
-                </div>
+                <ConfidenceIndicator value="MEDIUM" />
+                <RankingIndicator position={3} total={7} />
               </div>
 
-              {/* N3 — métricas secundárias */}
+              {/* N3 — métricas secundárias: módulos KPI */}
               <div className="lp-card-meters">
-                <Meter label="Recommendation Share" value={24} displayValue="24%" tone="accent" />
-                <Meter label="Intent Coverage" value={60} displayValue="60%" tone="accent" />
-                <Meter label="Evidence Coverage" value={50} displayValue="50%" tone="muted" />
+                <MetricCard label="Recommendation Share" value={24} displayValue="24%" />
+                <MetricCard label="Intent Coverage" value={60} displayValue="60%" />
+                <MetricCard label="Evidence Coverage" value={50} displayValue="50%" tone="muted" />
               </div>
 
               {/* Ação principal do card */}
@@ -311,7 +294,7 @@ export function LandingPage() {
                 <span>demo</span>
               </div>
               <div className="lp-chain-body">
-                <CausalChain steps={CHAIN} />
+                <EvidenceChain steps={CHAIN} />
               </div>
             </div>
           </div>
