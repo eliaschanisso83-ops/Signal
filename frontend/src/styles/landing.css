@@ -560,7 +560,7 @@
   margin-top: var(--sp-5);
 }
 
-/* Metadata — versões + transparência (dados simulados) */
+/* Metadata — versões + transparência */
 .lp-preview-foot {
   display: flex;
   flex-wrap: wrap;
@@ -574,18 +574,6 @@
   font-size: 10.5px;
   color: var(--lp-muted);
 }
-.lp-sim-pill {
-  white-space: nowrap;
-  border: 1px solid var(--lp-line-strong);
-  border-radius: var(--r-full);
-  padding: 3px 10px;
-  font-size: 9.5px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--lp-ink-2);
-  background: var(--lp-surface);
-}
-
 /* Microanimações: barras crescem, marcadores e pips aparecem uma vez */
 @keyframes lp-grow {
   from {

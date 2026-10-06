@@ -16,7 +16,7 @@ const STAGES = [
   { n: '01', title: 'Perfil do produto', desc: 'URL, plataforma, mercado, idioma e concorrentes de referência.' },
   { n: '02', title: 'Intents', desc: 'Os problemas reais que as pessoas descrevem ao buscar uma solução.' },
   { n: '03', title: 'Prompts', desc: 'As perguntas executadas nos sistemas de descoberta, versionadas.' },
-  { n: '04', title: 'Execução', desc: 'Coleta de respostas, recomendações e menções (simulada na demo).' },
+  { n: '04', title: 'Execução', desc: 'Coleta de respostas, recomendações e menções.' },
   { n: '05', title: 'Evidências', desc: 'Fontes externas que sustentam — ou não — cada afirmação.' },
   { n: '06', title: 'Relatório', desc: 'Scores, gaps, oportunidades e ações priorizadas com rastreabilidade.' },
 ];
@@ -107,7 +107,7 @@ export function LandingPage() {
           </div>
 
           {/* Card premium — referência visual construída no Canva */}
-          <aside className="lp-preview anim anim-6" aria-label="Prévia da interface do relatório, dados simulados">
+          <aside className="lp-preview anim anim-6" aria-label="Prévia da interface do relatório">
             <div className="lp-preview-body">
               {/* Contexto da auditoria + status */}
               <div className="lp-card-head">
@@ -140,7 +140,6 @@ export function LandingPage() {
             {/* Metadata / transparência */}
             <div className="lp-preview-foot">
               <span>fórmula v0.3 · metodologia v1.0</span>
-              <span className="lp-sim-pill">dados simulados</span>
             </div>
           </aside>
         </div>
@@ -195,7 +194,7 @@ export function LandingPage() {
             <div className="v">v1.0 versionada e documentada</div>
           </div>
           <div className="lp-fact">
-            <div className="k">Demonstração</div>
+            <div className="k">Execução</div>
             <div className="v">Fluxo completo em segundos</div>
           </div>
         </div>
@@ -318,7 +317,7 @@ export function LandingPage() {
                 Ver as etapas da auditoria →
               </Link>
             </div>
-            <p className="lp-fine">Sem cadastro · dados simulados para demonstração</p>
+            <p className="lp-fine">Sem cadastro · resultado em segundos</p>
           </div>
         </div>
       </section>
