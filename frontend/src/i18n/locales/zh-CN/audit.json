@@ -1,0 +1,288 @@
+{
+  "actions": {
+    "createDraft": "创建草稿并继续",
+    "save": "保存",
+    "cancel": "取消",
+    "add": "添加",
+    "edit": "编辑",
+    "remove": "移除",
+    "activate": "启用",
+    "deactivate": "停用"
+  },
+  "aria": {
+    "removeItem": "移除 {{name}}",
+    "includeIntent": "将意图“{{name}}”纳入审计",
+    "removeIntent": "移除意图 {{name}}",
+    "removePrompt": "移除提示词 {{preview}}",
+    "enablePrompt": "启用提示词",
+    "disablePrompt": "停用提示词",
+    "newKeyword": "新建关键词",
+    "intentsSummary": "意图概览",
+    "promptsSummary": "提示词概览",
+    "selectedIntentsTabs": "已选意图"
+  },
+  "newAudit": {
+    "eyebrow": "新建审计 · 第 1 步（共 5 步）",
+    "title": "配置产品",
+    "intro": "请定义将要审计哪个产品，以及分析应在何种市场、语言与竞争条件下进行。以下字段已预填演示数据。",
+    "sections": {
+      "product": "产品",
+      "conditions": "审计条件"
+    },
+    "fields": {
+      "url": "产品 URL",
+      "name": "产品名称",
+      "platform": "平台",
+      "category": "品类",
+      "audience": "目标受众",
+      "market": "市场",
+      "language": "语言",
+      "competitors": "参考竞品"
+    },
+    "hints": {
+      "url": "例如 https://fluxoapp.com.br",
+      "name": "可选 — 留空时将从 URL 自动提取。",
+      "market": "决定被观察回答所属的国家。",
+      "language": "执行提示词所使用的语言。"
+    },
+    "placeholders": {
+      "competitor": "添加竞品…"
+    },
+    "empty": {
+      "competitors": "未填写竞品 — 将使用默认目录。"
+    },
+    "platforms": {
+      "GOOGLE_PLAY": "Google Play",
+      "APP_STORE": "App Store",
+      "WEB": "网站",
+      "SAAS": "SaaS",
+      "DESKTOP": "桌面端"
+    },
+    "markets": {
+      "BR": "巴西（BR）",
+      "US": "美国（US）",
+      "PT": "葡萄牙（PT）",
+      "ES": "西班牙（ES）",
+      "MX": "墨西哥（MX）"
+    },
+    "languages": {
+      "ptBR": "葡萄牙语（pt-BR）",
+      "enUS": "英语（en-US）",
+      "esES": "西班牙语（es-ES）"
+    },
+    "errors": {
+      "url": "请输入以 http:// 或 https:// 开头的有效 URL。",
+      "create": "无法创建审计，请重试。"
+    },
+    "footer": {
+      "next": "下一步：复核解析出的产品档案。"
+    }
+  },
+  "profile": {
+    "eyebrow": "新建审计 · 第 2 步（共 5 步）",
+    "title": "解析出的产品档案",
+    "intro": "这是用于指导意图与提示词生成的规范化解读。<strong>它并非绝对事实</strong> — 请在继续之前复核并修正。",
+    "about": "关于 {{title}}",
+    "sections": {
+      "provided": "已提供的数据",
+      "valueProposition": "价值主张（解析结果）",
+      "valuePropositionHint": "由 URL 与品类自动派生的文本 — 如不准确请编辑。",
+      "features": "功能特性",
+      "featuresHint": "解析出的列表 — 用于生成提示词中的措辞。",
+      "problems": "解决的问题",
+      "useCases": "使用场景",
+      "audiences": "受众",
+      "competitors": "被观察到的竞品",
+      "keywords": "关键词",
+      "keywordsHint": "产品应与您的品牌相关联的语义实体。",
+      "entities": "实体与品类"
+    },
+    "terms": {
+      "product": "产品",
+      "url": "URL",
+      "platform": "平台",
+      "category": "品类",
+      "audience": "受众",
+      "market": "市场"
+    },
+    "fields": {
+      "valueProposition": "价值主张"
+    },
+    "editValueProposition": "编辑价值主张",
+    "keywordPlaceholder": "新关键词…",
+    "labels": {
+      "semanticEntities": "语义实体",
+      "categories": "品类"
+    },
+    "badges": {
+      "market": "市场 {{value}}",
+      "language": "语言 {{value}}",
+      "normalized": "规范化解读 · 文档 6 §11"
+    },
+    "back": "← 返回",
+    "nextIntents": "复核意图 →"
+  },
+  "intents": {
+    "eyebrow": "新建审计 · 第 3 步（共 5 步）",
+    "title": "复核意图",
+    "intro": "意图是人们在寻找解决方案时描述的真实问题 — 也是审计的基本单位（文档 3，§7）。请选择要分析的意图，并编辑任何不准确之处。",
+    "include": "纳入",
+    "relevance": "相关度",
+    "categories": {
+      "INFORMATIONAL": "信息型",
+      "EXPLORATORY": "探索型",
+      "COMMERCIAL": "商业型",
+      "TRANSACTIONAL": "交易型",
+      "COMPARATIVE": "对比型",
+      "PROBLEM_SPECIFIC": "特定问题型"
+    },
+    "sources": {
+      "AI_GENERATED": "AI 生成",
+      "USER_ADDED": "由您添加",
+      "USER_EDITED": "由您编辑",
+      "HISTORICAL": "来自此前的审计"
+    },
+    "priority": {
+      "HIGH": "优先级 高",
+      "MEDIUM": "优先级 中",
+      "LOW": "优先级 低"
+    },
+    "confidence": {
+      "HIGH": "置信度 高",
+      "MEDIUM": "置信度 中",
+      "LOW": "置信度 低"
+    },
+    "fields": {
+      "name": "意图名称",
+      "problem": "用户问题"
+    },
+    "terms": {
+      "problem": "问题",
+      "audience": "受众",
+      "context": "上下文"
+    },
+    "summary": {
+      "total_one": "个意图（总计）",
+      "total_other": "个意图（总计）",
+      "selected": "已选",
+      "avgRelevance": "平均相关度（满分 5）",
+      "plannedPrompts": "计划提示词（每个意图 5 条）"
+    },
+    "add": {
+      "label": "手动添加意图",
+      "placeholder": "例如：对比财务软件套餐",
+      "button": "添加意图",
+      "hint": "添加意图时会自动创建一条直接提示词。"
+    },
+    "back": "← 返回档案",
+    "validation": "请至少选择一个意图以继续。",
+    "next": "复核提示词 →"
+  },
+  "prompts": {
+    "eyebrow": "新建审计 · 第 4 步（共 5 步）",
+    "title": "复核提示词",
+    "intro": "提示词是实际执行的问题 — <strong>意图 ≠ 提示词</strong>（文档 6，§14）。每个已选意图都有 5 条带版本的变体。请编辑、停用或移除任何不应执行的内容。",
+    "inactive": "未启用 — 不会被执行",
+    "perIntent_one": "本意图 {{count}} 条提示词",
+    "perIntent_other": "本意图 {{count}} 条提示词",
+    "fields": {
+      "text": "提示词内容"
+    },
+    "variations": {
+      "DIRECT": "直接式",
+      "CONVERSATIONAL": "对话式",
+      "COMPARATIVE": "对比式",
+      "PROBLEM_BASED": "问题导向",
+      "ROLE_BASED": "用户角色",
+      "CONTEXTUAL": "情境式"
+    },
+    "summary": {
+      "total_one": "个提示词（总计）",
+      "total_other": "个提示词（总计）",
+      "active": "个可执行",
+      "selectedIntents_one": "个已选意图",
+      "selectedIntents_other": "个已选意图",
+      "setVersion": "提示词集版本"
+    },
+    "add": {
+      "label": "向该意图添加提示词",
+      "placeholder": "要执行的新问题…"
+    },
+    "empty": {
+      "title": "未选择任何意图",
+      "desc": "请返回上一步，至少选择一个意图以生成提示词。",
+      "action": "前往意图"
+    },
+    "back": "← 返回意图",
+    "validation": "没有可执行的提示词。",
+    "start": "开始审计"
+  },
+  "progress": {
+    "eyebrow": "新建审计 · 第 5 步（共 5 步）",
+    "title": {
+      "done": "审计已完成",
+      "running": "正在执行审计"
+    },
+    "intro": {
+      "done": "所有步骤均已处理完毕。包含评分、证据与机会的报告已就绪。",
+      "running": "收集与分析正在以下步骤中推进。本演示中的数据均为本地模拟。"
+    },
+    "net": {
+      "failed": "运行中断 — 重新启动以再次处理相同步骤",
+      "done": "所有步骤已完成 · 报告已就绪",
+      "idle": "网络空闲 · 当前没有收集任务",
+      "running": "收集与分析进行中 · 网络正逐步推进"
+    },
+    "status": {
+      "DRAFT": "草稿",
+      "QUEUED": "排队中",
+      "RUNNING": "运行中",
+      "ANALYZING": "分析中",
+      "COMPLETED": "已完成",
+      "FAILED": "失败",
+      "CANCELLED": "已取消"
+    },
+    "sections": {
+      "progress": "进度",
+      "context": "审计上下文"
+    },
+    "progressBar": "已完成步骤",
+    "steps": {
+      "preparing": "正在准备分析",
+      "testing": "正在测试发现环境",
+      "analyzing": "正在分析推荐结果",
+      "evidence": "正在分析证据",
+      "gaps": "正在识别缺口",
+      "opportunities": "正在生成机会",
+      "ready": "报告已就绪"
+    },
+    "start": "开始运行",
+    "back": "← 复核提示词",
+    "processing": "处理中… 在本演示中只需几秒。",
+    "viewReport": "立即查看报告 →",
+    "autoOpen": "正在自动打开…",
+    "error": {
+      "title": "运行未能完成",
+      "desc": "审计已中断。您可以使用相同的意图与提示词重新运行。"
+    },
+    "terms": {
+      "id": "ID",
+      "product": "产品",
+      "market": "市场",
+      "intents": "意图",
+      "activePrompts": "启用的提示词",
+      "methodology": "方法论",
+      "promptSet": "提示词集"
+    },
+    "selected_one": "已选 {{count}} 项",
+    "selected_other": "已选 {{count}} 项",
+    "currentStep": "当前步骤："
+  },
+  "wizard": {
+    "product": "产品",
+    "profile": "档案",
+    "intents": "意图",
+    "prompts": "提示词",
+    "execution": "运行"
+  }
+}

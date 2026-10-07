@@ -1,0 +1,141 @@
+{
+  "hero": {
+    "eyebrow": "Demo pública · datos simulados",
+    "title": "Tu producto es <accent>encontrado</accent>, comprendido y recomendado allí donde se toman las decisiones",
+    "lead": "Signal audita cómo los sistemas de descubrimiento — asistentes de IA, buscadores y marketplaces — responden sobre tu categoría. Obtienes puntuaciones con una fórmula explícita y una cadena trazable de observación, evidencia, hipótesis y acción.",
+    "cta": "Iniciar auditoría",
+    "howItWorks": "Cómo funciona ↓",
+    "fine": "Auditoría completa en segundos",
+    "previewLabel": "Vista previa de la interfaz del informe",
+    "previewContext": "{{product}} · mercado BR · pt-BR",
+    "previewStatus": "Completada",
+    "previewCta": "Ejecutar esta auditoría →",
+    "previewFoot": "fórmula {{formula}} · metodología {{methodology}}"
+  },
+  "marquee": {
+    "label": "Sistemas de descubrimiento cubiertos por la metodología",
+    "title": "Segmentación por sistema"
+  },
+  "facts": {
+    "traceability": {
+      "k": "Trazabilidad",
+      "v": "Observación → evidencia → hipótesis → acción"
+    },
+    "provenance": {
+      "k": "Procedencia",
+      "v": "Fórmula, versión y confianza en cada puntuación"
+    },
+    "methodology": {
+      "k": "Metodología",
+      "v": "{{version}} — versionada y documentada"
+    },
+    "execution": {
+      "k": "Ejecución",
+      "v": "Flujo completo en segundos"
+    }
+  },
+  "problem": {
+    "eyebrow": "El problema",
+    "title": "La decisión empieza con una pregunta — no con una búsqueda",
+    "desc": "Antes del clic, una cadena de sistemas decide quién entra en la respuesta, cómo se caracteriza y a quién se recomienda. Si tu producto no supera cada eslabón, desaparece de la conversación sin que tú lo notes. Signal mide exactamente esos cinco eslabones.",
+    "funnel": {
+      "found": {
+        "name": "Encontrado",
+        "gloss": "Encontrado",
+        "desc": "El producto entra en el conjunto de candidatos que considera el sistema de descubrimiento."
+      },
+      "understood": {
+        "name": "Comprendido",
+        "gloss": "Comprendido",
+        "desc": "La categoría, el público y el problema se asocian correctamente al producto."
+      },
+      "evidenced": {
+        "name": "Evidenciado",
+        "gloss": "Evidenciado",
+        "desc": "Las afirmaciones sobre el producto están respaldadas por fuentes externas verificables."
+      },
+      "recommended": {
+        "name": "Recomendado",
+        "gloss": "Recomendado",
+        "desc": "El producto se cita en las respuestas observadas relevantes."
+      },
+      "converted": {
+        "name": "Convertido",
+        "gloss": "Convertido",
+        "desc": "La mención lleva a quien decide al siguiente paso: visitar, probar o comprar."
+      }
+    }
+  },
+  "how": {
+    "eyebrow": "Cómo funciona",
+    "title": "De la configuración a la acción priorizada",
+    "desc": "Seis pasos trazables: configuras una vez, la ejecución recoge las respuestas y el informe te dice qué hacer — con evidencia para cada conclusión.",
+    "stages": {
+      "profile": {
+        "title": "Perfil del producto",
+        "desc": "URL, plataforma, mercado, idioma y competidores de referencia."
+      },
+      "intents": {
+        "title": "Intenciones",
+        "desc": "Los problemas reales que las personas describen al buscar una solución."
+      },
+      "prompts": {
+        "title": "Prompts",
+        "desc": "Las preguntas ejecutadas en los sistemas de descubrimiento, con versión."
+      },
+      "execution": {
+        "title": "Ejecución",
+        "desc": "Recopilación de respuestas, recomendaciones y menciones."
+      },
+      "evidence": {
+        "title": "Evidencia",
+        "desc": "Fuentes externas que respaldan — o no — cada afirmación."
+      },
+      "report": {
+        "title": "Informe",
+        "desc": "Puntuaciones, brechas, oportunidades y acciones priorizadas con trazabilidad."
+      }
+    }
+  },
+  "results": {
+    "eyebrow": "Lo que obtienes",
+    "title": "Puntuaciones con procedencia y evidencia trazable",
+    "desc": "Cada número del informe lleva una fórmula, una versión y una confianza. Cada recomendación remite a la observación que la originó.",
+    "figures": {
+      "recommendationShare": "Con qué frecuencia se recomienda el producto dentro de las respuestas relevantes.",
+      "intentCoverage": "Intenciones relevantes en las que el producto aparece al menos una vez.",
+      "evidenceCoverage": "Intenciones con evidencia externa suficiente asociada al producto.",
+      "semanticAlignment": "Posicionamiento declarado frente a la caracterización observada."
+    },
+    "traceable": {
+      "title": "Cada recomendación se puede rastrear hasta la evidencia",
+      "desc": "El informe separa visualmente lo observado, lo que es evidencia verificable, lo que es una hipótesis y lo que es una acción recomendada. Ningún paso salta al anterior: sin observación no hay evidencia; sin evidencia no hay acción."
+    },
+    "chain": {
+      "title": "Cadena de evidencia — extracto",
+      "tag": "demo",
+      "steps": {
+        "observed": "El producto no apareció en ninguna de las respuestas observadas para “controlar el flujo de caja”.",
+        "evidence": "CaixaFácil y ContaSimples aparecen en 68% de las respuestas de la intención, respaldados por un artículo, una página dedicada y un hilo de comunidad.",
+        "hypothesis": "La falta de una asociación explícita entre el producto y el término “flujo de caja” en las fuentes observadas puede estar reduciendo la presencia.",
+        "action": "Crea una página dedicada de flujo de caja para pequeñas empresas y refuerza la asociación en el listado de la tienda — valida con una nueva auditoría en 2–4 semanas."
+      }
+    }
+  },
+  "finalCta": {
+    "title": "Ejecuta una auditoría de principio a fin en segundos",
+    "desc": "Configura el producto, revisa intenciones y prompts, sigue la ejecución y explora el informe con evidencia, brechas y oportunidades.",
+    "primary": "Empezar ahora",
+    "secondary": "Ver los pasos de la auditoría →",
+    "fine": "Sin registro · resultados en segundos"
+  },
+  "cards": {
+    "ranking": {
+      "label": "Posición",
+      "caption": "competidores observados"
+    },
+    "confidence": {
+      "label": "Confianza"
+    }
+  }
+}

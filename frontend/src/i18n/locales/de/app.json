@@ -1,0 +1,37 @@
+{
+  "skipToContent": "Zum Inhalt springen",
+  "brand": {
+    "home": "Signal — Startseite"
+  },
+  "nav": {
+    "main": "Hauptnavigation",
+    "problem": "Problem",
+    "howItWorks": "So funktioniert es",
+    "metrics": "Metriken",
+    "startAudit": "Audit starten",
+    "newAudit": "Neues Audit",
+    "myReport": "Mein Bericht",
+    "continueAudit": "Audit fortsetzen"
+  },
+  "language": {
+    "label": "Sprache"
+  },
+  "footer": {
+    "description": "Software Discoverability Intelligence — prüfen Sie, wie KI-Assistenten, Suche und Marktplätze Ihr Produkt empfehlen, mit nachvollziehbaren Belegen und priorisierten Maßnahmen.",
+    "startAudit": "Audit starten",
+    "product": {
+      "title": "Produkt",
+      "problem": "Das Problem",
+      "howItWorks": "So funktioniert es",
+      "metrics": "Metriken & Belege"
+    },
+    "demo": {
+      "title": "Demo",
+      "newAudit": "Neues Audit",
+      "myReport": "Mein Bericht",
+      "continueAudit": "Audit fortsetzen"
+    },
+    "bottom": "Methodik v1.0 · Demo mit simulierten Daten",
+    "copyright": "© 2026 Signal — signal.biz-flow.cloud"
+  }
+}

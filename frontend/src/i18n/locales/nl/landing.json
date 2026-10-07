@@ -1,0 +1,141 @@
+{
+  "hero": {
+    "eyebrow": "Publieke demo · gesimuleerde gegevens",
+    "title": "Je product wordt <accent>gevonden</accent>, begrepen en aanbevolen daar waar beslissingen vallen",
+    "lead": "Signal auditeert hoe discovery-systemen — AI-assistenten, zoekmachines en marktplaatsen — antwoorden over je categorie. Je krijgt scores met een expliciete formule en een herleidbare keten van observatie, bewijs, hypothese en actie.",
+    "cta": "Audit starten",
+    "howItWorks": "Hoe het werkt ↓",
+    "fine": "Volledige audit in seconden",
+    "previewLabel": "Voorbeeld van de rapportinterface",
+    "previewContext": "{{product}} · BR-markt · pt-BR",
+    "previewStatus": "Voltooid",
+    "previewCta": "Deze audit uitvoeren →",
+    "previewFoot": "formule {{formula}} · methodologie {{methodology}}"
+  },
+  "marquee": {
+    "label": "Discovery-systemen binnen de methodologie",
+    "title": "Segmentatie per systeem"
+  },
+  "facts": {
+    "traceability": {
+      "k": "Traceerbaarheid",
+      "v": "Observatie → bewijs → hypothese → actie"
+    },
+    "provenance": {
+      "k": "Herkomst",
+      "v": "Formule, versie en betrouwbaarheid bij elke score"
+    },
+    "methodology": {
+      "k": "Methodologie",
+      "v": "{{version}} — versiebeheerd en gedocumenteerd"
+    },
+    "execution": {
+      "k": "Uitvoering",
+      "v": "Volledig proces in seconden"
+    }
+  },
+  "problem": {
+    "eyebrow": "Het probleem",
+    "title": "De beslissing begint met een vraag — niet met een zoekopdracht",
+    "desc": "Voor de klik bepaalt een keten van systemen wie er in het antwoord terechtkomt, hoe iets wordt gekarakteriseerd en wie er wordt aanbevolen. Haalt je product elke schakel niet, dan verdwijnt het uit het gesprek zonder dat jij het ziet. Signal meet precies deze vijf schakels.",
+    "funnel": {
+      "found": {
+        "name": "Gevonden",
+        "gloss": "Gevonden",
+        "desc": "Het product komt terecht in de reeks kandidaten die het discovery-systeem overweegt."
+      },
+      "understood": {
+        "name": "Begrepen",
+        "gloss": "Begrepen",
+        "desc": "Categorie, doelgroep en probleem worden correct aan het product gekoppeld."
+      },
+      "evidenced": {
+        "name": "Onderbouwd",
+        "gloss": "Onderbouwd",
+        "desc": "Beweringen over het product worden gedekt door verifieerbare externe bronnen."
+      },
+      "recommended": {
+        "name": "Aanbevolen",
+        "gloss": "Aanbevolen",
+        "desc": "Het product wordt genoemd in de relevante geobserveerde antwoorden."
+      },
+      "converted": {
+        "name": "Geconverteerd",
+        "gloss": "Geconverteerd",
+        "desc": "De vermelding brengt de beslisser naar de volgende stap: bezoeken, proberen of kopen."
+      }
+    }
+  },
+  "how": {
+    "eyebrow": "Hoe het werkt",
+    "title": "Van opzet naar geprioriteerde actie",
+    "desc": "Zes herleidbare stappen: je configureert één keer, de run verzamelt de antwoorden en het rapport vertelt wat je moet doen — met bewijs voor elke conclusie.",
+    "stages": {
+      "profile": {
+        "title": "Productprofiel",
+        "desc": "URL, platform, markt, taal en referentieconcurrenten."
+      },
+      "intents": {
+        "title": "Intenties",
+        "desc": "De echte problemen die mensen beschrijven wanneer ze naar een oplossing zoeken."
+      },
+      "prompts": {
+        "title": "Prompts",
+        "desc": "De vragen die op de discovery-systemen worden uitgevoerd, met versiebeheer."
+      },
+      "execution": {
+        "title": "Uitvoering",
+        "desc": "Verzameling van antwoorden, aanbevelingen en vermeldingen."
+      },
+      "evidence": {
+        "title": "Bewijs",
+        "desc": "Externe bronnen die elke bewering — of juist niet — ondersteunen."
+      },
+      "report": {
+        "title": "Rapport",
+        "desc": "Scores, tekorten, kansen en geprioriteerde acties met traceerbaarheid."
+      }
+    }
+  },
+  "results": {
+    "eyebrow": "Wat je krijgt",
+    "title": "Scores met herkomst en herleidbaar bewijs",
+    "desc": "Elk getal in het rapport draagt een formule, een versie en een betrouwbaarheid. Elke aanbeveling verwijst terug naar de observatie waaruit die is ontstaan.",
+    "figures": {
+      "recommendationShare": "Hoe vaak het product binnen de relevante antwoorden wordt aanbevolen.",
+      "intentCoverage": "Relevante intenties waarin het product minstens één keer voorkomt.",
+      "evidenceCoverage": "Intenties met voldoende extern bewijs over het product.",
+      "semanticAlignment": "Gedeclareerde positionering versus geobserveerde karakterisering."
+    },
+    "traceable": {
+      "title": "Elke aanbeveling is herleidbaar tot het bewijs",
+      "desc": "Het rapport scheidt visueel wat is geobserveerd, wat verifieerbaar bewijs is, wat een hypothese is en wat een aanbevolen actie is. Geen stap slaat de vorige over: zonder observatie geen bewijs; zonder bewijs geen actie."
+    },
+    "chain": {
+      "title": "Bewijsketen — fragment",
+      "tag": "demo",
+      "steps": {
+        "observed": "Het product kwam in geen van de geobserveerde antwoorden op “cashflow bijhouden” voor.",
+        "evidence": "CaixaFácil en ContaSimples komen in 68% van de antwoorden op deze intentie voor, onderbouwd met een artikel, een eigen pagina en een thread op een communityforum.",
+        "hypothesis": "Het ontbreken van een expliciete koppeling tussen het product en de term “cashflow” in de geobserveerde bronnen kan de aanwezigheid verlagen.",
+        "action": "Maak een eigen cashflowpagina voor kleine bedrijven en versterk de koppeling in de winkelvermelding — valideer met een nieuwe audit binnen 2–4 weken."
+      }
+    }
+  },
+  "finalCta": {
+    "title": "Voer een audit van A tot Z uit in seconden",
+    "desc": "Configureer het product, controleer intenties en prompts, volg de run en verken het rapport met bewijs, tekorten en kansen.",
+    "primary": "Nu starten",
+    "secondary": "Bekijk de auditstappen →",
+    "fine": "Geen registratie · resultaten in seconden"
+  },
+  "cards": {
+    "ranking": {
+      "label": "Positie",
+      "caption": "geobserveerde concurrenten"
+    },
+    "confidence": {
+      "label": "Betrouwbaarheid"
+    }
+  }
+}

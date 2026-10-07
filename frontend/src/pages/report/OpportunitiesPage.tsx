@@ -3,17 +3,8 @@ import { CausalChain, EffortBadge, ImpactBadge, PriorityTag, DataTable } from '.
 import { useAuditSession } from '../../state/session';
 import { RequireReport } from '../../components/layout/Guards';
 import { Navigate, useParams } from 'react-router-dom';
-import type { Action, Opportunity } from '../../domain/types';
-
-const ACTION_CATEGORY_LABEL: Record<Action['category'], string> = {
-  POSITIONING: 'Posicionamento',
-  STORE: 'Store listing',
-  WEBSITE: 'Site / conteúdo',
-  EVIDENCE: 'Evidência externa',
-  COMMUNITY: 'Comunidade',
-  PRODUCT: 'Produto',
-  DISTRIBUTION: 'Distribuição',
-};
+import { Trans, useTranslation } from 'react-i18next';
+import type { Action } from '../../domain/types';
 
 export function OpportunitiesPage() {
   return (
@@ -26,6 +17,8 @@ export function OpportunitiesPage() {
 function OpportunitiesContent() {
   const { bundle } = useAuditSession();
   const { auditId } = useParams();
+  const { t } = useTranslation('report');
+  const { t: tc } = useTranslation('common');
   if (!bundle || !auditId) return <Navigate to="/audit/new" replace />;
 
   const gapById = new Map(bundle.gaps.map((g) => [g.id, g]));
@@ -36,12 +29,9 @@ function OpportunitiesContent() {
       {/* ---- Top opportunities ---- */}
       <section aria-labelledby="opps-title">
         <div className="section-head">
-          <div className="page-eyebrow">Top opportunities</div>
-          <h2 id="opps-title">Oportunidades priorizadas</h2>
-          <p>
-            Cada oportunidade aponta o gap que a originou e é classificada por impacto, relevância, confiança, esforço e
-            prioridade final.
-          </p>
+          <div className="page-eyebrow">{t('opportunities.eyebrow')}</div>
+          <h2 id="opps-title">{t('opportunities.title')}</h2>
+          <p>{t('opportunities.desc')}</p>
         </div>
 
         <div className="stack stack-4">
@@ -49,7 +39,7 @@ function OpportunitiesContent() {
             const gap = gapById.get(opp.gapId);
             return (
               <Card key={opp.id} className="opp-card">
-                <div className="opp-rank" aria-label={`Posição ${opp.rank}`}>
+                <div className="opp-rank" aria-label={t('opportunities.rank', { rank: opp.rank })}>
                   <span className="mono">{opp.rank}</span>
                 </div>
                 <div className="opp-body">
@@ -64,13 +54,13 @@ function OpportunitiesContent() {
                   </p>
                   <div className="row" style={{ gap: 'var(--sp-2)' }}>
                     <ImpactBadge value={opp.impact} />
-                    <Badge tone="neutral">Relevância {labelOf(opp.relevance)}</Badge>
+                    <Badge tone="neutral">{t('opportunities.relevance', { level: tc(`levels.${opp.relevance}`) })}</Badge>
                     <ConfidenceBadge value={opp.confidence} />
                     <EffortBadge value={opp.effort} />
                   </div>
                   {gap && (
                     <div className="opp-gap">
-                      <span className="xsmall strong">GAP DE ORIGEM</span>
+                      <span className="xsmall strong">{t('opportunities.sourceGap')}</span>
                       <p className="small" style={{ margin: '4px 0 0' }}>
                         <strong>{gap.title}</strong> — {gap.description}
                       </p>
@@ -86,11 +76,14 @@ function OpportunitiesContent() {
       {/* ---- Recommended actions ---- */}
       <section aria-labelledby="actions-title">
         <div className="section-head">
-          <div className="page-eyebrow">Recommended actions</div>
-          <h2 id="actions-title">Ações recomendadas com rastreabilidade</h2>
+          <div className="page-eyebrow">{t('actions.eyebrow')}</div>
+          <h2 id="actions-title">{t('actions.title')}</h2>
           <p>
-            Cada ação segue a cadeia <strong>problema observado → evidência → hipótese → ação</strong>, com validação
-            definida. Isso é o oposto de uma recomendação sem lastro.
+            <Trans
+              ns="report"
+              i18nKey="actions.desc"
+              components={{ strong: <strong /> }}
+            />
           </p>
         </div>
 
@@ -101,8 +94,8 @@ function OpportunitiesContent() {
               <Card key={action.id}>
                 <div className="row-between">
                   <div className="row">
-                    <Badge tone="accent">{ACTION_CATEGORY_LABEL[action.category]}</Badge>
-                    <h3 style={{ margin: 0 }}>{opp ? `#${opp.rank} ${opp.title}` : 'Ação'}</h3>
+                    <Badge tone="accent">{t(`actionCategories.${action.category}`)}</Badge>
+                    <h3 style={{ margin: 0 }}>{opp ? `#${opp.rank} ${opp.title}` : t('actions.fallbackTitle')}</h3>
                   </div>
                   <div className="row">
                     <PriorityTag value={action.priority} />
@@ -122,7 +115,7 @@ function OpportunitiesContent() {
                 </div>
 
                 <div className="validation-note">
-                  <span className="xsmall strong">COMO VALIDAR</span>
+                  <span className="xsmall strong">{t('actions.validationLabel')}</span>
                   <p className="small" style={{ margin: '4px 0 0' }}>
                     {action.validation}
                   </p>
@@ -133,31 +126,31 @@ function OpportunitiesContent() {
         </div>
       </section>
 
-      {/* ---- Rastreabilidade completa ---- */}
+      {/* ---- Full traceability ---- */}
       <section aria-labelledby="trace-title">
         <div className="section-head">
-          <div className="page-eyebrow">Traceability</div>
-          <h2 id="trace-title">Action → Opportunity → Gap</h2>
-          <p>Visão tabular do encadeamento completo, para auditoria interna do resultado.</p>
+          <div className="page-eyebrow">{t('trace.eyebrow')}</div>
+          <h2 id="trace-title">{t('trace.title')}</h2>
+          <p>{t('trace.desc')}</p>
         </div>
         <Card>
           <DataTable
-            caption="Rastreabilidade das ações"
+            caption={t('trace.tableCaption')}
             rows={bundle.actions}
             columns={[
               {
                 key: 'action',
-                label: 'Ação',
+                label: t('trace.columns.action'),
                 render: (r: Action) => (
                   <div>
                     <div className="strong small">{r.action}</div>
-                    <span className="xsmall muted">{ACTION_CATEGORY_LABEL[r.category]}</span>
+                    <span className="xsmall muted">{t(`actionCategories.${r.category}`)}</span>
                   </div>
                 ),
               },
               {
                 key: 'opp',
-                label: 'Oportunidade',
+                label: t('trace.columns.opportunity'),
                 render: (r: Action) => {
                   const o = oppById.get(r.opportunityId);
                   return o ? `#${o.rank} ${o.title}` : '—';
@@ -165,7 +158,7 @@ function OpportunitiesContent() {
               },
               {
                 key: 'gap',
-                label: 'Gap',
+                label: t('trace.columns.gap'),
                 render: (r: Action) => {
                   const o = oppById.get(r.opportunityId);
                   const g = o ? gapById.get(o.gapId) : undefined;
@@ -174,12 +167,12 @@ function OpportunitiesContent() {
               },
               {
                 key: 'priority',
-                label: 'Prioridade',
+                label: t('trace.columns.priority'),
                 render: (r: Action) => <PriorityTag value={r.priority} />,
               },
               {
                 key: 'confidence',
-                label: 'Confiança',
+                label: t('trace.columns.confidence'),
                 render: (r: Action) => <ConfidenceBadge value={r.confidence} />,
               },
             ]}
@@ -187,23 +180,19 @@ function OpportunitiesContent() {
         </Card>
       </section>
 
-      {/* ---- Próximo passo ---- */}
+      {/* ---- Next step ---- */}
       <Card className="cta-card">
         <div className="row-between">
           <div>
-            <div className="page-eyebrow">Próximo ciclo</div>
-            <h2>Execute a validação e reaudite</h2>
+            <div className="page-eyebrow">{t('cta.eyebrow')}</div>
+            <h2>{t('cta.title')}</h2>
             <p className="small muted" style={{ marginBottom: 0 }}>
-              Após 2–4 semanas de alterações, execute uma nova auditoria para comparar presença, share e caracterização.
+              {t('cta.desc')}
             </p>
           </div>
-          <LinkButton to="/audit/new">Iniciar nova auditoria</LinkButton>
+          <LinkButton to="/audit/new">{t('cta.button')}</LinkButton>
         </div>
       </Card>
     </div>
   );
-}
-
-function labelOf(v: Opportunity['impact']): string {
-  return v === 'HIGH' ? 'alta' : v === 'MEDIUM' ? 'média' : 'baixa';
 }

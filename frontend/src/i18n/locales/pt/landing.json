@@ -1,0 +1,141 @@
+{
+  "hero": {
+    "eyebrow": "Demonstração pública · dados simulados",
+    "title": "Seu produto é <accent>encontrado</accent>, compreendido e recomendado onde as decisões acontecem",
+    "lead": "O Signal audita como os sistemas de descoberta — assistentes de IA, busca e marketplaces — respondem sobre a sua categoria. Você recebe notas com fórmula explícita e uma cadeia rastreável de observação, evidência, hipótese e ação.",
+    "cta": "Iniciar auditoria",
+    "howItWorks": "Como funciona ↓",
+    "fine": "Auditoria completa em segundos",
+    "previewLabel": "Prévia da interface do relatório",
+    "previewContext": "{{product}} · mercado BR · pt-BR",
+    "previewStatus": "Concluída",
+    "previewCta": "Executar esta auditoria →",
+    "previewFoot": "fórmula {{formula}} · metodologia {{methodology}}"
+  },
+  "marquee": {
+    "label": "Sistemas de descoberta cobertos pela metodologia",
+    "title": "Segmentação por sistema"
+  },
+  "facts": {
+    "traceability": {
+      "k": "Rastreabilidade",
+      "v": "Observação → evidência → hipótese → ação"
+    },
+    "provenance": {
+      "k": "Proveniência",
+      "v": "Fórmula, versão e confiança em cada nota"
+    },
+    "methodology": {
+      "k": "Metodologia",
+      "v": "{{version}} — versionada e documentada"
+    },
+    "execution": {
+      "k": "Execução",
+      "v": "Fluxo completo em segundos"
+    }
+  },
+  "problem": {
+    "eyebrow": "O problema",
+    "title": "A decisão começa com uma pergunta — não com uma busca",
+    "desc": "Antes do clique, uma cadeia de sistemas decide quem entra na resposta, como é caracterizado e quem é recomendado. Se o seu produto não passa por cada elo, ele some da conversa sem que você perceba. O Signal mede exatamente esses cinco elos.",
+    "funnel": {
+      "found": {
+        "name": "Encontrado",
+        "gloss": "Found",
+        "desc": "O produto entra no conjunto de candidatos considerados pelo sistema de descoberta."
+      },
+      "understood": {
+        "name": "Compreendido",
+        "gloss": "Understood",
+        "desc": "Categoria, público e problema são corretamente associados ao produto."
+      },
+      "evidenced": {
+        "name": "Evidenciado",
+        "gloss": "Evidenced",
+        "desc": "As afirmações sobre o produto são sustentadas por fontes externas verificáveis."
+      },
+      "recommended": {
+        "name": "Recomendado",
+        "gloss": "Recommended",
+        "desc": "O produto é citado nas respostas observadas relevantes."
+      },
+      "converted": {
+        "name": "Convertido",
+        "gloss": "Converted",
+        "desc": "A menção leva quem decide ao próximo passo: visitar, experimentar ou comprar."
+      }
+    }
+  },
+  "how": {
+    "eyebrow": "Como funciona",
+    "title": "Da configuração à ação priorizada",
+    "desc": "Seis etapas rastreáveis: você configura uma vez, a execução coleta as respostas e o relatório entrega o que fazer — com evidência para cada conclusão.",
+    "stages": {
+      "profile": {
+        "title": "Perfil do produto",
+        "desc": "URL, plataforma, mercado, idioma e concorrentes de referência."
+      },
+      "intents": {
+        "title": "Intents",
+        "desc": "Os problemas reais que as pessoas descrevem ao buscar uma solução."
+      },
+      "prompts": {
+        "title": "Prompts",
+        "desc": "As perguntas executadas nos sistemas de descoberta, versionadas."
+      },
+      "execution": {
+        "title": "Execução",
+        "desc": "Coleta de respostas, recomendações e menções."
+      },
+      "evidence": {
+        "title": "Evidências",
+        "desc": "Fontes externas que sustentam — ou não — cada afirmação."
+      },
+      "report": {
+        "title": "Relatório",
+        "desc": "Notas, lacunas, oportunidades e ações priorizadas com rastreabilidade."
+      }
+    }
+  },
+  "results": {
+    "eyebrow": "O que você recebe",
+    "title": "Notas com proveniência e evidências rastreáveis",
+    "desc": "Cada número do relatório carrega fórmula, versão e confiança. Cada recomendação aponta de volta à observação que a originou.",
+    "figures": {
+      "recommendationShare": "Quanto o produto é recomendado entre as respostas relevantes.",
+      "intentCoverage": "Intents relevantes em que o produto aparece ao menos uma vez.",
+      "evidenceCoverage": "Intents com evidência externa suficiente associada ao produto.",
+      "semanticAlignment": "Posicionamento declarado vs. caracterização observada."
+    },
+    "traceable": {
+      "title": "Toda recomendação é rastreável até a evidência",
+      "desc": "O relatório separa visualmente o que foi observado, o que é evidência verificável, o que é hipótese e o que é ação recomendada. Nenhuma etapa pula a anterior: sem observação não há evidência; sem evidência não há ação."
+    },
+    "chain": {
+      "title": "Cadeia de evidências — extrato",
+      "tag": "demo",
+      "steps": {
+        "observed": "O produto não apareceu em nenhuma das respostas observadas para “acompanhar fluxo de caixa”.",
+        "evidence": "CaixaFácil e ContaSimples aparecem em 68% das respostas do intent, sustentados por um artigo, uma página dedicada e um tópico de comunidade.",
+        "hypothesis": "A ausência de associação explícita entre o produto e o termo “fluxo de caixa” nas fontes observadas pode estar reduzindo a presença.",
+        "action": "Criar uma página dedicada de fluxo de caixa para pequenas empresas e reforçar a associação no anúncio da loja — validar com uma nova auditoria em 2–4 semanas."
+      }
+    }
+  },
+  "finalCta": {
+    "title": "Execute uma auditoria ponta a ponta em segundos",
+    "desc": "Configure o produto, revise intents e prompts, acompanhe a execução e explore o relatório com evidências, lacunas e oportunidades.",
+    "primary": "Começar agora",
+    "secondary": "Ver as etapas da auditoria →",
+    "fine": "Sem cadastro · resultados em segundos"
+  },
+  "cards": {
+    "ranking": {
+      "label": "Posição",
+      "caption": "concorrentes observados"
+    },
+    "confidence": {
+      "label": "Confiança"
+    }
+  }
+}

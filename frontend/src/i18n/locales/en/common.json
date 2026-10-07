@@ -1,0 +1,74 @@
+{
+  "skipToContent": "Skip to content",
+  "aria": {
+    "language": "Language",
+    "remove": "Remove",
+    "relevance": "Relevance {{value}} of {{max}}",
+    "scoreGauge": "{{label}}: {{value}} of {{max}}",
+    "auditSteps": "Audit steps",
+    "reportSections": "Report sections",
+    "inProgress": "(in progress)",
+    "done": "(done)"
+  },
+  "state": {
+    "loading": "Loading…",
+    "errorTitle": "Something went wrong",
+    "retry": "Try again",
+    "remove": "Remove",
+    "noData": "No data available."
+  },
+  "levels": {
+    "HIGH": "high",
+    "MEDIUM": "medium",
+    "LOW": "low"
+  },
+  "presenceLevels": {
+    "ALTA": "high",
+    "MEDIA": "medium",
+    "BAIXA": "low",
+    "AUSENTE": "absent"
+  },
+  "badge": {
+    "priority": "Priority {{level}}",
+    "confidence": "Confidence {{level}}",
+    "presence": "Presence {{level}}",
+    "impact": "Impact {{level}}",
+    "effort": "Effort {{level}}"
+  },
+  "events": {
+    "RECOMMENDATION": "Recommended",
+    "ALTERNATIVE": "Alternative",
+    "COMPARISON": "Comparison",
+    "MENTION": "Mention",
+    "NEGATIVE": "Negative",
+    "IRRELEVANT": "Irrelevant"
+  },
+  "causal": {
+    "observed": "Observation",
+    "evidence": "Evidence",
+    "hypothesis": "Hypothesis",
+    "action": "Action"
+  },
+  "metrics": {
+    "discoverabilityScore": "Discoverability Score",
+    "recommendationShare": "Recommendation Share",
+    "intentCoverage": "Intent Coverage",
+    "evidenceCoverage": "Evidence Coverage",
+    "semanticAlignment": "Semantic Alignment",
+    "competitivePosition": "Competitive Position"
+  },
+  "confidenceLevel": {
+    "HIGH": "High",
+    "MEDIUM": "Medium",
+    "LOW": "Low"
+  },
+  "gauge": {
+    "of": "of {{max}}"
+  },
+  "net": {
+    "processing": "Processing",
+    "success": "Done",
+    "error": "Failed",
+    "idle": "Waiting"
+  }
+}

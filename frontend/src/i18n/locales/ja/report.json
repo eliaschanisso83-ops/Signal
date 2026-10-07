@@ -1,0 +1,221 @@
+{
+  "head": {
+    "title": "発見性レポート",
+    "eyebrow": "発見性監査 · {{name}}",
+    "market": "市場 {{value}}",
+    "language": "言語 {{value}}",
+    "methodology": "方法論 v{{version}}",
+    "prompts": "プロンプト v{{version}}",
+    "completed": "監査完了",
+    "sectionsNav": "レポートのセクション"
+  },
+  "nav": {
+    "summary": "サマリーと診断",
+    "evidence": "証拠",
+    "actions": "機会とアクション"
+  },
+  "scoreCard": {
+    "formulaLabel": "式 {{metric}}",
+    "formulaText": "{{explanation}} · 式 v{{formula}} · 方法論 v{{methodology}}"
+  },
+  "summary": {
+    "eyebrow": "エグゼクティブサマリー"
+  },
+  "scores": {
+    "eyebrow": "スコア",
+    "title": "定量診断",
+    "desc": "すべてのスコアには値・計算式・バージョン・信頼度が表示されます — 出典のない数値はありません。",
+    "gaugeLabel": "発見性",
+    "heroNote": "<strong>{{metric}}</strong> — 複合スコア（式 v{{formula}}、方法論 v{{methodology}}）。",
+    "experimental": "実験的"
+  },
+  "coverage": {
+    "eyebrow": "意図カバレッジ",
+    "title": "意図の全体像",
+    "desc": "各関連意図におけるプロダクトの存在度、その意図をリードするプロダクト、およびギャップの大きさ（関連度 × 未掲載）。",
+    "tableCaption": "意図別の存在度",
+    "empty": "意図が選択されていません。",
+    "relevance": "関連度 {{level}}",
+    "gap": {
+      "low": "低",
+      "medium": "中",
+      "high": "高"
+    },
+    "columns": {
+      "intent": "意図",
+      "presence": "存在度",
+      "leader": "意図リーダー",
+      "share": "プロダクト占有率",
+      "gap": "ギャップ"
+    }
+  },
+  "reco": {
+    "eyebrow": "推奨分析",
+    "title": "推奨と競合ポジション",
+    "desc_one": "{{count}} 件の観察における言及分類の分布と、分析対象プロダクト同士の比較。",
+    "desc_other": "{{count}} 件の観察における言及分類の分布と、分析対象プロダクト同士の比較。",
+    "distributionTitle": "分類の分布",
+    "distributionNote": "分類は Document 3, §27 に準拠。「無関係」はプロダクトの範囲外です。",
+    "positionTitle": "競合ポジション",
+    "auditedProduct": "（監査対象プロダクト）",
+    "coverageLine": "カバレッジ {{coverage}}/{{total}} 意図 · 平均順位 {{position}}",
+    "rankingNote_one": "Recommendation Share で順位付け。{{product}} は {{count}} 件のプロダクト中 {{rank}} 位です。",
+    "rankingNote_other": "Recommendation Share で順位付け。{{product}} は {{count}} 件のプロダクト中 {{rank}} 位です。",
+    "breakdownTitle": "競合別の内訳",
+    "tableCaption": "競合スナップショット",
+    "columns": {
+      "product": "プロダクト",
+      "topIntents": "上位の意図",
+      "characterization": "観察された特徴づけ",
+      "sources": "頻出ソース",
+      "avgPosition": "平均順位"
+    }
+  },
+  "semantic": {
+    "eyebrow": "セマンティック整合性",
+    "title": "宣言されたポジショニング × 観察された特徴づけ",
+    "declared": "宣言",
+    "observed": "観察",
+    "verdict": "判定：{{value}}",
+    "verdictPartial": "部分一致",
+    "verdictAligned": "一致",
+    "termsTitle": "プロダクトごとに紐づく用語",
+    "audited": "（監査対象）"
+  },
+  "methodology": {
+    "eyebrow": "方法論",
+    "title": "この監査はどう作られたか",
+    "intentsOf": "分析済み {{analyzed}} / {{total}}",
+    "limitations": "制限事項",
+    "fields": {
+      "methodology": "方法論",
+      "promptSet": "プロンプトセット",
+      "scoring": "スコアリング",
+      "provider": "プロバイダー",
+      "model": "モデル",
+      "marketLanguage": "市場 / 言語",
+      "analysisDate": "分析日",
+      "intents": "意図",
+      "prompts": "プロンプト",
+      "relevantResponses": "関連する回答",
+      "sampleSize": "サンプル数"
+    }
+  },
+  "dimensions": {
+    "relevance": "関連性",
+    "specificity": "具体性",
+    "credibility": "信頼性",
+    "freshness": "鮮度",
+    "independence": "独立性"
+  },
+  "sourceCategories": {
+    "OWNED": "自社",
+    "EARNED": "プレス / コンテンツ",
+    "COMMUNITY": "コミュニティ",
+    "PLATFORM": "プラットフォーム",
+    "OTHER": "その他"
+  },
+  "gapTypes": {
+    "RECOMMENDATION_GAP": "推奨ギャップ",
+    "COVERAGE_GAP": "カバレッジギャップ",
+    "EVIDENCE_GAP": "証拠ギャップ",
+    "SEMANTIC_GAP": "セマンティックギャップ",
+    "COMPETITIVE_GAP": "競合ギャップ",
+    "SOURCE_GAP": "ソースギャップ",
+    "POSITIONING_GAP": "ポジショニングギャップ",
+    "CONVERSION_GAP": "コンバージョングャップ"
+  },
+  "evidenceLandscape": {
+    "eyebrow": "証拠の全体像",
+    "title": "意図別の証拠の強さ",
+    "desc": "各関連意図に対して、プロダクトに紐づく外部証拠がどの程度存在するか（0–1のスケール）。0.5未満はカバレッジ不足とみなされます。"
+  },
+  "evidenceStats": {
+    "total": "証拠の合計",
+    "aboutProduct": "プロダクトについて",
+    "aboutCompetitors": "競合について",
+    "sources": "観察されたソース",
+    "byCategory": "カテゴリ別ソース"
+  },
+  "gaps": {
+    "eyebrow": "証拠ギャップ",
+    "title": "特定されたギャップ",
+    "desc": "各ギャップには、その裏にある証拠・影響度・信頼度が付いています — 根拠のない主張はありません。",
+    "evidenceLabel": "証拠"
+  },
+  "raw": {
+    "eyebrow": "未加工の証拠",
+    "title": "観察された未加工の証拠",
+    "desc": "結論を裏付ける回答とソースの抜粋（Doc 4, §36）。",
+    "tableCaption": "観察された回答の抜粋",
+    "position_ordinal_one": "{{count}}位",
+    "position_ordinal_two": "{{count}}位",
+    "position_ordinal_few": "{{count}}位",
+    "position_ordinal_other": "{{count}}位",
+    "columns": {
+      "prompt": "プロンプト",
+      "excerpt": "回答の抜粋",
+      "products": "言及されたプロダクト",
+      "position": "順位",
+      "event": "分類",
+      "sources": "ソース"
+    }
+  },
+  "evidenceLists": {
+    "product": "プロダクトの証拠",
+    "competitors": "競合の証拠"
+  },
+  "evidenceItem": {
+    "source": "ソース：{{source}} · {{contextText}}"
+  },
+  "evidenceTrace": {
+    "eyebrow": "追跡可能性",
+    "title": "証拠が意思決定に変わるまで",
+    "desc": "影響度が最大のギャップを例に、観察から推奨アクションまでを示します。",
+    "hypothesis": "仮説：プロダクトと意図のトピックの結び付きが欠けていることが、回答内の存在度を下げている可能性があります。",
+    "action": "アクション：優先順位付きの介入と検証計画については「機会とアクション」を参照してください。"
+  },
+  "opportunities": {
+    "eyebrow": "主要な機会",
+    "title": "優先順位付きの機会",
+    "desc": "各機会は、それを作り出したギャップを指し、影響度・関連度・信頼度・工数・最終優先度で分類されます。",
+    "rank": "{{rank}}位",
+    "relevance": "関連度 {{level}}",
+    "sourceGap": "ソースギャップ"
+  },
+  "actions": {
+    "eyebrow": "推奨アクション",
+    "title": "追跡可能な推奨アクション",
+    "desc": "各アクションは、<strong>観察された課題 → 証拠 → 仮説 → アクション</strong>という連鎖に沿い、検証方法まで定義されています。根拠のない推奨とは正反対です。",
+    "fallbackTitle": "アクション",
+    "validationLabel": "検証方法"
+  },
+  "actionCategories": {
+    "POSITIONING": "ポジショニング",
+    "STORE": "ストア掲載",
+    "WEBSITE": "Webサイト / コンテンツ",
+    "EVIDENCE": "外部証拠",
+    "COMMUNITY": "コミュニティ",
+    "PRODUCT": "プロダクト",
+    "DISTRIBUTION": "販路"
+  },
+  "trace": {
+    "eyebrow": "追跡可能性",
+    "title": "アクション → 機会 → ギャップ",
+    "desc": "一連のチェーンを表形式で確認する、結果の内部監査向けビューです。",
+    "tableCaption": "アクションの追跡可能性",
+    "columns": {
+      "action": "アクション",
+      "opportunity": "機会",
+      "gap": "ギャップ",
+      "priority": "優先度",
+      "confidence": "信頼度"
+    }
+  },
+  "cta": {
+    "eyebrow": "次のサイクル",
+    "title": "検証を実行し、再監査する",
+    "desc": "変更から2–4週間後、存在度・占有率・特徴づけを比較するため、新しい監査を実行しましょう。",
+    "button": "新規監査を開始"
+  }
+}

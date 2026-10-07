@@ -1,0 +1,221 @@
+{
+  "head": {
+    "title": "Discoverability report",
+    "eyebrow": "Discoverability Audit · {{name}}",
+    "market": "Market {{value}}",
+    "language": "Language {{value}}",
+    "methodology": "Methodology v{{version}}",
+    "prompts": "Prompts v{{version}}",
+    "completed": "Audit completed",
+    "sectionsNav": "Report sections"
+  },
+  "nav": {
+    "summary": "Summary & diagnosis",
+    "evidence": "Evidence",
+    "actions": "Opportunities & actions"
+  },
+  "scoreCard": {
+    "formulaLabel": "Formula {{metric}}",
+    "formulaText": "{{explanation}} · formula v{{formula}} · methodology v{{methodology}}"
+  },
+  "summary": {
+    "eyebrow": "Executive summary"
+  },
+  "scores": {
+    "eyebrow": "Scores",
+    "title": "Quantitative diagnosis",
+    "desc": "Every score shows its value, formula, version and confidence — no number without provenance.",
+    "gaugeLabel": "Discoverability",
+    "heroNote": "<strong>{{metric}}</strong> — composite score (formula v{{formula}}, methodology v{{methodology}}).",
+    "experimental": "Experimental"
+  },
+  "coverage": {
+    "eyebrow": "Intent coverage",
+    "title": "Intent landscape",
+    "desc": "Presence of the product in each relevant intent, the intent leader and the size of the gap (relevance × absence).",
+    "tableCaption": "Presence by intent",
+    "empty": "No intent selected.",
+    "relevance": "Relevance {{level}}",
+    "gap": {
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High"
+    },
+    "columns": {
+      "intent": "Intent",
+      "presence": "Presence",
+      "leader": "Intent leader",
+      "share": "Product share",
+      "gap": "Gap"
+    }
+  },
+  "reco": {
+    "eyebrow": "Recommendation analysis",
+    "title": "Recommendations and competitive position",
+    "desc_one": "Distribution of the mention classifications across {{count}} observation and a comparison between the analyzed products.",
+    "desc_other": "Distribution of the mention classifications across {{count}} observations and a comparison between the analyzed products.",
+    "distributionTitle": "Distribution of classifications",
+    "distributionNote": "Classification per Document 3, §27. “Irrelevant” falls outside the product scope.",
+    "positionTitle": "Competitive position",
+    "auditedProduct": "(audited product)",
+    "coverageLine": "Coverage {{coverage}}/{{total}} intents · average position {{position}}",
+    "rankingNote_one": "Ranked by Recommendation Share. {{product}} ranks #{{rank}} of {{count}} product.",
+    "rankingNote_other": "Ranked by Recommendation Share. {{product}} ranks #{{rank}} of {{count}} products.",
+    "breakdownTitle": "Competitor breakdown",
+    "tableCaption": "Competitor snapshot",
+    "columns": {
+      "product": "Product",
+      "topIntents": "Top intents",
+      "characterization": "Observed characterization",
+      "sources": "Recurring sources",
+      "avgPosition": "Average position"
+    }
+  },
+  "semantic": {
+    "eyebrow": "Semantic alignment",
+    "title": "Declared positioning × observed characterization",
+    "declared": "Declared",
+    "observed": "Observed",
+    "verdict": "Verdict: {{value}}",
+    "verdictPartial": "PARTIAL",
+    "verdictAligned": "ALIGNED",
+    "termsTitle": "Terms associated with each product",
+    "audited": "(AUDITED)"
+  },
+  "methodology": {
+    "eyebrow": "Methodology",
+    "title": "How this audit was produced",
+    "intentsOf": "{{analyzed}} of {{total}} analyzed",
+    "limitations": "Limitations",
+    "fields": {
+      "methodology": "Methodology",
+      "promptSet": "Prompt set",
+      "scoring": "Scoring",
+      "provider": "Provider",
+      "model": "Model",
+      "marketLanguage": "Market / language",
+      "analysisDate": "Analysis date",
+      "intents": "Intents",
+      "prompts": "Prompts",
+      "relevantResponses": "Relevant responses",
+      "sampleSize": "Sample size"
+    }
+  },
+  "dimensions": {
+    "relevance": "Relevance",
+    "specificity": "Specificity",
+    "credibility": "Credibility",
+    "freshness": "Freshness",
+    "independence": "Independence"
+  },
+  "sourceCategories": {
+    "OWNED": "Own",
+    "EARNED": "Press / content",
+    "COMMUNITY": "Community",
+    "PLATFORM": "Platform",
+    "OTHER": "Other"
+  },
+  "gapTypes": {
+    "RECOMMENDATION_GAP": "Recommendation gap",
+    "COVERAGE_GAP": "Coverage gap",
+    "EVIDENCE_GAP": "Evidence gap",
+    "SEMANTIC_GAP": "Semantic gap",
+    "COMPETITIVE_GAP": "Competitive gap",
+    "SOURCE_GAP": "Source gap",
+    "POSITIONING_GAP": "Positioning gap",
+    "CONVERSION_GAP": "Conversion gap"
+  },
+  "evidenceLandscape": {
+    "eyebrow": "Evidence landscape",
+    "title": "Evidence strength by intent",
+    "desc": "How much external evidence associated with the product exists for each relevant intent (scale 0–1). Values below 0.5 count as insufficient coverage."
+  },
+  "evidenceStats": {
+    "total": "Total evidence",
+    "aboutProduct": "About the product",
+    "aboutCompetitors": "About competitors",
+    "sources": "Sources observed",
+    "byCategory": "Sources by category"
+  },
+  "gaps": {
+    "eyebrow": "Evidence gaps",
+    "title": "Gaps identified",
+    "desc": "Every gap carries the evidence behind it, its impact and confidence — no claim without backing.",
+    "evidenceLabel": "EVIDENCE"
+  },
+  "raw": {
+    "eyebrow": "Raw evidence",
+    "title": "Observed raw evidence",
+    "desc": "Sample of the responses and sources that back the conclusions (Doc 4, §36).",
+    "tableCaption": "Sample of observed responses",
+    "position_ordinal_one": "{{count}}st",
+    "position_ordinal_two": "{{count}}nd",
+    "position_ordinal_few": "{{count}}rd",
+    "position_ordinal_other": "{{count}}th",
+    "columns": {
+      "prompt": "Prompt",
+      "excerpt": "Response excerpt",
+      "products": "Products mentioned",
+      "position": "Position",
+      "event": "Classification",
+      "sources": "Sources"
+    }
+  },
+  "evidenceLists": {
+    "product": "Evidence about the product",
+    "competitors": "Evidence about competitors"
+  },
+  "evidenceItem": {
+    "source": "Source: {{source}} · {{contextText}}"
+  },
+  "evidenceTrace": {
+    "eyebrow": "Traceability",
+    "title": "How evidence becomes decisions",
+    "desc": "Example of the highest-impact gap: from the observation to the recommended action.",
+    "hypothesis": "Hypothesis: the missing association between the product and the intent topic may be reducing presence in responses.",
+    "action": "Action: see “Opportunities & actions” for the prioritized intervention and validation plan."
+  },
+  "opportunities": {
+    "eyebrow": "Top opportunities",
+    "title": "Prioritized opportunities",
+    "desc": "Each opportunity points to the gap that originated it and is classified by impact, relevance, confidence, effort and final priority.",
+    "rank": "Position {{rank}}",
+    "relevance": "Relevance {{level}}",
+    "sourceGap": "SOURCE GAP"
+  },
+  "actions": {
+    "eyebrow": "Recommended actions",
+    "title": "Recommended actions with traceability",
+    "desc": "Each action follows the chain <strong>observed problem → evidence → hypothesis → action</strong>, with validation defined. This is the opposite of an unsupported recommendation.",
+    "fallbackTitle": "Action",
+    "validationLabel": "HOW TO VALIDATE"
+  },
+  "actionCategories": {
+    "POSITIONING": "Positioning",
+    "STORE": "Store listing",
+    "WEBSITE": "Website / content",
+    "EVIDENCE": "External evidence",
+    "COMMUNITY": "Community",
+    "PRODUCT": "Product",
+    "DISTRIBUTION": "Distribution"
+  },
+  "trace": {
+    "eyebrow": "Traceability",
+    "title": "Action → Opportunity → Gap",
+    "desc": "Tabular view of the full chain, for internal audit of the result.",
+    "tableCaption": "Action traceability",
+    "columns": {
+      "action": "Action",
+      "opportunity": "Opportunity",
+      "gap": "Gap",
+      "priority": "Priority",
+      "confidence": "Confidence"
+    }
+  },
+  "cta": {
+    "eyebrow": "Next cycle",
+    "title": "Run validation and re-audit",
+    "desc": "After 2–4 weeks of changes, run a new audit to compare presence, share and characterization.",
+    "button": "Start new audit"
+  }
+}

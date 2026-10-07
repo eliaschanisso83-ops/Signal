@@ -1,6 +1,7 @@
 import type { CSSProperties } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { Confidence } from '../domain/types';
-import { CAUSAL_LABEL, CONFIDENCE_LABEL, type CausalKind } from '../design-system/visuals';
+import type { CausalKind } from '../design-system/visuals';
 
 /* ============================================================
    Componentes de dados da landing — Score, métricas, ranking,
@@ -22,12 +23,13 @@ function pointAt(t: number, r: number) {
 }
 
 export function ScoreCard({ value, label, max = 100 }: { value: number; label: string; max?: number }) {
+  const { t: tc } = useTranslation('common');
   const pct = Math.max(0, Math.min(1, value / max));
   const marker = pointAt(pct, R);
   const ticks = [0, 0.25, 0.5, 0.75, 1];
   return (
     <div className="sc">
-      <svg className="sc-svg" viewBox="0 0 240 140" role="img" aria-label={`${label}: ${value} de ${max}`}>
+      <svg className="sc-svg" viewBox="0 0 240 140" role="img" aria-label={tc('aria.scoreGauge', { label, value, max })}>
         <defs>
           <linearGradient id="sc-grad" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0" stopColor="#6480e8" />
@@ -104,15 +106,16 @@ export function MetricCard({
 export function RankingIndicator({
   position,
   total,
-  caption = 'concorrentes observados',
+  caption,
 }: {
   position: number;
   total: number;
   caption?: string;
 }) {
+  const { t } = useTranslation('landing');
   return (
     <div className="ri">
-      <span className="ri-k">Posição</span>
+      <span className="ri-k">{t('cards.ranking.label')}</span>
       <div className="ri-main">
         <span className="ri-pos">#{position}</span>
         <span className="ri-of">/{total}</span>
@@ -126,7 +129,7 @@ export function RankingIndicator({
           />
         ))}
       </div>
-      <span className="ri-cap">{caption}</span>
+      <span className="ri-cap">{caption ?? t('cards.ranking.caption')}</span>
     </div>
   );
 }
@@ -136,10 +139,12 @@ export function RankingIndicator({
 const CONF_LEVEL: Record<Confidence, number> = { LOW: 1, MEDIUM: 2, HIGH: 3 };
 
 export function ConfidenceIndicator({ value }: { value: Confidence }) {
+  const { t } = useTranslation('landing');
+  const { t: tc } = useTranslation('common');
   const level = CONF_LEVEL[value];
   return (
     <div className="ci" data-value={value}>
-      <span className="ci-k">Confiança</span>
+      <span className="ci-k">{t('cards.confidence.label')}</span>
       <div className="ci-main">
         <span className="ci-track" aria-hidden="true">
           {[0, 1, 2].map((i) => (
@@ -150,7 +155,7 @@ export function ConfidenceIndicator({ value }: { value: Confidence }) {
             />
           ))}
         </span>
-        <span className="ci-v">{CONFIDENCE_LABEL[value]}</span>
+        <span className="ci-v">{tc(`confidenceLevel.${value}`)}</span>
       </div>
     </div>
   );
@@ -169,6 +174,7 @@ export function EvidenceStep({
   index: number;
   total: number;
 }) {
+  const { t: tc } = useTranslation('common');
   const delay = 320 + (index - 1) * 170;
   return (
     <li className="ec-step" data-kind={kind} style={{ '--ec-d': `${delay}` } as CSSProperties}>
@@ -177,7 +183,7 @@ export function EvidenceStep({
       </span>
       {index < total && <span className="ec-link" aria-hidden="true" />}
       <div className="ec-body">
-        <span className="ec-label">{CAUSAL_LABEL[kind]}</span>
+        <span className="ec-label">{tc(`causal.${kind}`)}</span>
         <p>{text}</p>
       </div>
     </li>

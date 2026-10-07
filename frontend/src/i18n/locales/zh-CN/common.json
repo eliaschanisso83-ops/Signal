@@ -1,0 +1,74 @@
+{
+  "skipToContent": "跳到主要内容",
+  "aria": {
+    "language": "语言",
+    "remove": "移除",
+    "relevance": "相关度 {{value}} / {{max}}",
+    "scoreGauge": "{{label}}：{{value}} / {{max}}",
+    "auditSteps": "审计步骤",
+    "reportSections": "报告章节",
+    "inProgress": "（进行中）",
+    "done": "（已完成）"
+  },
+  "state": {
+    "loading": "加载中…",
+    "errorTitle": "出现问题",
+    "retry": "重试",
+    "remove": "移除",
+    "noData": "暂无数据。"
+  },
+  "levels": {
+    "HIGH": "高",
+    "MEDIUM": "中",
+    "LOW": "低"
+  },
+  "presenceLevels": {
+    "ALTA": "高",
+    "MEDIA": "中",
+    "BAIXA": "低",
+    "AUSENTE": "缺失"
+  },
+  "badge": {
+    "priority": "优先级 {{level}}",
+    "confidence": "置信度 {{level}}",
+    "presence": "存在度 {{level}}",
+    "impact": "影响 {{level}}",
+    "effort": "投入 {{level}}"
+  },
+  "events": {
+    "RECOMMENDATION": "推荐",
+    "ALTERNATIVE": "替代方案",
+    "COMPARISON": "对比",
+    "MENTION": "提及",
+    "NEGATIVE": "负面",
+    "IRRELEVANT": "不相关"
+  },
+  "causal": {
+    "observed": "观察",
+    "evidence": "证据",
+    "hypothesis": "假设",
+    "action": "行动"
+  },
+  "metrics": {
+    "discoverabilityScore": "Discoverability Score",
+    "recommendationShare": "Recommendation Share",
+    "intentCoverage": "Intent Coverage",
+    "evidenceCoverage": "Evidence Coverage",
+    "semanticAlignment": "Semantic Alignment",
+    "competitivePosition": "Competitive Position"
+  },
+  "confidenceLevel": {
+    "HIGH": "高",
+    "MEDIUM": "中",
+    "LOW": "低"
+  },
+  "gauge": {
+    "of": "/ {{max}}"
+  },
+  "net": {
+    "processing": "处理中",
+    "success": "完成",
+    "error": "失败",
+    "idle": "等待"
+  }
+}

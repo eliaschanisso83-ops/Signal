@@ -1,0 +1,141 @@
+{
+  "hero": {
+    "eyebrow": "Démo publique · données simulées",
+    "title": "Votre produit est <accent>trouvé</accent>, compris et recommandé là où les décisions se prennent",
+    "lead": "Signal audite la façon dont les systèmes de découverte — assistants IA, recherche et marketplaces — répondent au sujet de votre catégorie. Vous obtenez des scores avec une formule explicite et une chaîne traçable d’observation, de preuve, d’hypothèse et d’action.",
+    "cta": "Lancer l’audit",
+    "howItWorks": "Comment ça marche ↓",
+    "fine": "Audit complet en quelques secondes",
+    "previewLabel": "Aperçu de l’interface du rapport",
+    "previewContext": "{{product}} · marché BR · pt-BR",
+    "previewStatus": "Terminé",
+    "previewCta": "Lancer cet audit →",
+    "previewFoot": "formule {{formula}} · méthodologie {{methodology}}"
+  },
+  "marquee": {
+    "label": "Systèmes de découverte couverts par la méthodologie",
+    "title": "Segmentation par système"
+  },
+  "facts": {
+    "traceability": {
+      "k": "Traçabilité",
+      "v": "Observation → preuve → hypothèse → action"
+    },
+    "provenance": {
+      "k": "Provenance",
+      "v": "Formule, version et confiance sur chaque score"
+    },
+    "methodology": {
+      "k": "Méthodologie",
+      "v": "{{version}} — versionnée et documentée"
+    },
+    "execution": {
+      "k": "Exécution",
+      "v": "Parcours complet en quelques secondes"
+    }
+  },
+  "problem": {
+    "eyebrow": "Le problème",
+    "title": "La décision commence par une question — pas par une recherche",
+    "desc": "Avant le clic, une chaîne de systèmes décide qui entre dans la réponse, comment le produit est caractérisé et qui est recommandé. Si votre produit ne franchit pas chaque maillon, il disparaît de la conversation sans que vous le voyiez. Signal mesure précisément ces cinq maillons.",
+    "funnel": {
+      "found": {
+        "name": "Trouvé",
+        "gloss": "Trouvé",
+        "desc": "Le produit entre dans l’ensemble des candidats considérés par le système de découverte."
+      },
+      "understood": {
+        "name": "Compris",
+        "gloss": "Compris",
+        "desc": "La catégorie, l’audience et le problème sont correctement associés au produit."
+      },
+      "evidenced": {
+        "name": "Étayé",
+        "gloss": "Étayé",
+        "desc": "Les affirmations à propos du produit sont étayées par des sources externes vérifiables."
+      },
+      "recommended": {
+        "name": "Recommandé",
+        "gloss": "Recommandé",
+        "desc": "Le produit est cité dans les réponses pertinentes observées."
+      },
+      "converted": {
+        "name": "Converti",
+        "gloss": "Converti",
+        "desc": "La mention amène le décideur à l’étape suivante : visite, essai ou achat."
+      }
+    }
+  },
+  "how": {
+    "eyebrow": "Comment ça marche",
+    "title": "De la configuration à l’action priorisée",
+    "desc": "Six étapes traçables : on configure une fois, l’exécution collecte les réponses et le rapport indique quoi faire — avec la preuve à l’appui de chaque conclusion.",
+    "stages": {
+      "profile": {
+        "title": "Profil du produit",
+        "desc": "URL, plateforme, marché, langue et concurrents de référence."
+      },
+      "intents": {
+        "title": "Intentions",
+        "desc": "Les vrais problèmes que les gens décrivent lorsqu’ils cherchent une solution."
+      },
+      "prompts": {
+        "title": "Prompts",
+        "desc": "Les questions exécutées sur les systèmes de découverte, versionnées."
+      },
+      "execution": {
+        "title": "Exécution",
+        "desc": "Collecte des réponses, des recommandations et des mentions."
+      },
+      "evidence": {
+        "title": "Preuves",
+        "desc": "Les sources externes qui étayent — ou non — chaque affirmation."
+      },
+      "report": {
+        "title": "Rapport",
+        "desc": "Scores, lacunes, opportunités et actions priorisées avec traçabilité."
+      }
+    }
+  },
+  "results": {
+    "eyebrow": "Ce que vous obtenez",
+    "title": "Des scores avec provenance et des preuves traçables",
+    "desc": "Chaque chiffre du rapport porte une formule, une version et un niveau de confiance. Chaque recommandation renvoie à l’observation dont elle est issue.",
+    "figures": {
+      "recommendationShare": "La fréquence à laquelle le produit est recommandé parmi les réponses pertinentes.",
+      "intentCoverage": "Les intentions pertinentes dans lesquelles le produit apparaît au moins une fois.",
+      "evidenceCoverage": "Les intentions disposant de preuves externes suffisantes associées au produit.",
+      "semanticAlignment": "Positionnement déclaré face à la caractérisation observée."
+    },
+    "traceable": {
+      "title": "Chaque recommandation est traçable jusqu’à la preuve",
+      "desc": "Le rapport sépare visuellement ce qui a été observé, ce qui constitue une preuve vérifiable, ce qui relève de l’hypothèse et ce qui est une action recommandée. Aucune étape ne saute la précédente : sans observation, pas de preuve ; sans preuve, pas d’action."
+    },
+    "chain": {
+      "title": "Chaîne de preuves — extrait",
+      "tag": "démo",
+      "steps": {
+        "observed": "Le produit n’est apparu dans aucune des réponses observées pour « suivre la trésorerie ».",
+        "evidence": "CaixaFácil et ContaSimples apparaissent dans 68 % des réponses à cette intention, étayés par un article, une page dédiée et une discussion de communauté.",
+        "hypothesis": "L’absence d’association explicite entre le produit et le terme « flux de trésorerie » dans les sources observées pourrait réduire la présence.",
+        "action": "Créer une page dédiée à la trésorerie pour les petites entreprises et renforcer l’association dans la fiche de l’application — valider par un nouvel audit dans 2 à 4 semaines."
+      }
+    }
+  },
+  "finalCta": {
+    "title": "Lancez un audit de bout en bout en quelques secondes",
+    "desc": "Configurez le produit, vérifiez les intentions et les prompts, suivez l’exécution et explorez le rapport avec ses preuves, ses lacunes et ses opportunités.",
+    "primary": "Commencer maintenant",
+    "secondary": "Voir les étapes de l’audit →",
+    "fine": "Sans inscription · résultats en quelques secondes"
+  },
+  "cards": {
+    "ranking": {
+      "label": "Position",
+      "caption": "concurrents observés"
+    },
+    "confidence": {
+      "label": "Confiance"
+    }
+  }
+}

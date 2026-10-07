@@ -1,0 +1,221 @@
+{
+  "head": {
+    "title": "Rapport de découvrabilité",
+    "eyebrow": "Audit de découvrabilité · {{name}}",
+    "market": "Marché {{value}}",
+    "language": "Langue {{value}}",
+    "methodology": "Méthodologie v{{version}}",
+    "prompts": "Prompts v{{version}}",
+    "completed": "Audit terminé",
+    "sectionsNav": "Sections du rapport"
+  },
+  "nav": {
+    "summary": "Synthèse et diagnostic",
+    "evidence": "Preuves",
+    "actions": "Opportunités et actions"
+  },
+  "scoreCard": {
+    "formulaLabel": "Formule {{metric}}",
+    "formulaText": "{{explanation}} · formule v{{formula}} · méthodologie v{{methodology}}"
+  },
+  "summary": {
+    "eyebrow": "Synthèse exécutive"
+  },
+  "scores": {
+    "eyebrow": "Scores",
+    "title": "Diagnostic quantitatif",
+    "desc": "Chaque score affiche sa valeur, sa formule, sa version et sa confiance — aucun chiffre sans provenance.",
+    "gaugeLabel": "Découvrabilité",
+    "heroNote": "<strong>{{metric}}</strong> — score composite (formule v{{formula}}, méthodologie v{{methodology}}).",
+    "experimental": "Expérimental"
+  },
+  "coverage": {
+    "eyebrow": "Couverture des intentions",
+    "title": "Paysage des intentions",
+    "desc": "Présence du produit dans chaque intention pertinente, l’intention dominante et l’ampleur de l’écart (pertinence × absence).",
+    "tableCaption": "Présence par intention",
+    "empty": "Aucune intention sélectionnée.",
+    "relevance": "Pertinence de niveau {{level}}",
+    "gap": {
+      "low": "Faible",
+      "medium": "Moyen",
+      "high": "Élevé"
+    },
+    "columns": {
+      "intent": "Intention",
+      "presence": "Présence",
+      "leader": "Intention dominante",
+      "share": "Part du produit",
+      "gap": "Écart"
+    }
+  },
+  "reco": {
+    "eyebrow": "Analyse des recommandations",
+    "title": "Recommandations et position concurrentielle",
+    "desc_one": "Répartition des classifications des mentions sur {{count}} observation et comparaison des produits analysés.",
+    "desc_other": "Répartition des classifications des mentions sur {{count}} observations et comparaison des produits analysés.",
+    "distributionTitle": "Répartition des classifications",
+    "distributionNote": "Classification selon le document 3, §27. « Non pertinent » sort du périmètre du produit.",
+    "positionTitle": "Position concurrentielle",
+    "auditedProduct": "(produit audité)",
+    "coverageLine": "Couverture {{coverage}}/{{total}} intentions · position moyenne {{position}}",
+    "rankingNote_one": "Classement par Recommendation Share. {{product}} est classé #{{rank}} sur {{count}} produit.",
+    "rankingNote_other": "Classement par Recommendation Share. {{product}} est classé #{{rank}} sur {{count}} produits.",
+    "breakdownTitle": "Détail par concurrent",
+    "tableCaption": "Aperçu des concurrents",
+    "columns": {
+      "product": "Produit",
+      "topIntents": "Intentions principales",
+      "characterization": "Caractérisation observée",
+      "sources": "Sources récurrentes",
+      "avgPosition": "Position moyenne"
+    }
+  },
+  "semantic": {
+    "eyebrow": "Alignement sémantique",
+    "title": "Positionnement déclaré × caractérisation observée",
+    "declared": "Déclaré",
+    "observed": "Observé",
+    "verdict": "Verdict : {{value}}",
+    "verdictPartial": "PARTIEL",
+    "verdictAligned": "ALIGNÉ",
+    "termsTitle": "Termes associés à chaque produit",
+    "audited": "(AUDITÉ)"
+  },
+  "methodology": {
+    "eyebrow": "Méthodologie",
+    "title": "Comment cet audit a été produit",
+    "intentsOf": "{{analyzed}} sur {{total}} analysés",
+    "limitations": "Limites",
+    "fields": {
+      "methodology": "Méthodologie",
+      "promptSet": "Jeu de prompts",
+      "scoring": "Scoring",
+      "provider": "Fournisseur",
+      "model": "Modèle",
+      "marketLanguage": "Marché / langue",
+      "analysisDate": "Date d’analyse",
+      "intents": "Intentions",
+      "prompts": "Prompts",
+      "relevantResponses": "Réponses pertinentes",
+      "sampleSize": "Taille de l’échantillon"
+    }
+  },
+  "dimensions": {
+    "relevance": "Pertinence",
+    "specificity": "Spécificité",
+    "credibility": "Crédibilité",
+    "freshness": "Fraîcheur",
+    "independence": "Indépendance"
+  },
+  "sourceCategories": {
+    "OWNED": "Propriétaire",
+    "EARNED": "Presse / contenu",
+    "COMMUNITY": "Communauté",
+    "PLATFORM": "Plateforme",
+    "OTHER": "Autre"
+  },
+  "gapTypes": {
+    "RECOMMENDATION_GAP": "Lacune de recommandation",
+    "COVERAGE_GAP": "Lacune de couverture",
+    "EVIDENCE_GAP": "Lacune de preuve",
+    "SEMANTIC_GAP": "Lacune sémantique",
+    "COMPETITIVE_GAP": "Lacune concurrentielle",
+    "SOURCE_GAP": "Lacune de source",
+    "POSITIONING_GAP": "Lacune de positionnement",
+    "CONVERSION_GAP": "Lacune de conversion"
+  },
+  "evidenceLandscape": {
+    "eyebrow": "Paysage des preuves",
+    "title": "Solidité des preuves par intention",
+    "desc": "Quantité de preuves externes associées au produit pour chaque intention pertinente (échelle de 0 à 1). Les valeurs inférieures à 0,5 sont considérées comme une couverture insuffisante."
+  },
+  "evidenceStats": {
+    "total": "Preuves au total",
+    "aboutProduct": "À propos du produit",
+    "aboutCompetitors": "À propos des concurrents",
+    "sources": "Sources observées",
+    "byCategory": "Sources par catégorie"
+  },
+  "gaps": {
+    "eyebrow": "Lacunes de preuve",
+    "title": "Lacunes identifiées",
+    "desc": "Chaque lacune s’accompagne de la preuve qui la fonde, de son impact et de sa confiance — aucune affirmation sans appui.",
+    "evidenceLabel": "PREUVE"
+  },
+  "raw": {
+    "eyebrow": "Preuves brutes",
+    "title": "Preuves brutes observées",
+    "desc": "Échantillon des réponses et des sources qui étayent les conclusions (Doc 4, §36).",
+    "tableCaption": "Échantillon des réponses observées",
+    "position_ordinal_one": "{{count}}er",
+    "position_ordinal_two": "{{count}}e",
+    "position_ordinal_few": "{{count}}e",
+    "position_ordinal_other": "{{count}}e",
+    "columns": {
+      "prompt": "Prompt",
+      "excerpt": "Extrait de réponse",
+      "products": "Produits mentionnés",
+      "position": "Position",
+      "event": "Classification",
+      "sources": "Sources"
+    }
+  },
+  "evidenceLists": {
+    "product": "Preuves à propos du produit",
+    "competitors": "Preuves à propos des concurrents"
+  },
+  "evidenceItem": {
+    "source": "Source : {{source}} · {{contextText}}"
+  },
+  "evidenceTrace": {
+    "eyebrow": "Traçabilité",
+    "title": "Comment les preuves deviennent des décisions",
+    "desc": "Exemple de la lacune au plus fort impact : de l’observation à l’action recommandée.",
+    "hypothesis": "Hypothèse : l’association absente entre le produit et le sujet de l’intention pourrait réduire la présence dans les réponses.",
+    "action": "Action : voir « Opportunités et actions » pour le plan d’intervention et de validation priorisé."
+  },
+  "opportunities": {
+    "eyebrow": "Meilleures opportunités",
+    "title": "Opportunités priorisées",
+    "desc": "Chaque opportunité renvoie à la lacune dont elle est issue et est classée selon l’impact, la pertinence, la confiance, l’effort et la priorité finale.",
+    "rank": "Position {{rank}}",
+    "relevance": "Pertinence de niveau {{level}}",
+    "sourceGap": "LACUNE DE SOURCE"
+  },
+  "actions": {
+    "eyebrow": "Actions recommandées",
+    "title": "Actions recommandées avec traçabilité",
+    "desc": "Chaque action suit la chaîne <strong>problème observé → preuve → hypothèse → action</strong>, avec une validation définie. C’est l’inverse d’une recommandation sans fondement.",
+    "fallbackTitle": "Action",
+    "validationLabel": "COMMENT VALIDER"
+  },
+  "actionCategories": {
+    "POSITIONING": "Positionnement",
+    "STORE": "Fiche de l’application",
+    "WEBSITE": "Site web / contenu",
+    "EVIDENCE": "Preuve externe",
+    "COMMUNITY": "Communauté",
+    "PRODUCT": "Produit",
+    "DISTRIBUTION": "Distribution"
+  },
+  "trace": {
+    "eyebrow": "Traçabilité",
+    "title": "Action → Opportunité → Lacune",
+    "desc": "Vue tabulaire de la chaîne complète, pour l’audit interne du résultat.",
+    "tableCaption": "Traçabilité des actions",
+    "columns": {
+      "action": "Action",
+      "opportunity": "Opportunité",
+      "gap": "Lacune",
+      "priority": "Priorité",
+      "confidence": "Confiance"
+    }
+  },
+  "cta": {
+    "eyebrow": "Prochain cycle",
+    "title": "Valider et relancer l’audit",
+    "desc": "Après 2 à 4 semaines de modifications, lancez un nouvel audit pour comparer la présence, la part et la caractérisation.",
+    "button": "Lancer un nouvel audit"
+  }
+}

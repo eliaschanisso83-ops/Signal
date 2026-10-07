@@ -1,0 +1,74 @@
+{
+  "skipToContent": "Aller au contenu",
+  "aria": {
+    "language": "Langue",
+    "remove": "Supprimer",
+    "relevance": "Pertinence {{value}} sur {{max}}",
+    "scoreGauge": "{{label}} : {{value}} sur {{max}}",
+    "auditSteps": "Étapes de l'audit",
+    "reportSections": "Sections du rapport",
+    "inProgress": "(en cours)",
+    "done": "(terminé)"
+  },
+  "state": {
+    "loading": "Chargement…",
+    "errorTitle": "Une erreur est survenue",
+    "retry": "Réessayer",
+    "remove": "Supprimer",
+    "noData": "Aucune donnée disponible."
+  },
+  "levels": {
+    "HIGH": "élevé",
+    "MEDIUM": "moyen",
+    "LOW": "faible"
+  },
+  "presenceLevels": {
+    "ALTA": "élevée",
+    "MEDIA": "moyenne",
+    "BAIXA": "faible",
+    "AUSENTE": "absente"
+  },
+  "badge": {
+    "priority": "Priorité de niveau {{level}}",
+    "confidence": "Confiance de niveau {{level}}",
+    "presence": "Présence {{level}}",
+    "impact": "Impact {{level}}",
+    "effort": "Effort {{level}}"
+  },
+  "events": {
+    "RECOMMENDATION": "Recommandé",
+    "ALTERNATIVE": "Alternative",
+    "COMPARISON": "Comparaison",
+    "MENTION": "Mention",
+    "NEGATIVE": "Négatif",
+    "IRRELEVANT": "Non pertinent"
+  },
+  "causal": {
+    "observed": "Observation",
+    "evidence": "Preuve",
+    "hypothesis": "Hypothèse",
+    "action": "Action"
+  },
+  "metrics": {
+    "discoverabilityScore": "Discoverability Score",
+    "recommendationShare": "Recommendation Share",
+    "intentCoverage": "Intent Coverage",
+    "evidenceCoverage": "Evidence Coverage",
+    "semanticAlignment": "Semantic Alignment",
+    "competitivePosition": "Competitive Position"
+  },
+  "confidenceLevel": {
+    "HIGH": "Élevée",
+    "MEDIUM": "Moyenne",
+    "LOW": "Faible"
+  },
+  "gauge": {
+    "of": "sur {{max}}"
+  },
+  "net": {
+    "processing": "Traitement",
+    "success": "Terminé",
+    "error": "Échec",
+    "idle": "En attente"
+  }
+}

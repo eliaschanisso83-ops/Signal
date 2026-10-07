@@ -1,0 +1,288 @@
+{
+  "actions": {
+    "createDraft": "下書きを作成して続行",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "add": "追加",
+    "edit": "編集",
+    "remove": "削除",
+    "activate": "有効化",
+    "deactivate": "無効化"
+  },
+  "aria": {
+    "removeItem": "{{name}} を削除",
+    "includeIntent": "意図「{{name}}」を監査に含める",
+    "removeIntent": "意図 {{name}} を削除",
+    "removePrompt": "プロンプト {{preview}} を削除",
+    "enablePrompt": "プロンプトを有効化",
+    "disablePrompt": "プロンプトを無効化",
+    "newKeyword": "新しいキーワード",
+    "intentsSummary": "意図のサマリー",
+    "promptsSummary": "プロンプトのサマリー",
+    "selectedIntentsTabs": "選択した意図"
+  },
+  "newAudit": {
+    "eyebrow": "新規監査 · ステップ 1 / 5",
+    "title": "プロダクトを設定する",
+    "intro": "どのプロダクトを、どのような市場・言語・競合条件下で分析するかを定義します。以下のフォームはデモ用データが入力済みです。",
+    "sections": {
+      "product": "プロダクト",
+      "conditions": "監査条件"
+    },
+    "fields": {
+      "url": "プロダクトのURL",
+      "name": "プロダクト名",
+      "platform": "プラットフォーム",
+      "category": "カテゴリ",
+      "audience": "対象層",
+      "market": "市場",
+      "language": "言語",
+      "competitors": "参考となる競合"
+    },
+    "hints": {
+      "url": "例：https://fluxoapp.com.br",
+      "name": "任意 — 空欄の場合はURLから自動取得します。",
+      "market": "観察される回答の国を決定します。",
+      "language": "実行するプロンプトの言語。"
+    },
+    "placeholders": {
+      "competitor": "競合を追加…"
+    },
+    "empty": {
+      "competitors": "競合が未入力 — 既定のカタログを使用します。"
+    },
+    "platforms": {
+      "GOOGLE_PLAY": "Google Play",
+      "APP_STORE": "App Store",
+      "WEB": "Webサイト",
+      "SAAS": "SaaS",
+      "DESKTOP": "デスクトップ"
+    },
+    "markets": {
+      "BR": "ブラジル (BR)",
+      "US": "アメリカ合衆国 (US)",
+      "PT": "ポルトガル (PT)",
+      "ES": "スペイン (ES)",
+      "MX": "メキシコ (MX)"
+    },
+    "languages": {
+      "ptBR": "ポルトガル語 (pt-BR)",
+      "enUS": "英語 (en-US)",
+      "esES": "スペイン語 (es-ES)"
+    },
+    "errors": {
+      "url": "http:// または https:// で始まる有効なURLを入力してください。",
+      "create": "監査を作成できませんでした。もう一度お試しください。"
+    },
+    "footer": {
+      "next": "次のステップ：解釈されたプロダクトプロフィールを確認します。"
+    }
+  },
+  "profile": {
+    "eyebrow": "新規監査 · ステップ 2 / 5",
+    "title": "解釈されたプロダクトプロフィール",
+    "intro": "これは意図とプロンプトの生成を導く、正規化された解釈です。<strong>絶対的な真実ではありません</strong> — 続行する前に確認し、必要に応じて修正してください。",
+    "about": "{{title}} について",
+    "sections": {
+      "provided": "入力されたデータ",
+      "valueProposition": "価値提案（解釈）",
+      "valuePropositionHint": "URLとカテゴリから自動生成したテキスト — 不正確な場合は編集してください。",
+      "features": "機能",
+      "featuresHint": "解釈された一覧 — プロンプトの文言生成に使用します。",
+      "problems": "解決する課題",
+      "useCases": "ユースケース",
+      "audiences": "対象層",
+      "competitors": "観察対象の競合",
+      "keywords": "キーワード",
+      "keywordsHint": "自社ブランドと結び付けるべきセマンティックな実体。",
+      "entities": "エンティティとカテゴリ"
+    },
+    "terms": {
+      "product": "プロダクト",
+      "url": "URL",
+      "platform": "プラットフォーム",
+      "category": "カテゴリ",
+      "audience": "対象層",
+      "market": "市場"
+    },
+    "fields": {
+      "valueProposition": "価値提案"
+    },
+    "editValueProposition": "価値提案を編集",
+    "keywordPlaceholder": "新しいキーワード…",
+    "labels": {
+      "semanticEntities": "セマンティックエンティティ",
+      "categories": "カテゴリ"
+    },
+    "badges": {
+      "market": "市場 {{value}}",
+      "language": "言語 {{value}}",
+      "normalized": "正規化された解釈 · Doc 6 §11"
+    },
+    "back": "← 戻る",
+    "nextIntents": "意図を確認 →"
+  },
+  "intents": {
+    "eyebrow": "新規監査 · ステップ 3 / 5",
+    "title": "意図を確認する",
+    "intro": "意図とは、人が解決策を探すときに実際に述べる課題です — 監査の基本単位（Doc 3, §7）。分析するものを選択し、不正確な点は修正してください。",
+    "include": "含める",
+    "relevance": "関連度",
+    "categories": {
+      "INFORMATIONAL": "情報型",
+      "EXPLORATORY": "探索型",
+      "COMMERCIAL": "比較検討型",
+      "TRANSACTIONAL": "取引型",
+      "COMPARATIVE": "比較型",
+      "PROBLEM_SPECIFIC": "課題特定型"
+    },
+    "sources": {
+      "AI_GENERATED": "AI生成",
+      "USER_ADDED": "あなたが追加",
+      "USER_EDITED": "あなたが編集",
+      "HISTORICAL": "過去の監査から"
+    },
+    "priority": {
+      "HIGH": "優先度 高",
+      "MEDIUM": "優先度 中",
+      "LOW": "優先度 低"
+    },
+    "confidence": {
+      "HIGH": "信頼度 高",
+      "MEDIUM": "信頼度 中",
+      "LOW": "信頼度 低"
+    },
+    "fields": {
+      "name": "意図名",
+      "problem": "ユーザーの課題"
+    },
+    "terms": {
+      "problem": "課題",
+      "audience": "対象層",
+      "context": "コンテキスト"
+    },
+    "summary": {
+      "total_one": "意図（合計）",
+      "total_other": "意図（合計）",
+      "selected": "選択済み",
+      "avgRelevance": "平均関連度（5点満点）",
+      "plannedPrompts": "計画プロンプト（意図あたり5件）"
+    },
+    "add": {
+      "label": "意図を手動で追加",
+      "placeholder": "例：会計ソフトのプランを比較する",
+      "button": "意図を追加",
+      "hint": "意図を追加すると、直接プロンプトが自動的に作成されます。"
+    },
+    "back": "← プロフィールに戻る",
+    "validation": "続行するには、意図を1つ以上選択してください。",
+    "next": "プロンプトを確認 →"
+  },
+  "prompts": {
+    "eyebrow": "新規監査 · ステップ 4 / 5",
+    "title": "プロンプトを確認する",
+    "intro": "プロンプトとは、実際に実行される質問です — <strong>意図 ≠ プロンプト</strong>（Doc 6, §14）。選択した各意図に、バージョン管理された5つのバリエーションがあります。実行したくないものは編集・無効化・削除してください。",
+    "inactive": "無効 — 実行されません",
+    "perIntent_one": "この意図のプロンプト {{count}} 件",
+    "perIntent_other": "この意図のプロンプト {{count}} 件",
+    "fields": {
+      "text": "プロンプトの文言"
+    },
+    "variations": {
+      "DIRECT": "直接",
+      "CONVERSATIONAL": "会話",
+      "COMPARATIVE": "比較",
+      "PROBLEM_BASED": "課題ベース",
+      "ROLE_BASED": "ユーザー役割",
+      "CONTEXTUAL": "状況"
+    },
+    "summary": {
+      "total_one": "プロンプト（合計）",
+      "total_other": "プロンプト（合計）",
+      "active": "実行対象",
+      "selectedIntents_one": "選択した意図",
+      "selectedIntents_other": "選択した意図",
+      "setVersion": "セットのバージョン"
+    },
+    "add": {
+      "label": "この意図にプロンプトを追加",
+      "placeholder": "実行する新しい質問…"
+    },
+    "empty": {
+      "title": "意図が選択されていません",
+      "desc": "前のステップに戻って、意図を1つ以上選択するとプロンプトが生成されます。",
+      "action": "意図へ移動"
+    },
+    "back": "← 意図に戻る",
+    "validation": "実行できる有効なプロンプトがありません。",
+    "start": "監査を開始"
+  },
+  "progress": {
+    "eyebrow": "新規監査 · ステップ 5 / 5",
+    "title": {
+      "done": "監査完了",
+      "running": "監査を実行中"
+    },
+    "intro": {
+      "done": "すべてのステップが処理されました。スコア・証拠・機会を含むレポートができあがりました。",
+      "running": "収集と分析が下のステップを順に進めています。このデモのデータはローカルでシミュレーションされたものです。"
+    },
+    "net": {
+      "failed": "実行が中断されました — 同じステップを再処理するには再起動してください",
+      "done": "全ステップ完了 · レポート準備完了",
+      "idle": "ネットワーク待機 · 収集は実行されていません",
+      "running": "収集と分析を実行中 · ネットワークがステップを進めています"
+    },
+    "status": {
+      "DRAFT": "下書き",
+      "QUEUED": "待機中",
+      "RUNNING": "実行中",
+      "ANALYZING": "分析中",
+      "COMPLETED": "完了",
+      "FAILED": "失敗",
+      "CANCELLED": "キャンセル済み"
+    },
+    "sections": {
+      "progress": "進捗",
+      "context": "監査コンテキスト"
+    },
+    "progressBar": "完了したステップ",
+    "steps": {
+      "preparing": "分析を準備しています",
+      "testing": "発見環境をテストしています",
+      "analyzing": "推奨を分析しています",
+      "evidence": "証拠を分析しています",
+      "gaps": "ギャップを特定しています",
+      "opportunities": "機会を生成しています",
+      "ready": "レポート準備完了"
+    },
+    "start": "実行を開始",
+    "back": "← プロンプトを確認",
+    "processing": "処理中… このデモでは数秒かかります。",
+    "viewReport": "レポートを見る →",
+    "autoOpen": "自動で開いています…",
+    "error": {
+      "title": "実行は完了しませんでした",
+      "desc": "監査は中断されました。同じ意図とプロンプトで実行を再開できます。"
+    },
+    "terms": {
+      "id": "ID",
+      "product": "プロダクト",
+      "market": "市場",
+      "intents": "意図",
+      "activePrompts": "有効なプロンプト",
+      "methodology": "方法論",
+      "promptSet": "プロンプトセット"
+    },
+    "selected_one": "{{count}} 件選択",
+    "selected_other": "{{count}} 件選択",
+    "currentStep": "現在のステップ："
+  },
+  "wizard": {
+    "product": "プロダクト",
+    "profile": "プロフィール",
+    "intents": "意図",
+    "prompts": "プロンプト",
+    "execution": "実行"
+  }
+}

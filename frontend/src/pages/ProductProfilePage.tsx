@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
+import { Trans, useTranslation } from 'react-i18next';
 import { useAuditSession } from '../state/session';
 import { Badge, Button, Card, Chip, Field, Tooltip } from '../design-system/components';
 import { WizardHeader } from '../components/layout/WizardHeader';
@@ -7,11 +8,12 @@ import { RequireDraft } from '../components/layout/Guards';
 import type { ReactNode } from 'react';
 
 function Section({ title, hint, children }: { title: string; hint?: string; children: ReactNode }) {
+  const { t } = useTranslation('audit');
   return (
     <div className="profile-section">
       <div className="row" style={{ gap: 6 }}>
         <h3>{title}</h3>
-        {hint && <Tooltip label={`Sobre ${title}`} text={hint} />}
+        {hint && <Tooltip label={t('profile.about', { title })} text={hint} />}
       </div>
       {children}
     </div>
@@ -19,6 +21,7 @@ function Section({ title, hint, children }: { title: string; hint?: string; chil
 }
 
 export function ProductProfilePage() {
+  const { t } = useTranslation('audit');
   const { draft, updateProfile } = useAuditSession();
   const navigate = useNavigate();
   const [editing, setEditing] = useState(false);
@@ -55,31 +58,30 @@ export function ProductProfilePage() {
         <WizardHeader currentIndex={1} />
 
         <div className="page-head">
-          <div className="page-eyebrow">Nova auditoria · Etapa 2 de 5</div>
-          <h1>Perfil interpretado do produto</h1>
+          <div className="page-eyebrow">{t('profile.eyebrow')}</div>
+          <h1>{t('profile.title')}</h1>
           <p>
-            Esta é a interpretação normalizada que orienta a geração de intents e prompts.{' '}
-            <strong>Não é uma verdade absoluta</strong> — revise e corrija antes de continuar.
+            <Trans<'profile.intro', 'audit'> i18nKey="profile.intro" ns="audit" components={{ strong: <strong /> }} />
           </p>
         </div>
 
         <div className="grid-2" style={{ alignItems: 'start' }}>
           <Card>
-            <Section title="Dados fornecidos">
+            <Section title={t('profile.sections.provided')}>
               <dl className="kv">
-                <dt>Produto</dt>
+                <dt>{t('profile.terms.product')}</dt>
                 <dd>{product.name}</dd>
-                <dt>URL</dt>
+                <dt>{t('profile.terms.url')}</dt>
                 <dd className="mono" style={{ wordBreak: 'break-all' }}>
                   {product.url}
                 </dd>
-                <dt>Plataforma</dt>
+                <dt>{t('profile.terms.platform')}</dt>
                 <dd>{product.platform}</dd>
-                <dt>Categoria</dt>
+                <dt>{t('profile.terms.category')}</dt>
                 <dd>{product.category}</dd>
-                <dt>Público</dt>
+                <dt>{t('profile.terms.audience')}</dt>
                 <dd>{product.targetAudience}</dd>
-                <dt>Mercado</dt>
+                <dt>{t('profile.terms.market')}</dt>
                 <dd>
                   {product.country} · {product.language}
                 </dd>
@@ -89,20 +91,20 @@ export function ProductProfilePage() {
             <hr className="divider" />
 
             <Section
-              title="Proposta de valor (interpretada)"
-              hint="Texto derivado automaticamente da URL e da categoria — edite se estiver impreciso."
+              title={t('profile.sections.valueProposition')}
+              hint={t('profile.sections.valuePropositionHint')}
             >
               {editing ? (
                 <div className="stack stack-3">
-                  <Field label="Proposta de valor" htmlFor="vp">
+                  <Field label={t('profile.fields.valueProposition')} htmlFor="vp">
                     <textarea id="vp" className="textarea" value={vp} onChange={(e) => setVp(e.target.value)} rows={3} />
                   </Field>
                   <div className="row">
                     <Button onClick={save} size="sm">
-                      Salvar
+                      {t('actions.save')}
                     </Button>
                     <Button variant="ghost" size="sm" onClick={() => setEditing(false)}>
-                      Cancelar
+                      {t('actions.cancel')}
                     </Button>
                   </div>
                 </div>
@@ -111,7 +113,7 @@ export function ProductProfilePage() {
                   <p style={{ margin: 0 }}>{profile.valueProposition}</p>
                   <div>
                     <Button variant="secondary" size="sm" onClick={startEdit}>
-                      Editar proposta de valor
+                      {t('profile.editValueProposition')}
                     </Button>
                   </div>
                 </div>
@@ -120,7 +122,7 @@ export function ProductProfilePage() {
           </Card>
 
           <Card>
-            <Section title="Funcionalidades" hint="Lista interpretada — usada para gerar linguagem nos prompts.">
+            <Section title={t('profile.sections.features')} hint={t('profile.sections.featuresHint')}>
               <ul className="chip-list">
                 {profile.features.map((f) => (
                   <Chip key={f}>{f}</Chip>
@@ -128,7 +130,7 @@ export function ProductProfilePage() {
               </ul>
             </Section>
 
-            <Section title="Problemas resolvidos">
+            <Section title={t('profile.sections.problems')}>
               <ul className="chip-list">
                 {profile.problemsSolved.map((f) => (
                   <Chip key={f}>{f}</Chip>
@@ -136,7 +138,7 @@ export function ProductProfilePage() {
               </ul>
             </Section>
 
-            <Section title="Casos de uso">
+            <Section title={t('profile.sections.useCases')}>
               <ul className="chip-list">
                 {profile.useCases.map((f) => (
                   <Chip key={f}>{f}</Chip>
@@ -144,7 +146,7 @@ export function ProductProfilePage() {
               </ul>
             </Section>
 
-            <Section title="Audiências">
+            <Section title={t('profile.sections.audiences')}>
               <ul className="chip-list">
                 {profile.audiences.map((f) => (
                   <Chip key={f}>{f}</Chip>
@@ -152,7 +154,7 @@ export function ProductProfilePage() {
               </ul>
             </Section>
 
-            <Section title="Concorrentes observados">
+            <Section title={t('profile.sections.competitors')}>
               <ul className="chip-list">
                 {profile.competitors.map((f) => (
                   <Chip key={f}>{f}</Chip>
@@ -164,10 +166,10 @@ export function ProductProfilePage() {
 
         <div className="grid-2" style={{ alignItems: 'start', marginTop: 'var(--sp-4)' }}>
           <Card>
-            <Section title="Palavras-chave" hint="Entidades semânticas que o produto deve associar à sua marca.">
+            <Section title={t('profile.sections.keywords')} hint={t('profile.sections.keywordsHint')}>
               <ul className="chip-list">
                 {profile.keywords.map((k) => (
-                  <Chip key={k} onRemove={() => removeKeyword(k)} removeLabel={`Remover ${k}`}>
+                  <Chip key={k} onRemove={() => removeKeyword(k)} removeLabel={t('aria.removeItem', { name: k })}>
                     {k}
                   </Chip>
                 ))}
@@ -175,8 +177,8 @@ export function ProductProfilePage() {
               <div className="row" style={{ marginTop: 'var(--sp-3)', gap: 'var(--sp-2)' }}>
                 <input
                   className="input"
-                  placeholder="Nova palavra-chave…"
-                  aria-label="Nova palavra-chave"
+                  placeholder={t('profile.keywordPlaceholder')}
+                  aria-label={t('aria.newKeyword')}
                   value={kwDraft}
                   onChange={(e) => setKwDraft(e.target.value)}
                   onKeyDown={(e) => {
@@ -187,18 +189,18 @@ export function ProductProfilePage() {
                   }}
                 />
                 <Button variant="secondary" size="sm" onClick={addKeyword}>
-                  Adicionar
+                  {t('actions.add')}
                 </Button>
               </div>
             </Section>
           </Card>
 
           <Card>
-            <Section title="Entidades e categorias">
+            <Section title={t('profile.sections.entities')}>
               <div className="stack stack-3">
                 <div>
                   <div className="xsmall muted strong" style={{ marginBottom: 6 }}>
-                    ENTIDADES SEMÂNTICAS
+                    {t('profile.labels.semanticEntities')}
                   </div>
                   <ul className="chip-list">
                     {profile.semanticEntities.map((e) => (
@@ -210,7 +212,7 @@ export function ProductProfilePage() {
                 </div>
                 <div>
                   <div className="xsmall muted strong" style={{ marginBottom: 6 }}>
-                    CATEGORIAS
+                    {t('profile.labels.categories')}
                   </div>
                   <ul className="chip-list">
                     {profile.categories.map((c) => (
@@ -219,9 +221,9 @@ export function ProductProfilePage() {
                   </ul>
                 </div>
                 <div className="row">
-                  <Badge tone="blue">Mercado {profile.markets.join(', ')}</Badge>
-                  <Badge tone="blue">Idioma {profile.languages.join(', ')}</Badge>
-                  <Badge tone="neutral">Interpretação normalizada · Doc 6 §11</Badge>
+                  <Badge tone="blue">{t('profile.badges.market', { value: profile.markets.join(', ') })}</Badge>
+                  <Badge tone="blue">{t('profile.badges.language', { value: profile.languages.join(', ') })}</Badge>
+                  <Badge tone="neutral">{t('profile.badges.normalized')}</Badge>
                 </div>
               </div>
             </Section>
@@ -230,9 +232,9 @@ export function ProductProfilePage() {
 
         <div className="page-actions between">
           <Button variant="secondary" onClick={() => navigate('/audit/new')}>
-            ← Voltar
+            {t('profile.back')}
           </Button>
-          <Button onClick={() => navigate(`/audit/${draft.audit.id}/intents`)}>Revisar intents →</Button>
+          <Button onClick={() => navigate(`/audit/${draft.audit.id}/intents`)}>{t('profile.nextIntents')}</Button>
         </div>
       </div>
     </RequireDraft>

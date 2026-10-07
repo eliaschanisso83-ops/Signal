@@ -1,0 +1,37 @@
+{
+  "skipToContent": "Pular para o conteúdo",
+  "brand": {
+    "home": "Signal — página inicial"
+  },
+  "nav": {
+    "main": "Navegação principal",
+    "problem": "Problema",
+    "howItWorks": "Como funciona",
+    "metrics": "Métricas",
+    "startAudit": "Iniciar auditoria",
+    "newAudit": "Nova auditoria",
+    "myReport": "Meu relatório",
+    "continueAudit": "Continuar auditoria"
+  },
+  "language": {
+    "label": "Idioma"
+  },
+  "footer": {
+    "description": "Software Discoverability Intelligence — audite como assistentes de IA, busca e marketplaces recomendam o seu produto, com evidências rastreáveis e ações priorizadas.",
+    "startAudit": "Iniciar auditoria",
+    "product": {
+      "title": "Produto",
+      "problem": "O problema",
+      "howItWorks": "Como funciona",
+      "metrics": "Métricas e evidências"
+    },
+    "demo": {
+      "title": "Demonstração",
+      "newAudit": "Nova auditoria",
+      "myReport": "Meu relatório",
+      "continueAudit": "Continuar auditoria"
+    },
+    "bottom": "Metodologia v1.0 · demonstração com dados simulados",
+    "copyright": "© 2026 Signal — signal.biz-flow.cloud"
+  }
+}

@@ -1,32 +1,46 @@
 import { useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAuditSession } from '../state/session';
 import { Badge, Button, Card, Field, RelevancePips } from '../design-system/components';
 import { WizardHeader } from '../components/layout/WizardHeader';
 import { RequireDraft } from '../components/layout/Guards';
 import type { Intent, IntentType } from '../domain/types';
 
-const CATEGORY_LABEL: Record<IntentType, string> = {
-  INFORMATIONAL: 'Informacional',
-  EXPLORATORY: 'Exploratório',
-  COMMERCIAL: 'Comercial',
-  TRANSACTIONAL: 'Transacional',
-  COMPARATIVE: 'Comparativo',
-  PROBLEM_SPECIFIC: 'Problema específico',
-};
-
-const SOURCE_LABEL: Record<Intent['source'], string> = {
-  AI_GENERATED: 'Gerado por IA',
-  USER_ADDED: 'Adicionado por você',
-  USER_EDITED: 'Editado por você',
-  HISTORICAL: 'De auditoria anterior',
-};
-
 function IntentCard({ intent }: { intent: Intent }) {
+  const { t } = useTranslation('audit');
   const { updateIntent, removeIntent } = useAuditSession();
   const [editing, setEditing] = useState(false);
   const [name, setName] = useState(intent.name);
   const [problem, setProblem] = useState(intent.problem);
+
+  const CATEGORY_LABEL: Record<IntentType, string> = {
+    INFORMATIONAL: t('intents.categories.INFORMATIONAL'),
+    EXPLORATORY: t('intents.categories.EXPLORATORY'),
+    COMMERCIAL: t('intents.categories.COMMERCIAL'),
+    TRANSACTIONAL: t('intents.categories.TRANSACTIONAL'),
+    COMPARATIVE: t('intents.categories.COMPARATIVE'),
+    PROBLEM_SPECIFIC: t('intents.categories.PROBLEM_SPECIFIC'),
+  };
+
+  const SOURCE_LABEL: Record<Intent['source'], string> = {
+    AI_GENERATED: t('intents.sources.AI_GENERATED'),
+    USER_ADDED: t('intents.sources.USER_ADDED'),
+    USER_EDITED: t('intents.sources.USER_EDITED'),
+    HISTORICAL: t('intents.sources.HISTORICAL'),
+  };
+
+  const PRIORITY_LABEL: Record<Intent['priority'], string> = {
+    HIGH: t('intents.priority.HIGH'),
+    MEDIUM: t('intents.priority.MEDIUM'),
+    LOW: t('intents.priority.LOW'),
+  };
+
+  const CONFIDENCE_LABEL: Record<Intent['confidence'], string> = {
+    HIGH: t('intents.confidence.HIGH'),
+    MEDIUM: t('intents.confidence.MEDIUM'),
+    LOW: t('intents.confidence.LOW'),
+  };
 
   function save() {
     updateIntent(intent.id, { name: name.trim() || intent.name, problem: problem.trim() });
@@ -42,15 +56,15 @@ function IntentCard({ intent }: { intent: Intent }) {
               type="checkbox"
               checked={intent.selected}
               onChange={(e) => updateIntent(intent.id, { selected: e.target.checked })}
-              aria-label={`Incluir intent "${intent.name}" na auditoria`}
+              aria-label={t('aria.includeIntent', { name: intent.name })}
             />
-            <span>Incluir</span>
+            <span>{t('intents.include')}</span>
           </label>
         </div>
         <div className="row" style={{ gap: 'var(--sp-2)' }}>
           <Badge tone="neutral">{CATEGORY_LABEL[intent.category]}</Badge>
           <Badge tone={intent.priority === 'HIGH' ? 'red' : intent.priority === 'MEDIUM' ? 'amber' : 'neutral'}>
-            Prioridade {intent.priority === 'HIGH' ? 'alta' : intent.priority === 'MEDIUM' ? 'média' : 'baixa'}
+            {PRIORITY_LABEL[intent.priority]}
           </Badge>
           <Badge tone={intent.source === 'AI_GENERATED' ? 'accent' : 'blue'}>{SOURCE_LABEL[intent.source]}</Badge>
         </div>
@@ -58,10 +72,10 @@ function IntentCard({ intent }: { intent: Intent }) {
 
       {editing ? (
         <div className="stack stack-3" style={{ marginTop: 'var(--sp-4)' }}>
-          <Field label="Nome do intent" htmlFor={`name-${intent.id}`}>
+          <Field label={t('intents.fields.name')} htmlFor={`name-${intent.id}`}>
             <input id={`name-${intent.id}`} className="input" value={name} onChange={(e) => setName(e.target.value)} />
           </Field>
-          <Field label="Problema do usuário" htmlFor={`problem-${intent.id}`}>
+          <Field label={t('intents.fields.problem')} htmlFor={`problem-${intent.id}`}>
             <textarea
               id={`problem-${intent.id}`}
               className="textarea"
@@ -72,10 +86,10 @@ function IntentCard({ intent }: { intent: Intent }) {
           </Field>
           <div className="row">
             <Button size="sm" onClick={save}>
-              Salvar
+              {t('actions.save')}
             </Button>
             <Button size="sm" variant="ghost" onClick={() => setEditing(false)}>
-              Cancelar
+              {t('actions.cancel')}
             </Button>
           </div>
         </div>
@@ -86,11 +100,11 @@ function IntentCard({ intent }: { intent: Intent }) {
             {intent.description}
           </p>
           <dl className="kv" style={{ marginTop: 'var(--sp-3)' }}>
-            <dt>Problema</dt>
+            <dt>{t('intents.terms.problem')}</dt>
             <dd>{intent.problem}</dd>
-            <dt>Audiência</dt>
+            <dt>{t('intents.terms.audience')}</dt>
             <dd>{intent.audience}</dd>
-            <dt>Contexto</dt>
+            <dt>{t('intents.terms.context')}</dt>
             <dd>{intent.context}</dd>
           </dl>
         </>
@@ -99,22 +113,22 @@ function IntentCard({ intent }: { intent: Intent }) {
       <div className="row-between" style={{ marginTop: 'var(--sp-4)' }}>
         <div className="row" style={{ gap: 'var(--sp-3)' }}>
           <span className="row" style={{ gap: 6 }}>
-            <span className="xsmall muted strong">RELEVÂNCIA</span>
+            <span className="xsmall muted strong">{t('intents.relevance')}</span>
             <RelevancePips value={intent.relevance} />
             <span className="xsmall mono muted">{intent.relevance}/5</span>
           </span>
           <Badge tone={intent.confidence === 'HIGH' ? 'green' : intent.confidence === 'MEDIUM' ? 'amber' : 'red'}>
-            Confiança {intent.confidence === 'HIGH' ? 'alta' : intent.confidence === 'MEDIUM' ? 'média' : 'baixa'}
+            {CONFIDENCE_LABEL[intent.confidence]}
           </Badge>
         </div>
         <div className="row" style={{ gap: 'var(--sp-2)' }}>
           {!editing && (
             <Button size="sm" variant="secondary" onClick={() => setEditing(true)}>
-              Editar
+              {t('actions.edit')}
             </Button>
           )}
-          <Button size="sm" variant="ghost" onClick={() => removeIntent(intent.id)} aria-label={`Remover intent ${intent.name}`}>
-            Remover
+          <Button size="sm" variant="ghost" onClick={() => removeIntent(intent.id)} aria-label={t('aria.removeIntent', { name: intent.name })}>
+            {t('actions.remove')}
           </Button>
         </div>
       </div>
@@ -123,6 +137,7 @@ function IntentCard({ intent }: { intent: Intent }) {
 }
 
 export function IntentsPage() {
+  const { t } = useTranslation('audit');
   const { draft, addIntent } = useAuditSession();
   const navigate = useNavigate();
   const [newIntent, setNewIntent] = useState('');
@@ -146,30 +161,27 @@ export function IntentsPage() {
         <WizardHeader currentIndex={2} />
 
         <div className="page-head">
-          <div className="page-eyebrow">Nova auditoria · Etapa 3 de 5</div>
-          <h1>Revisar intents</h1>
-          <p>
-            Intents são os problemas reais que as pessoas descrevem ao buscar uma solução — a unidade fundamental da
-            auditoria (Doc 3, §7). Selecione quais serão analisados e edite o que estiver impreciso.
-          </p>
+          <div className="page-eyebrow">{t('intents.eyebrow')}</div>
+          <h1>{t('intents.title')}</h1>
+          <p>{t('intents.intro')}</p>
         </div>
 
-        <div className="summary-strip" aria-label="Resumo dos intents">
+        <div className="summary-strip" aria-label={t('aria.intentsSummary')}>
           <div>
             <span className="mono metric-mini">{draft.intents.length}</span>
-            <span className="xsmall muted"> intents no total</span>
+            <span className="xsmall muted"> {t('intents.summary.total', { count: draft.intents.length })}</span>
           </div>
           <div>
             <span className="mono metric-mini">{selected.length}</span>
-            <span className="xsmall muted"> selecionados</span>
+            <span className="xsmall muted"> {t('intents.summary.selected')}</span>
           </div>
           <div>
             <span className="mono metric-mini">{avgRel.toFixed(1)}</span>
-            <span className="xsmall muted"> relevância média (de 5)</span>
+            <span className="xsmall muted"> {t('intents.summary.avgRelevance')}</span>
           </div>
           <div>
             <span className="mono metric-mini">{selected.length * 5}</span>
-            <span className="xsmall muted"> prompts previstos (5/intent)</span>
+            <span className="xsmall muted"> {t('intents.summary.plannedPrompts')}</span>
           </div>
         </div>
 
@@ -182,13 +194,13 @@ export function IntentsPage() {
         <Card style={{ marginTop: 'var(--sp-5)' }}>
           <div className="field">
             <label className="field-label" htmlFor="newIntent">
-              Adicionar intent manualmente
+              {t('intents.add.label')}
             </label>
             <div className="row" style={{ gap: 'var(--sp-2)' }}>
               <input
                 id="newIntent"
                 className="input"
-                placeholder="Ex.: Comparar planos de software financeiro"
+                placeholder={t('intents.add.placeholder')}
                 value={newIntent}
                 onChange={(e) => setNewIntent(e.target.value)}
                 onKeyDown={(e) => {
@@ -199,25 +211,25 @@ export function IntentsPage() {
                 }}
               />
               <Button variant="secondary" onClick={add}>
-                Adicionar intent
+                {t('intents.add.button')}
               </Button>
             </div>
-            <span className="field-hint">Um prompt direto é criado automaticamente junto com o intent.</span>
+            <span className="field-hint">{t('intents.add.hint')}</span>
           </div>
         </Card>
 
         <div className="page-actions between">
           <Button variant="secondary" onClick={() => navigate(`/audit/${draft.audit.id}/profile`)}>
-            ← Voltar ao perfil
+            {t('intents.back')}
           </Button>
           <div className="row">
             {selected.length === 0 && (
               <span className="small" style={{ color: 'var(--c-gap)' }} role="alert">
-                Selecione ao menos um intent para continuar.
+                {t('intents.validation')}
               </span>
             )}
             <Button disabled={selected.length === 0} onClick={() => navigate(`/audit/${draft.audit.id}/prompts`)}>
-              Revisar prompts →
+              {t('intents.next')}
             </Button>
           </div>
         </div>

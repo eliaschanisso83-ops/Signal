@@ -1,0 +1,10 @@
+{
+  "notFound": {
+    "eyebrow": "Erro 404",
+    "title": "Página não encontrada",
+    "desc": "O endereço que você acessou não existe nesta demonstração.",
+    "backToAudit": "Voltar para a auditoria",
+    "backHome": "Voltar para a página inicial",
+    "homeLink": "Página inicial"
+  }
+}

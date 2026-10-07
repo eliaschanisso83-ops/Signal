@@ -1,0 +1,74 @@
+{
+  "skipToContent": "본문으로 건너뛰기",
+  "aria": {
+    "language": "언어",
+    "remove": "삭제",
+    "relevance": "관련도 {{max}} 중 {{value}}",
+    "scoreGauge": "{{label}}: {{max}} 중 {{value}}",
+    "auditSteps": "감사 단계",
+    "reportSections": "리포트 섹션",
+    "inProgress": "(진행 중)",
+    "done": "(완료)"
+  },
+  "state": {
+    "loading": "불러오는 중…",
+    "errorTitle": "문제가 발생했습니다",
+    "retry": "다시 시도",
+    "remove": "삭제",
+    "noData": "표시할 데이터가 없습니다."
+  },
+  "levels": {
+    "HIGH": "높음",
+    "MEDIUM": "중간",
+    "LOW": "낮음"
+  },
+  "presenceLevels": {
+    "ALTA": "높음",
+    "MEDIA": "중간",
+    "BAIXA": "낮음",
+    "AUSENTE": "없음"
+  },
+  "badge": {
+    "priority": "우선순위 {{level}}",
+    "confidence": "신뢰도 {{level}}",
+    "presence": "노출 {{level}}",
+    "impact": "영향도 {{level}}",
+    "effort": "노력도 {{level}}"
+  },
+  "events": {
+    "RECOMMENDATION": "추천",
+    "ALTERNATIVE": "대안",
+    "COMPARISON": "비교",
+    "MENTION": "언급",
+    "NEGATIVE": "부정적",
+    "IRRELEVANT": "무관"
+  },
+  "causal": {
+    "observed": "관찰",
+    "evidence": "근거",
+    "hypothesis": "가설",
+    "action": "조치"
+  },
+  "metrics": {
+    "discoverabilityScore": "Discoverability Score",
+    "recommendationShare": "Recommendation Share",
+    "intentCoverage": "Intent Coverage",
+    "evidenceCoverage": "Evidence Coverage",
+    "semanticAlignment": "Semantic Alignment",
+    "competitivePosition": "Competitive Position"
+  },
+  "confidenceLevel": {
+    "HIGH": "높음",
+    "MEDIUM": "중간",
+    "LOW": "낮음"
+  },
+  "gauge": {
+    "of": "{{max}} 중"
+  },
+  "net": {
+    "processing": "처리 중",
+    "success": "완료",
+    "error": "실패",
+    "idle": "대기"
+  }
+}

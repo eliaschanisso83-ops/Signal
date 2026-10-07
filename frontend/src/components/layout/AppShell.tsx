@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAuditSession } from '../../state/session';
 import { Button, LinkButton } from '../../design-system/components';
+import { LanguageSwitcher } from '../LanguageSwitcher';
 
 /**
  * Shell global: barra superior, banner de demonstração, conteúdo e rodapé.
@@ -11,6 +13,7 @@ export function AppShell() {
   const { draft, status, resetSession } = useAuditSession();
   const location = useLocation();
   const navigate = useNavigate();
+  const { t } = useTranslation('app');
 
   const completed = status === 'COMPLETED';
 
@@ -57,39 +60,40 @@ export function AppShell() {
   return (
     <div className={onLanding ? 'lp-chrome' : 'app-chrome'}>
       <a className="skip-link" href="#main">
-        Pular para o conteúdo
+        {t('skipToContent')}
       </a>
       <header className="topbar">
         <div className="topbar-inner">
-          <Link to="/" className="brand" aria-label="Signal — página inicial">
+          <Link to="/" className="brand" aria-label={t('brand.home')}>
             <img src="/mark.svg" alt="" width={24} height={24} className="brand-icon" aria-hidden="true" />
             <span className="brand-mark">Signal</span>
             <span className="brand-domain">signal.biz-flow.cloud</span>
           </Link>
-          <nav className="topnav" aria-label="Navegação principal">
+          <nav className="topnav" aria-label={t('nav.main')}>
             {cont && (
               <Link className="nav-link" to={cont}>
-                {completed ? 'Meu relatório' : 'Continuar auditoria'}
+                {completed ? t('nav.myReport') : t('nav.continueAudit')}
               </Link>
             )}
             {onLanding && (
               <>
                 <a className="nav-link lp-anchor" href="#problema">
-                  Problema
+                  {t('nav.problem')}
                 </a>
                 <a className="nav-link lp-anchor" href="#como-funciona">
-                  Como funciona
+                  {t('nav.howItWorks')}
                 </a>
                 <a className="nav-link lp-anchor" href="#metricas">
-                  Métricas
+                  {t('nav.metrics')}
                 </a>
               </>
             )}
+            <LanguageSwitcher id="lang-topbar" />
             {onLanding ? (
-              <Button onClick={startNew}>Iniciar auditoria</Button>
+              <Button onClick={startNew}>{t('nav.startAudit')}</Button>
             ) : (
               <Button variant="ghost" onClick={startNew}>
-                Nova auditoria
+                {t('nav.newAudit')}
               </Button>
             )}
           </nav>
@@ -104,44 +108,41 @@ export function AppShell() {
         <div className="footer-inner">
           <div className="footer-grid">
             <div className="footer-brand">
-              <Link to="/" className="brand" aria-label="Signal — página inicial">
+              <Link to="/" className="brand" aria-label={t('brand.home')}>
                 <img src="/mark.svg" alt="" width={24} height={24} className="brand-icon" aria-hidden="true" />
                 <span className="brand-mark">Signal</span>
                 <span className="brand-domain">signal.biz-flow.cloud</span>
               </Link>
-              <p className="footer-desc">
-                Software Discoverability Intelligence — audite como assistentes de IA, busca e marketplaces recomendam o
-                seu produto, com evidências rastreáveis e ações priorizadas.
-              </p>
+              <p className="footer-desc">{t('footer.description')}</p>
               <LinkButton to="/audit/new" size="sm">
-                Iniciar auditoria
+                {t('footer.startAudit')}
               </LinkButton>
             </div>
 
-            <nav className="footer-col" aria-label="Produto">
-              <h2 className="footer-title">Produto</h2>
+            <nav className="footer-col" aria-label={t('footer.product.title')}>
+              <h2 className="footer-title">{t('footer.product.title')}</h2>
               <ul className="footer-links">
                 <li>
-                  <Link to="/#problema">O problema</Link>
+                  <Link to="/#problema">{t('footer.product.problem')}</Link>
                 </li>
                 <li>
-                  <Link to="/#como-funciona">Como funciona</Link>
+                  <Link to="/#como-funciona">{t('footer.product.howItWorks')}</Link>
                 </li>
                 <li>
-                  <Link to="/#metricas">Métricas e evidências</Link>
+                  <Link to="/#metricas">{t('footer.product.metrics')}</Link>
                 </li>
               </ul>
             </nav>
 
-            <nav className="footer-col" aria-label="Demonstração">
-              <h2 className="footer-title">Demonstração</h2>
+            <nav className="footer-col" aria-label={t('footer.demo.title')}>
+              <h2 className="footer-title">{t('footer.demo.title')}</h2>
               <ul className="footer-links">
                 <li>
-                  <Link to="/audit/new">Nova auditoria</Link>
+                  <Link to="/audit/new">{t('footer.demo.newAudit')}</Link>
                 </li>
                 {cont && (
                   <li>
-                    <Link to={cont}>{completed ? 'Meu relatório' : 'Continuar auditoria'}</Link>
+                    <Link to={cont}>{completed ? t('footer.demo.myReport') : t('footer.demo.continueAudit')}</Link>
                   </li>
                 )}
               </ul>
@@ -149,8 +150,11 @@ export function AppShell() {
           </div>
 
           <div className="footer-bottom">
-            <span>© 2026 Signal — signal.biz-flow.cloud</span>
-            <span>Metodologia v1.0 · demonstração com dados simulados</span>
+            <span>{t('footer.copyright')}</span>
+            <span className="footer-meta">
+              <span>{t('footer.bottom')}</span>
+              <LanguageSwitcher id="lang-footer" />
+            </span>
           </div>
         </div>
       </footer>

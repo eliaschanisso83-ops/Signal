@@ -1,0 +1,221 @@
+{
+  "head": {
+    "title": "Informe de detectabilidad",
+    "eyebrow": "Auditoría de detectabilidad · {{name}}",
+    "market": "Mercado {{value}}",
+    "language": "Idioma {{value}}",
+    "methodology": "Metodología v{{version}}",
+    "prompts": "Prompts v{{version}}",
+    "completed": "Auditoría completada",
+    "sectionsNav": "Secciones del informe"
+  },
+  "nav": {
+    "summary": "Resumen y diagnóstico",
+    "evidence": "Evidencia",
+    "actions": "Oportunidades y acciones"
+  },
+  "scoreCard": {
+    "formulaLabel": "Fórmula {{metric}}",
+    "formulaText": "{{explanation}} · fórmula v{{formula}} · metodología v{{methodology}}"
+  },
+  "summary": {
+    "eyebrow": "Resumen ejecutivo"
+  },
+  "scores": {
+    "eyebrow": "Puntuaciones",
+    "title": "Diagnóstico cuantitativo",
+    "desc": "Cada puntuación muestra su valor, su fórmula, su versión y su confianza — ningún número sin procedencia.",
+    "gaugeLabel": "Detectabilidad",
+    "heroNote": "<strong>{{metric}}</strong> — puntuación compuesta (fórmula v{{formula}}, metodología v{{methodology}}).",
+    "experimental": "Experimental"
+  },
+  "coverage": {
+    "eyebrow": "Cobertura de intenciones",
+    "title": "Panorama de intenciones",
+    "desc": "Presencia del producto en cada intención relevante, la intención líder y el tamaño de la brecha (relevancia × ausencia).",
+    "tableCaption": "Presencia por intención",
+    "empty": "Ninguna intención seleccionada.",
+    "relevance": "Relevancia {{level}}",
+    "gap": {
+      "low": "Baja",
+      "medium": "Media",
+      "high": "Alta"
+    },
+    "columns": {
+      "intent": "Intención",
+      "presence": "Presencia",
+      "leader": "Intención líder",
+      "share": "Cuota del producto",
+      "gap": "Brecha"
+    }
+  },
+  "reco": {
+    "eyebrow": "Análisis de recomendaciones",
+    "title": "Recomendaciones y posición competitiva",
+    "desc_one": "Distribución de las clasificaciones de menciones en {{count}} observación y una comparación entre los productos analizados.",
+    "desc_other": "Distribución de las clasificaciones de menciones en {{count}} observaciones y una comparación entre los productos analizados.",
+    "distributionTitle": "Distribución de clasificaciones",
+    "distributionNote": "Clasificación según el Documento 3, §27. “Irrelevante” queda fuera del alcance del producto.",
+    "positionTitle": "Posición competitiva",
+    "auditedProduct": "(producto auditado)",
+    "coverageLine": "Cobertura {{coverage}}/{{total}} intenciones · posición media {{position}}",
+    "rankingNote_one": "Ordenado por Recommendation Share. {{product}} ocupa el puesto #{{rank}} de {{count}} producto.",
+    "rankingNote_other": "Ordenado por Recommendation Share. {{product}} ocupa el puesto #{{rank}} de {{count}} productos.",
+    "breakdownTitle": "Desglose por competidor",
+    "tableCaption": "Panorama de competidores",
+    "columns": {
+      "product": "Producto",
+      "topIntents": "Intenciones principales",
+      "characterization": "Caracterización observada",
+      "sources": "Fuentes recurrentes",
+      "avgPosition": "Posición media"
+    }
+  },
+  "semantic": {
+    "eyebrow": "Alineación semántica",
+    "title": "Posicionamiento declarado × caracterización observada",
+    "declared": "Declarado",
+    "observed": "Observado",
+    "verdict": "Veredicto: {{value}}",
+    "verdictPartial": "PARCIAL",
+    "verdictAligned": "ALINEADO",
+    "termsTitle": "Términos asociados a cada producto",
+    "audited": "(AUDITADO)"
+  },
+  "methodology": {
+    "eyebrow": "Metodología",
+    "title": "Cómo se produjo esta auditoría",
+    "intentsOf": "{{analyzed}} de {{total}} analizados",
+    "limitations": "Limitaciones",
+    "fields": {
+      "methodology": "Metodología",
+      "promptSet": "Conjunto de prompts",
+      "scoring": "Scoring",
+      "provider": "Proveedor",
+      "model": "Modelo",
+      "marketLanguage": "Mercado / idioma",
+      "analysisDate": "Fecha de análisis",
+      "intents": "Intenciones",
+      "prompts": "Prompts",
+      "relevantResponses": "Respuestas relevantes",
+      "sampleSize": "Tamaño de la muestra"
+    }
+  },
+  "dimensions": {
+    "relevance": "Relevancia",
+    "specificity": "Especificidad",
+    "credibility": "Credibilidad",
+    "freshness": "Actualidad",
+    "independence": "Independencia"
+  },
+  "sourceCategories": {
+    "OWNED": "Propia",
+    "EARNED": "Prensa / contenido",
+    "COMMUNITY": "Comunidad",
+    "PLATFORM": "Plataforma",
+    "OTHER": "Otra"
+  },
+  "gapTypes": {
+    "RECOMMENDATION_GAP": "Brecha de recomendación",
+    "COVERAGE_GAP": "Brecha de cobertura",
+    "EVIDENCE_GAP": "Brecha de evidencia",
+    "SEMANTIC_GAP": "Brecha semántica",
+    "COMPETITIVE_GAP": "Brecha competitiva",
+    "SOURCE_GAP": "Brecha de fuente",
+    "POSITIONING_GAP": "Brecha de posicionamiento",
+    "CONVERSION_GAP": "Brecha de conversión"
+  },
+  "evidenceLandscape": {
+    "eyebrow": "Panorama de evidencia",
+    "title": "Fortaleza de la evidencia por intención",
+    "desc": "Cuánta evidencia externa asociada al producto existe para cada intención relevante (escala 0–1). Los valores por debajo de 0.5 cuentan como cobertura insuficiente."
+  },
+  "evidenceStats": {
+    "total": "Evidencia total",
+    "aboutProduct": "Sobre el producto",
+    "aboutCompetitors": "Sobre competidores",
+    "sources": "Fuentes observadas",
+    "byCategory": "Fuentes por categoría"
+  },
+  "gaps": {
+    "eyebrow": "Brechas de evidencia",
+    "title": "Brechas identificadas",
+    "desc": "Cada brecha lleva la evidencia que la respalda, su impacto y su confianza — ninguna afirmación sin sustento.",
+    "evidenceLabel": "EVIDENCIA"
+  },
+  "raw": {
+    "eyebrow": "Evidencia en bruto",
+    "title": "Evidencia en bruto observada",
+    "desc": "Muestra de las respuestas y fuentes que respaldan las conclusiones (Doc. 4, §36).",
+    "tableCaption": "Muestra de respuestas observadas",
+    "position_ordinal_one": "{{count}}.º",
+    "position_ordinal_two": "{{count}}.º",
+    "position_ordinal_few": "{{count}}.º",
+    "position_ordinal_other": "{{count}}.º",
+    "columns": {
+      "prompt": "Prompt",
+      "excerpt": "Extracto de la respuesta",
+      "products": "Productos mencionados",
+      "position": "Posición",
+      "event": "Clasificación",
+      "sources": "Fuentes"
+    }
+  },
+  "evidenceLists": {
+    "product": "Evidencia sobre el producto",
+    "competitors": "Evidencia sobre competidores"
+  },
+  "evidenceItem": {
+    "source": "Fuente: {{source}} · {{contextText}}"
+  },
+  "evidenceTrace": {
+    "eyebrow": "Trazabilidad",
+    "title": "Cómo la evidencia se convierte en decisiones",
+    "desc": "Ejemplo de la brecha de mayor impacto: de la observación a la acción recomendada.",
+    "hypothesis": "Hipótesis: la asociación ausente entre el producto y el tema de la intención puede estar reduciendo la presencia en las respuestas.",
+    "action": "Acción: consulta “Oportunidades y acciones” para ver el plan de intervención priorizado y su validación."
+  },
+  "opportunities": {
+    "eyebrow": "Principales oportunidades",
+    "title": "Oportunidades priorizadas",
+    "desc": "Cada oportunidad señala la brecha que la originó y se clasifica por impacto, relevancia, confianza, esfuerzo y prioridad final.",
+    "rank": "Posición {{rank}}",
+    "relevance": "Relevancia {{level}}",
+    "sourceGap": "BRECHA DE FUENTE"
+  },
+  "actions": {
+    "eyebrow": "Acciones recomendadas",
+    "title": "Acciones recomendadas con trazabilidad",
+    "desc": "Cada acción sigue la cadena <strong>problema observado → evidencia → hipótesis → acción</strong>, con la validación definida. Esto es lo contrario de una recomendación sin sustento.",
+    "fallbackTitle": "Acción",
+    "validationLabel": "CÓMO VALIDAR"
+  },
+  "actionCategories": {
+    "POSITIONING": "Posicionamiento",
+    "STORE": "Listado en la tienda",
+    "WEBSITE": "Sitio web / contenido",
+    "EVIDENCE": "Evidencia externa",
+    "COMMUNITY": "Comunidad",
+    "PRODUCT": "Producto",
+    "DISTRIBUTION": "Distribución"
+  },
+  "trace": {
+    "eyebrow": "Trazabilidad",
+    "title": "Acción → Oportunidad → Brecha",
+    "desc": "Vista tabular de la cadena completa, para la auditoría interna del resultado.",
+    "tableCaption": "Trazabilidad de acciones",
+    "columns": {
+      "action": "Acción",
+      "opportunity": "Oportunidad",
+      "gap": "Brecha",
+      "priority": "Prioridad",
+      "confidence": "Confianza"
+    }
+  },
+  "cta": {
+    "eyebrow": "Siguiente ciclo",
+    "title": "Ejecuta la validación y una nueva auditoría",
+    "desc": "Tras 2–4 semanas de cambios, ejecuta una nueva auditoría para comparar presencia, cuota y caracterización.",
+    "button": "Iniciar nueva auditoría"
+  }
+}

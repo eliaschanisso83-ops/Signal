@@ -1,0 +1,141 @@
+{
+  "hero": {
+    "eyebrow": "Öffentliche Demo · simulierte Daten",
+    "title": "Ihr Produkt wird <accent>gefunden</accent>, verstanden und empfohlen, wo Entscheidungen getroffen werden",
+    "lead": "Signal prüft, wie Discovery-Systeme — KI-Assistenten, Suche und Marktplätze — Ihre Kategorie beantworten. Sie erhalten Scores mit expliziter Formel und einer nachvollziehbaren Kette aus Beobachtung, Beleg, Hypothese und Maßnahme.",
+    "cta": "Audit starten",
+    "howItWorks": "So funktioniert es ↓",
+    "fine": "Vollständiges Audit in Sekunden",
+    "previewLabel": "Vorschau der Berichtsoberfläche",
+    "previewContext": "{{product}} · BR-Markt · pt-BR",
+    "previewStatus": "Abgeschlossen",
+    "previewCta": "Dieses Audit ausführen →",
+    "previewFoot": "Formel {{formula}} · Methodik {{methodology}}"
+  },
+  "marquee": {
+    "label": "Von der Methodik erfasste Discovery-Systeme",
+    "title": "Segmentierung nach System"
+  },
+  "facts": {
+    "traceability": {
+      "k": "Nachvollziehbarkeit",
+      "v": "Beobachtung → Beleg → Hypothese → Maßnahme"
+    },
+    "provenance": {
+      "k": "Herkunft",
+      "v": "Formel, Version und Konfidenz bei jedem Score"
+    },
+    "methodology": {
+      "k": "Methodik",
+      "v": "{{version}} — versioniert und dokumentiert"
+    },
+    "execution": {
+      "k": "Ausführung",
+      "v": "Vollständiger Ablauf in Sekunden"
+    }
+  },
+  "problem": {
+    "eyebrow": "Das Problem",
+    "title": "Die Entscheidung beginnt mit einer Frage — nicht mit einer Suche",
+    "desc": "Vor dem Klick entscheidet eine Kette von Systemen, wer in die Antwort aufgenommen wird, wie das Produkt charakterisiert wird und wer empfohlen wird. Wenn Ihr Produkt jedes einzelne Glied nicht durchläuft, verschwindet es aus dem Gespräch, ohne dass Sie es bemerken. Signal misst genau diese fünf Glieder.",
+    "funnel": {
+      "found": {
+        "name": "Gefunden",
+        "gloss": "Gefunden",
+        "desc": "Das Produkt gelangt in die Menge der Kandidaten, die vom Discovery-System in Betracht gezogen werden."
+      },
+      "understood": {
+        "name": "Verstanden",
+        "gloss": "Verstanden",
+        "desc": "Kategorie, Zielgruppe und Problem werden dem Produkt korrekt zugeordnet."
+      },
+      "evidenced": {
+        "name": "Belegt",
+        "gloss": "Belegt",
+        "desc": "Aussagen über das Produkt werden durch überprüfbare externe Quellen gestützt."
+      },
+      "recommended": {
+        "name": "Empfohlen",
+        "gloss": "Empfohlen",
+        "desc": "Das Produkt wird in den relevanten beobachteten Antworten genannt."
+      },
+      "converted": {
+        "name": "Konvertiert",
+        "gloss": "Konvertiert",
+        "desc": "Die Erwähnung führt die Entscheidungsträger zum nächsten Schritt: Besuch, Test oder Kauf."
+      }
+    }
+  },
+  "how": {
+    "eyebrow": "So funktioniert es",
+    "title": "Von der Einrichtung bis zur priorisierten Maßnahme",
+    "desc": "Sechs nachvollziehbare Schritte: Sie konfigurieren einmal, der Lauf sammelt die Antworten und der Bericht liefert, was zu tun ist — mit Belegen für jede Schlussfolgerung.",
+    "stages": {
+      "profile": {
+        "title": "Produktprofil",
+        "desc": "URL, Plattform, Markt, Sprache und Referenz-Wettbewerber."
+      },
+      "intents": {
+        "title": "Intents",
+        "desc": "Die realen Probleme, die Menschen beschreiben, wenn sie nach einer Lösung suchen."
+      },
+      "prompts": {
+        "title": "Prompts",
+        "desc": "Die Fragen, die auf den Discovery-Systemen tatsächlich ausgeführt werden, mit Versionsstand."
+      },
+      "execution": {
+        "title": "Ausführung",
+        "desc": "Erhebung von Antworten, Empfehlungen und Erwähnungen."
+      },
+      "evidence": {
+        "title": "Belege",
+        "desc": "Externe Quellen, die jede Aussage — oder auch nicht — stützen."
+      },
+      "report": {
+        "title": "Bericht",
+        "desc": "Scores, Lücken, Chancen und priorisierte Maßnahmen mit Nachvollziehbarkeit."
+      }
+    }
+  },
+  "results": {
+    "eyebrow": "Was Sie erhalten",
+    "title": "Scores mit Herkunft und nachvollziehbaren Belegen",
+    "desc": "Jede Zahl im Bericht trägt eine Formel, eine Version und eine Konfidenz. Jede Empfehlung verweist zurück auf die Beobachtung, die sie ausgelöst hat.",
+    "figures": {
+      "recommendationShare": "Wie oft das Produkt innerhalb der relevanten Antworten empfohlen wird.",
+      "intentCoverage": "Relevante Intents, in denen das Produkt mindestens einmal auftaucht.",
+      "evidenceCoverage": "Intents mit ausreichenden externen Belegen zum Produkt.",
+      "semanticAlignment": "Deklarierte Positionierung gegenüber der beobachteten Charakterisierung."
+    },
+    "traceable": {
+      "title": "Jede Empfehlung lässt sich bis zum Beleg zurückverfolgen",
+      "desc": "Der Bericht trennt visuell, was beobachtet wurde, was überprüfbarer Beleg ist, was eine Hypothese ist und was eine empfohlene Maßnahme. Kein Schritt überspringt den vorherigen: ohne Beobachtung gibt es keinen Beleg; ohne Beleg gibt es keine Maßnahme."
+    },
+    "chain": {
+      "title": "Belegkette — Auszug",
+      "tag": "demo",
+      "steps": {
+        "observed": "Das Produkt erschien in keiner der beobachteten Antworten zu „Cashflow nachverfolgen“.",
+        "evidence": "CaixaFácil und ContaSimples erscheinen in 68% der Antworten zu diesem Intent, gestützt durch einen Artikel, eine eigene Seite und einen Community-Thread.",
+        "hypothesis": "Das Fehlen einer expliziten Zuordnung zwischen Produkt und dem Begriff „Cashflow“ in den beobachteten Quellen kann die Präsenz verringern.",
+        "action": "Erstellen Sie eine eigene Cashflow-Seite für kleine Unternehmen und stärken Sie die Zuordnung im Store-Listing — Validierung mit einem neuen Audit in 2–4 Wochen."
+      }
+    }
+  },
+  "finalCta": {
+    "title": "End-to-End-Audit in Sekunden ausführen",
+    "desc": "Produkt konfigurieren, Intents und Prompts prüfen, dem Lauf folgen und den Bericht mit Belegen, Lücken und Chancen erkunden.",
+    "primary": "Jetzt starten",
+    "secondary": "Audit-Schritte ansehen →",
+    "fine": "Keine Registrierung · Ergebnisse in Sekunden"
+  },
+  "cards": {
+    "ranking": {
+      "label": "Position",
+      "caption": "beobachtete Wettbewerber"
+    },
+    "confidence": {
+      "label": "Konfidenz"
+    }
+  }
+}

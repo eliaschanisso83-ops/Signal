@@ -1,0 +1,37 @@
+{
+  "skipToContent": "Salta al contenuto",
+  "brand": {
+    "home": "Signal — pagina iniziale"
+  },
+  "nav": {
+    "main": "Navigazione principale",
+    "problem": "Il problema",
+    "howItWorks": "Come funziona",
+    "metrics": "Metriche",
+    "startAudit": "Avvia audit",
+    "newAudit": "Nuovo audit",
+    "myReport": "Il mio report",
+    "continueAudit": "Continua audit"
+  },
+  "language": {
+    "label": "Lingua"
+  },
+  "footer": {
+    "description": "Intelligenza sulla reperibilità del software — audita come gli assistenti IA, la ricerca e i marketplace raccomandano il tuo prodotto, con evidenze tracciabili e azioni prioritizzate.",
+    "startAudit": "Avvia audit",
+    "product": {
+      "title": "Prodotto",
+      "problem": "Il problema",
+      "howItWorks": "Come funziona",
+      "metrics": "Metriche ed evidenze"
+    },
+    "demo": {
+      "title": "Demo",
+      "newAudit": "Nuovo audit",
+      "myReport": "Il mio report",
+      "continueAudit": "Continua audit"
+    },
+    "bottom": "Metodologia v1.0 · demo con dati simulati",
+    "copyright": "© 2026 Signal — signal.biz-flow.cloud"
+  }
+}

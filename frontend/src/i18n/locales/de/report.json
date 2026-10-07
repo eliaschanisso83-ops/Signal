@@ -1,0 +1,221 @@
+{
+  "head": {
+    "title": "Discoverability-Bericht",
+    "eyebrow": "Discoverability-Audit · {{name}}",
+    "market": "Markt {{value}}",
+    "language": "Sprache {{value}}",
+    "methodology": "Methodik v{{version}}",
+    "prompts": "Prompts v{{version}}",
+    "completed": "Audit abgeschlossen",
+    "sectionsNav": "Berichtsabschnitte"
+  },
+  "nav": {
+    "summary": "Zusammenfassung & Diagnose",
+    "evidence": "Belege",
+    "actions": "Chancen & Maßnahmen"
+  },
+  "scoreCard": {
+    "formulaLabel": "Formel {{metric}}",
+    "formulaText": "{{explanation}} · Formel v{{formula}} · Methodik v{{methodology}}"
+  },
+  "summary": {
+    "eyebrow": "Executive Summary"
+  },
+  "scores": {
+    "eyebrow": "Scores",
+    "title": "Quantitative Diagnose",
+    "desc": "Jeder Score zeigt seinen Wert, seine Formel, seine Version und seine Konfidenz — keine Zahl ohne Herkunft.",
+    "gaugeLabel": "Discoverability",
+    "heroNote": "<strong>{{metric}}</strong> — zusammengesetzter Score (Formel v{{formula}}, Methodik v{{methodology}}).",
+    "experimental": "Experimentell"
+  },
+  "coverage": {
+    "eyebrow": "Intent-Abdeckung",
+    "title": "Intent-Landschaft",
+    "desc": "Präsenz des Produkts in jedem relevanten Intent, der jeweils führende Anbieter im Intent und die Größe der Lücke (Relevanz × Abwesenheit).",
+    "tableCaption": "Präsenz nach Intent",
+    "empty": "Kein Intent ausgewählt.",
+    "relevance": "Relevanz {{level}}",
+    "gap": {
+      "low": "Niedrig",
+      "medium": "Mittel",
+      "high": "Hoch"
+    },
+    "columns": {
+      "intent": "Intent",
+      "presence": "Präsenz",
+      "leader": "Führend im Intent",
+      "share": "Anteil des Produkts",
+      "gap": "Lücke"
+    }
+  },
+  "reco": {
+    "eyebrow": "Empfehlungsanalyse",
+    "title": "Empfehlungen und Wettbewerbsposition",
+    "desc_one": "Verteilung der Erwähnungsklassifizierungen über {{count}} Beobachtung und ein Vergleich der analysierten Produkte.",
+    "desc_other": "Verteilung der Erwähnungsklassifizierungen über {{count}} Beobachtungen und ein Vergleich der analysierten Produkte.",
+    "distributionTitle": "Verteilung der Klassifizierungen",
+    "distributionNote": "Klassifizierung gemäß Dokument 3, §27. „Irrelevant“ liegt außerhalb des Produktumfangs.",
+    "positionTitle": "Wettbewerbsposition",
+    "auditedProduct": "(auditiertes Produkt)",
+    "coverageLine": "Abdeckung {{coverage}}/{{total}} Intents · durchschnittliche Position {{position}}",
+    "rankingNote_one": "Sortiert nach Recommendation Share. {{product}} belegt Platz {{rank}} von {{count}} Produkt.",
+    "rankingNote_other": "Sortiert nach Recommendation Share. {{product}} belegt Platz {{rank}} von {{count}} Produkten.",
+    "breakdownTitle": "Aufschlüsselung nach Wettbewerbern",
+    "tableCaption": "Überblick Wettbewerber",
+    "columns": {
+      "product": "Produkt",
+      "topIntents": "Top-Intents",
+      "characterization": "Beobachtete Charakterisierung",
+      "sources": "Wiederkehrende Quellen",
+      "avgPosition": "Durchschnittliche Position"
+    }
+  },
+  "semantic": {
+    "eyebrow": "Semantische Ausrichtung",
+    "title": "Deklarierte Positionierung × beobachtete Charakterisierung",
+    "declared": "Deklariert",
+    "observed": "Beobachtet",
+    "verdict": "Urteil: {{value}}",
+    "verdictPartial": "TEILWEISE",
+    "verdictAligned": "AUSGERICHTET",
+    "termsTitle": "Mit jedem Produkt verknüpfte Begriffe",
+    "audited": "(AUDITIERT)"
+  },
+  "methodology": {
+    "eyebrow": "Methodik",
+    "title": "Wie dieses Audit erstellt wurde",
+    "intentsOf": "{{analyzed}} von {{total}} analysiert",
+    "limitations": "Einschränkungen",
+    "fields": {
+      "methodology": "Methodik",
+      "promptSet": "Prompt-Satz",
+      "scoring": "Bewertung",
+      "provider": "Anbieter",
+      "model": "Modell",
+      "marketLanguage": "Markt / Sprache",
+      "analysisDate": "Analysedatum",
+      "intents": "Intents",
+      "prompts": "Prompts",
+      "relevantResponses": "Relevante Antworten",
+      "sampleSize": "Stichprobengröße"
+    }
+  },
+  "dimensions": {
+    "relevance": "Relevanz",
+    "specificity": "Spezifität",
+    "credibility": "Glaubwürdigkeit",
+    "freshness": "Aktualität",
+    "independence": "Unabhängigkeit"
+  },
+  "sourceCategories": {
+    "OWNED": "Eigene",
+    "EARNED": "Presse / Inhalte",
+    "COMMUNITY": "Community",
+    "PLATFORM": "Plattform",
+    "OTHER": "Sonstige"
+  },
+  "gapTypes": {
+    "RECOMMENDATION_GAP": "Empfehlungslücke",
+    "COVERAGE_GAP": "Abdeckungslücke",
+    "EVIDENCE_GAP": "Beleglücke",
+    "SEMANTIC_GAP": "Semantische Lücke",
+    "COMPETITIVE_GAP": "Wettbewerbslücke",
+    "SOURCE_GAP": "Quellenlücke",
+    "POSITIONING_GAP": "Positionierungslücke",
+    "CONVERSION_GAP": "Konversionslücke"
+  },
+  "evidenceLandscape": {
+    "eyebrow": "Beleglandschaft",
+    "title": "Belegstärke nach Intent",
+    "desc": "Wie viele externen Belege zum Produkt für jeden relevanten Intent vorhanden sind (Skala 0–1). Werte unter 0,5 gelten als unzureichende Abdeckung."
+  },
+  "evidenceStats": {
+    "total": "Belege gesamt",
+    "aboutProduct": "Zum Produkt",
+    "aboutCompetitors": "Zu Wettbewerbern",
+    "sources": "Beobachtete Quellen",
+    "byCategory": "Quellen nach Kategorie"
+  },
+  "gaps": {
+    "eyebrow": "Beleglücken",
+    "title": "Erkannte Lücken",
+    "desc": "Jede Lücke trägt den Beleg dahinter, ihre Wirkung und ihre Konfidenz — keine Behauptung ohne Beleg.",
+    "evidenceLabel": "BELEGE"
+  },
+  "raw": {
+    "eyebrow": "Rohbelege",
+    "title": "Rohe Belege aus der Beobachtung",
+    "desc": "Stichprobe der Antworten und Quellen, die die Schlussfolgerungen stützen (Doc 4, §36).",
+    "tableCaption": "Stichprobe beobachteter Antworten",
+    "position_ordinal_one": "{{count}}.",
+    "position_ordinal_two": "{{count}}.",
+    "position_ordinal_few": "{{count}}.",
+    "position_ordinal_other": "{{count}}.",
+    "columns": {
+      "prompt": "Prompt",
+      "excerpt": "Antwortauszug",
+      "products": "Erwähnte Produkte",
+      "position": "Position",
+      "event": "Klassifizierung",
+      "sources": "Quellen"
+    }
+  },
+  "evidenceLists": {
+    "product": "Belege zum Produkt",
+    "competitors": "Belege zu Wettbewerbern"
+  },
+  "evidenceItem": {
+    "source": "Quelle: {{source}} · {{contextText}}"
+  },
+  "evidenceTrace": {
+    "eyebrow": "Nachvollziehbarkeit",
+    "title": "Wie aus Belegen Entscheidungen werden",
+    "desc": "Beispiel für die Lücke mit der größten Wirkung: von der Beobachtung bis zur empfohlenen Maßnahme.",
+    "hypothesis": "Hypothese: Die fehlende Zuordnung zwischen Produkt und dem Thema des Intents kann die Präsenz in den Antworten verringern.",
+    "action": "Maßnahme: Siehe „Chancen & Maßnahmen“ für die priorisierte Intervention und den Validierungsplan."
+  },
+  "opportunities": {
+    "eyebrow": "Top-Chancen",
+    "title": "Priorisierte Chancen",
+    "desc": "Jede Chance verweist auf die Lücke, die sie ausgelöst hat, und wird nach Wirkung, Relevanz, Konfidenz, Aufwand und endgültiger Priorität klassifiziert.",
+    "rank": "Position {{rank}}",
+    "relevance": "Relevanz {{level}}",
+    "sourceGap": "QUELLENLÜCKE"
+  },
+  "actions": {
+    "eyebrow": "Empfohlene Maßnahmen",
+    "title": "Empfohlene Maßnahmen mit Nachvollziehbarkeit",
+    "desc": "Jede Maßnahme folgt der Kette <strong>beobachtetes Problem → Beleg → Hypothese → Maßnahme</strong> mit definierter Validierung. Das Gegenteil einer unbelegten Empfehlung.",
+    "fallbackTitle": "Maßnahme",
+    "validationLabel": "SO WIRD VALIDIERT"
+  },
+  "actionCategories": {
+    "POSITIONING": "Positionierung",
+    "STORE": "Store-Listing",
+    "WEBSITE": "Website / Inhalte",
+    "EVIDENCE": "Externe Belege",
+    "COMMUNITY": "Community",
+    "PRODUCT": "Produkt",
+    "DISTRIBUTION": "Distribution"
+  },
+  "trace": {
+    "eyebrow": "Nachvollziehbarkeit",
+    "title": "Maßnahme → Chance → Lücke",
+    "desc": "Tabellarische Ansicht der gesamten Kette, für die interne Prüfung des Ergebnisses.",
+    "tableCaption": "Nachvollziehbarkeit der Maßnahmen",
+    "columns": {
+      "action": "Maßnahme",
+      "opportunity": "Chance",
+      "gap": "Lücke",
+      "priority": "Priorität",
+      "confidence": "Konfidenz"
+    }
+  },
+  "cta": {
+    "eyebrow": "Nächster Zyklus",
+    "title": "Validierung durchführen und Re-Audit starten",
+    "desc": "Führen Sie 2–4 Wochen nach den Änderungen ein neues Audit aus, um Präsenz, Anteil und Charakterisierung zu vergleichen.",
+    "button": "Neues Audit starten"
+  }
+}

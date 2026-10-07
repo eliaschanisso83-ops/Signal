@@ -1,0 +1,221 @@
+{
+  "head": {
+    "title": "可发现性报告",
+    "eyebrow": "可发现性审计 · {{name}}",
+    "market": "市场 {{value}}",
+    "language": "语言 {{value}}",
+    "methodology": "方法论 v{{version}}",
+    "prompts": "提示词 v{{version}}",
+    "completed": "审计已完成",
+    "sectionsNav": "报告章节"
+  },
+  "nav": {
+    "summary": "摘要与诊断",
+    "evidence": "证据",
+    "actions": "机会与行动"
+  },
+  "scoreCard": {
+    "formulaLabel": "公式 {{metric}}",
+    "formulaText": "{{explanation}} · 公式 v{{formula}} · 方法论 v{{methodology}}"
+  },
+  "summary": {
+    "eyebrow": "执行摘要"
+  },
+  "scores": {
+    "eyebrow": "评分",
+    "title": "量化诊断",
+    "desc": "每项评分都会展示其数值、公式、版本与置信度 — 没有来源的数字不会出现。",
+    "gaugeLabel": "可发现性",
+    "heroNote": "<strong>{{metric}}</strong> — 综合评分（公式 v{{formula}}，方法论 v{{methodology}}）。",
+    "experimental": "实验性"
+  },
+  "coverage": {
+    "eyebrow": "意图覆盖",
+    "title": "意图全景",
+    "desc": "产品在每个相关意图中的存在度、该意图的领先者，以及差距的大小（相关度 × 缺席）。",
+    "tableCaption": "按意图的存在度",
+    "empty": "未选择任何意图。",
+    "relevance": "相关度 {{level}}",
+    "gap": {
+      "low": "低",
+      "medium": "中",
+      "high": "高"
+    },
+    "columns": {
+      "intent": "意图",
+      "presence": "存在度",
+      "leader": "意图领先者",
+      "share": "产品份额",
+      "gap": "差距"
+    }
+  },
+  "reco": {
+    "eyebrow": "推荐分析",
+    "title": "推荐与竞争地位",
+    "desc_one": "提及分类在 {{count}} 次观察中的分布，以及对所分析产品之间的对比。",
+    "desc_other": "提及分类在 {{count}} 次观察中的分布，以及对所分析产品之间的对比。",
+    "distributionTitle": "分类分布",
+    "distributionNote": "分类依据文档 3，§27。“不相关”不属于产品范围。",
+    "positionTitle": "竞争地位",
+    "auditedProduct": "（被审计的产品）",
+    "coverageLine": "覆盖 {{coverage}}/{{total}} 个意图 · 平均排名 {{position}}",
+    "rankingNote_one": "按 Recommendation Share 排名。{{product}} 在 {{count}} 个产品中位列第 {{rank}}。",
+    "rankingNote_other": "按 Recommendation Share 排名。{{product}} 在 {{count}} 个产品中位列第 {{rank}}。",
+    "breakdownTitle": "竞品细分",
+    "tableCaption": "竞品概览",
+    "columns": {
+      "product": "产品",
+      "topIntents": "头部意图",
+      "characterization": "观察到的刻画",
+      "sources": "高频来源",
+      "avgPosition": "平均排名"
+    }
+  },
+  "semantic": {
+    "eyebrow": "语义对齐",
+    "title": "宣称的定位 × 观察到的刻画",
+    "declared": "宣称",
+    "observed": "观察",
+    "verdict": "结论：{{value}}",
+    "verdictPartial": "部分一致",
+    "verdictAligned": "一致",
+    "termsTitle": "与各产品关联的术语",
+    "audited": "（被审计）"
+  },
+  "methodology": {
+    "eyebrow": "方法论",
+    "title": "本次审计是如何产出的",
+    "intentsOf": "已分析 {{analyzed}} / {{total}}",
+    "limitations": "局限性",
+    "fields": {
+      "methodology": "方法论",
+      "promptSet": "提示词集",
+      "scoring": "评分方法",
+      "provider": "服务商",
+      "model": "模型",
+      "marketLanguage": "市场 / 语言",
+      "analysisDate": "分析日期",
+      "intents": "意图",
+      "prompts": "提示词",
+      "relevantResponses": "相关回答",
+      "sampleSize": "样本量"
+    }
+  },
+  "dimensions": {
+    "relevance": "相关度",
+    "specificity": "具体度",
+    "credibility": "可信度",
+    "freshness": "时效性",
+    "independence": "独立性"
+  },
+  "sourceCategories": {
+    "OWNED": "自有",
+    "EARNED": "媒体 / 内容",
+    "COMMUNITY": "社区",
+    "PLATFORM": "平台",
+    "OTHER": "其他"
+  },
+  "gapTypes": {
+    "RECOMMENDATION_GAP": "推荐缺口",
+    "COVERAGE_GAP": "覆盖缺口",
+    "EVIDENCE_GAP": "证据缺口",
+    "SEMANTIC_GAP": "语义缺口",
+    "COMPETITIVE_GAP": "竞争缺口",
+    "SOURCE_GAP": "来源缺口",
+    "POSITIONING_GAP": "定位缺口",
+    "CONVERSION_GAP": "转化缺口"
+  },
+  "evidenceLandscape": {
+    "eyebrow": "证据全景",
+    "title": "按意图的证据强度",
+    "desc": "每个相关意图下，与该产品关联的外部证据有多少（量表 0–1）。低于 0.5 计为覆盖不足。"
+  },
+  "evidenceStats": {
+    "total": "证据总数",
+    "aboutProduct": "关于产品",
+    "aboutCompetitors": "关于竞品",
+    "sources": "被观察到的来源",
+    "byCategory": "按类别的来源"
+  },
+  "gaps": {
+    "eyebrow": "证据缺口",
+    "title": "已识别的缺口",
+    "desc": "每个缺口都附有其背后的证据、影响与置信度 — 没有依据的主张不会出现。",
+    "evidenceLabel": "证据"
+  },
+  "raw": {
+    "eyebrow": "原始证据",
+    "title": "观察到的原始证据",
+    "desc": "支撑结论的回答与来源样本（文档 4，§36）。",
+    "tableCaption": "被观察回答的样本",
+    "position_ordinal_one": "第 {{count}} 位",
+    "position_ordinal_two": "第 {{count}} 位",
+    "position_ordinal_few": "第 {{count}} 位",
+    "position_ordinal_other": "第 {{count}} 位",
+    "columns": {
+      "prompt": "提示词",
+      "excerpt": "回答摘录",
+      "products": "提及的产品",
+      "position": "排名",
+      "event": "分类",
+      "sources": "来源"
+    }
+  },
+  "evidenceLists": {
+    "product": "关于该产品的证据",
+    "competitors": "关于竞品的证据"
+  },
+  "evidenceItem": {
+    "source": "来源：{{source}} · {{contextText}}"
+  },
+  "evidenceTrace": {
+    "eyebrow": "可追溯性",
+    "title": "证据如何转化为决策",
+    "desc": "影响最大的缺口示例：从观察走到建议的行动。",
+    "hypothesis": "假设：产品与该意图主题之间缺失的关联，可能正在拉低回答中的存在度。",
+    "action": "行动：参见“机会与行动”，了解优先干预与验证计划。"
+  },
+  "opportunities": {
+    "eyebrow": "重点机会",
+    "title": "按优先级排序的机会",
+    "desc": "每个机会都指向产生它的缺口，并按影响、相关度、置信度、投入与最终优先级分类。",
+    "rank": "第 {{rank}} 位",
+    "relevance": "相关度 {{level}}",
+    "sourceGap": "来源缺口"
+  },
+  "actions": {
+    "eyebrow": "建议行动",
+    "title": "带可追溯性的建议行动",
+    "desc": "每项行动都遵循 <strong>观察到的问题 → 证据 → 假设 → 行动</strong> 的链条，并定义了验证方式。这与毫无依据的建议恰恰相反。",
+    "fallbackTitle": "行动",
+    "validationLabel": "如何验证"
+  },
+  "actionCategories": {
+    "POSITIONING": "定位",
+    "STORE": "商店详情页",
+    "WEBSITE": "网站 / 内容",
+    "EVIDENCE": "外部证据",
+    "COMMUNITY": "社区",
+    "PRODUCT": "产品",
+    "DISTRIBUTION": "分发"
+  },
+  "trace": {
+    "eyebrow": "可追溯性",
+    "title": "行动 → 机会 → 缺口",
+    "desc": "完整链条的表格视图，供对结果进行内部审计。",
+    "tableCaption": "行动可追溯性",
+    "columns": {
+      "action": "行动",
+      "opportunity": "机会",
+      "gap": "缺口",
+      "priority": "优先级",
+      "confidence": "置信度"
+    }
+  },
+  "cta": {
+    "eyebrow": "下一轮",
+    "title": "执行验证并重新审计",
+    "desc": "改动 2–4 周后，运行新一轮审计，对比存在度、份额与刻画。",
+    "button": "开始新的审计"
+  }
+}

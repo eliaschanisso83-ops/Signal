@@ -1,0 +1,221 @@
+{
+  "head": {
+    "title": "발견 가능성 리포트",
+    "eyebrow": "발견 가능성 감사 · {{name}}",
+    "market": "시장 {{value}}",
+    "language": "언어 {{value}}",
+    "methodology": "방법론 v{{version}}",
+    "prompts": "프롬프트 v{{version}}",
+    "completed": "감사 완료",
+    "sectionsNav": "리포트 섹션"
+  },
+  "nav": {
+    "summary": "요약 및 진단",
+    "evidence": "근거",
+    "actions": "기회 및 조치"
+  },
+  "scoreCard": {
+    "formulaLabel": "공식 {{metric}}",
+    "formulaText": "{{explanation}} · 공식 v{{formula}} · 방법론 v{{methodology}}"
+  },
+  "summary": {
+    "eyebrow": "핵심 요약"
+  },
+  "scores": {
+    "eyebrow": "점수",
+    "title": "정량 진단",
+    "desc": "모든 점수는 값, 공식, 버전, 신뢰도를 함께 보여줍니다 — 출처 없는 숫자는 없습니다.",
+    "gaugeLabel": "발견 가능성",
+    "heroNote": "<strong>{{metric}}</strong> — 복합 점수 (공식 v{{formula}}, 방법론 v{{methodology}}).",
+    "experimental": "실험적"
+  },
+  "coverage": {
+    "eyebrow": "의도 커버리지",
+    "title": "의도 지형",
+    "desc": "각 관련 의도에서 제품의 노출, 의도 선두, 그리고 격차의 크기(관련도 × 부재).",
+    "tableCaption": "의도별 노출",
+    "empty": "선택된 의도가 없습니다.",
+    "relevance": "관련도 {{level}}",
+    "gap": {
+      "low": "낮음",
+      "medium": "중간",
+      "high": "높음"
+    },
+    "columns": {
+      "intent": "의도",
+      "presence": "노출",
+      "leader": "의도 선두",
+      "share": "제품 점유율",
+      "gap": "격차"
+    }
+  },
+  "reco": {
+    "eyebrow": "추천 분석",
+    "title": "추천 및 경쟁 포지션",
+    "desc_one": "{{count}}건의 관찰에 걸친 언급 분류의 분포와 분석 대상 제품 간 비교.",
+    "desc_other": "{{count}}건의 관찰에 걸친 언급 분류의 분포와 분석 대상 제품 간 비교.",
+    "distributionTitle": "분류 분포",
+    "distributionNote": "분류는 Document 3, §27 기준입니다. “무관”은 제품 범위 밖입니다.",
+    "positionTitle": "경쟁 포지션",
+    "auditedProduct": "(감사 대상 제품)",
+    "coverageLine": "커버리지 {{coverage}}/{{total}} 의도 · 평균 순위 {{position}}",
+    "rankingNote_one": "Recommendation Share 기준 순위. {{product}}는 {{count}}개 제품 중 {{rank}}위입니다.",
+    "rankingNote_other": "Recommendation Share 기준 순위. {{product}}는 {{count}}개 제품 중 {{rank}}위입니다.",
+    "breakdownTitle": "경쟁 제품별 내역",
+    "tableCaption": "경쟁 제품 스냅숏",
+    "columns": {
+      "product": "제품",
+      "topIntents": "상위 의도",
+      "characterization": "관찰된 특징",
+      "sources": "반복 출처",
+      "avgPosition": "평균 순위"
+    }
+  },
+  "semantic": {
+    "eyebrow": "의미 정렬",
+    "title": "선언된 포지셔닝 × 관찰된 특징",
+    "declared": "선언됨",
+    "observed": "관찰됨",
+    "verdict": "판정: {{value}}",
+    "verdictPartial": "부분 일치",
+    "verdictAligned": "일치",
+    "termsTitle": "제품별 연관 용어",
+    "audited": "(감사 대상)"
+  },
+  "methodology": {
+    "eyebrow": "방법론",
+    "title": "이 감사는 어떻게 만들어졌는가",
+    "intentsOf": "{{total}}개 중 {{analyzed}}개 분석",
+    "limitations": "한계",
+    "fields": {
+      "methodology": "방법론",
+      "promptSet": "프롬프트 세트",
+      "scoring": "채점 방식",
+      "provider": "제공자",
+      "model": "모델",
+      "marketLanguage": "시장 / 언어",
+      "analysisDate": "분석 일자",
+      "intents": "의도",
+      "prompts": "프롬프트",
+      "relevantResponses": "관련 응답",
+      "sampleSize": "표본 크기"
+    }
+  },
+  "dimensions": {
+    "relevance": "관련성",
+    "specificity": "구체성",
+    "credibility": "신뢰성",
+    "freshness": "최신성",
+    "independence": "독립성"
+  },
+  "sourceCategories": {
+    "OWNED": "자사 채널",
+    "EARNED": "언론 / 콘텐츠",
+    "COMMUNITY": "커뮤니티",
+    "PLATFORM": "플랫폼",
+    "OTHER": "기타"
+  },
+  "gapTypes": {
+    "RECOMMENDATION_GAP": "추천 격차",
+    "COVERAGE_GAP": "커버리지 격차",
+    "EVIDENCE_GAP": "근거 격차",
+    "SEMANTIC_GAP": "의미 격차",
+    "COMPETITIVE_GAP": "경쟁 격차",
+    "SOURCE_GAP": "소스 격차",
+    "POSITIONING_GAP": "포지셔닝 격차",
+    "CONVERSION_GAP": "전환 격차"
+  },
+  "evidenceLandscape": {
+    "eyebrow": "근거 지형",
+    "title": "의도별 근거 강도",
+    "desc": "각 관련 의도에서 제품과 연결된 외부 근거가 얼마나 존재하는지 (0–1 척도). 0.5 미만은 근거 부족으로 집계됩니다."
+  },
+  "evidenceStats": {
+    "total": "총 근거",
+    "aboutProduct": "제품 관련",
+    "aboutCompetitors": "경쟁 제품 관련",
+    "sources": "관찰된 출처",
+    "byCategory": "카테고리별 출처"
+  },
+  "gaps": {
+    "eyebrow": "근거 격차",
+    "title": "발견된 격차",
+    "desc": "각 격차에는 그 뒤의 근거, 영향도, 신뢰도가 함께 표시됩니다 — 뒷받침 없는 주장은 없습니다.",
+    "evidenceLabel": "근거"
+  },
+  "raw": {
+    "eyebrow": "원시 근거",
+    "title": "관찰된 원시 근거",
+    "desc": "결론을 뒷받침하는 응답과 출처의 표본 (Doc 4, §36).",
+    "tableCaption": "관찰된 응답 표본",
+    "position_ordinal_one": "{{count}}위",
+    "position_ordinal_two": "{{count}}위",
+    "position_ordinal_few": "{{count}}위",
+    "position_ordinal_other": "{{count}}위",
+    "columns": {
+      "prompt": "프롬프트",
+      "excerpt": "응답 발췌",
+      "products": "언급된 제품",
+      "position": "순위",
+      "event": "분류",
+      "sources": "출처"
+    }
+  },
+  "evidenceLists": {
+    "product": "제품에 대한 근거",
+    "competitors": "경쟁 제품에 대한 근거"
+  },
+  "evidenceItem": {
+    "source": "출처: {{source}} · {{contextText}}"
+  },
+  "evidenceTrace": {
+    "eyebrow": "추적 가능성",
+    "title": "근거가 의사결정이 되는 과정",
+    "desc": "영향이 가장 큰 격차의 예: 관찰에서 권장 조치까지.",
+    "hypothesis": "가설: 제품과 의도 주제의 연결 부재가 응답 내 노출을 낮추고 있을 수 있습니다.",
+    "action": "조치: 우선순위가 정해진 개입과 검증 계획은 “기회 및 조치”에서 확인하세요."
+  },
+  "opportunities": {
+    "eyebrow": "주요 기회",
+    "title": "우선순위가 정해진 기회",
+    "desc": "각 기회는 그것을 만들어낸 격차를 가리키며, 영향도, 관련도, 신뢰도, 노력, 최종 우선순위로 분류됩니다.",
+    "rank": "{{rank}}위",
+    "relevance": "관련도 {{level}}",
+    "sourceGap": "소스 격차"
+  },
+  "actions": {
+    "eyebrow": "권장 조치",
+    "title": "추적 가능한 권장 조치",
+    "desc": "각 조치는 <strong>관찰된 문제 → 근거 → 가설 → 조치</strong> 사슬을 따르며, 검증 방법이 정의되어 있습니다. 근거 없는 추천의 반대입니다.",
+    "fallbackTitle": "조치",
+    "validationLabel": "검증 방법"
+  },
+  "actionCategories": {
+    "POSITIONING": "포지셔닝",
+    "STORE": "스토어 등록",
+    "WEBSITE": "웹사이트 / 콘텐츠",
+    "EVIDENCE": "외부 근거",
+    "COMMUNITY": "커뮤니티",
+    "PRODUCT": "제품",
+    "DISTRIBUTION": "유통"
+  },
+  "trace": {
+    "eyebrow": "추적 가능성",
+    "title": "조치 → 기회 → 격차",
+    "desc": "전체 사슬을 표로 확인하는 뷰로, 결과를 내부 점검할 때 사용합니다.",
+    "tableCaption": "조치 추적 가능성",
+    "columns": {
+      "action": "조치",
+      "opportunity": "기회",
+      "gap": "격차",
+      "priority": "우선순위",
+      "confidence": "신뢰도"
+    }
+  },
+  "cta": {
+    "eyebrow": "다음 사이클",
+    "title": "검증 실행 후 재감사",
+    "desc": "2–4주간의 변경 후 새 감사를 실행해 노출, 점유율, 특징을 비교하세요.",
+    "button": "새 감사 시작"
+  }
+}

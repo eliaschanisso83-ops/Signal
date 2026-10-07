@@ -38,13 +38,13 @@ export interface SessionDraft {
 
 /** Etapas conceituais exibidas durante o processamento (Doc 4 §40). */
 export const PIPELINE_STEPS = [
-  'Preparando a análise',
-  'Testando ambientes de descoberta',
-  'Analisando recomendações',
-  'Analisando evidências',
-  'Identificando gaps',
-  'Gerando oportunidades',
-  'Relatório pronto',
+  'preparing',
+  'testing',
+  'analyzing',
+  'evidence',
+  'gaps',
+  'opportunities',
+  'ready',
 ] as const;
 
 interface SessionState {

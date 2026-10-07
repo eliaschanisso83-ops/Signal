@@ -1,0 +1,288 @@
+{
+  "actions": {
+    "createDraft": "Créer le brouillon et continuer",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "add": "Ajouter",
+    "edit": "Modifier",
+    "remove": "Supprimer",
+    "activate": "Activer",
+    "deactivate": "Désactiver"
+  },
+  "aria": {
+    "removeItem": "Supprimer {{name}}",
+    "includeIntent": "Inclure l’intention « {{name}} » dans l’audit",
+    "removeIntent": "Supprimer l’intention {{name}}",
+    "removePrompt": "Supprimer le prompt {{preview}}",
+    "enablePrompt": "Activer le prompt",
+    "disablePrompt": "Désactiver le prompt",
+    "newKeyword": "Nouveau mot-clé",
+    "intentsSummary": "Résumé des intentions",
+    "promptsSummary": "Résumé des prompts",
+    "selectedIntentsTabs": "Intentions sélectionnées"
+  },
+  "newAudit": {
+    "eyebrow": "Nouvel audit · Étape 1 sur 5",
+    "title": "Configurer le produit",
+    "intro": "Définissez le produit à auditer ainsi que le marché, la langue et les conditions de concurrence dans lesquels l’analyse doit se dérouler. Les champs ci-dessous sont préremplis avec des données de démonstration.",
+    "sections": {
+      "product": "Produit",
+      "conditions": "Conditions de l’audit"
+    },
+    "fields": {
+      "url": "URL du produit",
+      "name": "Nom du produit",
+      "platform": "Plateforme",
+      "category": "Catégorie",
+      "audience": "Public cible",
+      "market": "Marché",
+      "language": "Langue",
+      "competitors": "Concurrents de référence"
+    },
+    "hints": {
+      "url": "Par ex. https://fluxoapp.com.br",
+      "name": "Facultatif — déduit de l’URL si vide.",
+      "market": "Détermine le pays des réponses observées.",
+      "language": "Langue des prompts exécutés."
+    },
+    "placeholders": {
+      "competitor": "Ajouter un concurrent…"
+    },
+    "empty": {
+      "competitors": "Aucun concurrent renseigné — le catalogue par défaut sera utilisé."
+    },
+    "platforms": {
+      "GOOGLE_PLAY": "Google Play",
+      "APP_STORE": "App Store",
+      "WEB": "Site web",
+      "SAAS": "SaaS",
+      "DESKTOP": "Application de bureau"
+    },
+    "markets": {
+      "BR": "Brésil (BR)",
+      "US": "États-Unis (US)",
+      "PT": "Portugal (PT)",
+      "ES": "Espagne (ES)",
+      "MX": "Mexique (MX)"
+    },
+    "languages": {
+      "ptBR": "Portugais (pt-BR)",
+      "enUS": "Anglais (en-US)",
+      "esES": "Espagnol (es-ES)"
+    },
+    "errors": {
+      "url": "Saisissez une URL valide commençant par http:// ou https://.",
+      "create": "Impossible de créer l’audit. Réessayez."
+    },
+    "footer": {
+      "next": "Étape suivante : examiner le profil du produit interprété."
+    }
+  },
+  "profile": {
+    "eyebrow": "Nouvel audit · Étape 2 sur 5",
+    "title": "Profil du produit interprété",
+    "intro": "Voici l’interprétation normalisée qui guide la génération des intentions et des prompts. <strong>Ce n’est pas une vérité absolue</strong> — vérifiez-la et corrigez-la avant de continuer.",
+    "about": "À propos de {{title}}",
+    "sections": {
+      "provided": "Données fournies",
+      "valueProposition": "Proposition de valeur (interprétée)",
+      "valuePropositionHint": "Texte déduit automatiquement de l’URL et de la catégorie — modifiez-le s’il est inexact.",
+      "features": "Fonctionnalités",
+      "featuresHint": "Liste interprétée — utilisée pour générer le vocabulaire des prompts.",
+      "problems": "Problèmes résolus",
+      "useCases": "Cas d’usage",
+      "audiences": "Audiences",
+      "competitors": "Concurrents observés",
+      "keywords": "Mots-clés",
+      "keywordsHint": "Entités sémantiques que le produit doit associer à votre marque.",
+      "entities": "Entités et catégories"
+    },
+    "terms": {
+      "product": "Produit",
+      "url": "URL",
+      "platform": "Plateforme",
+      "category": "Catégorie",
+      "audience": "Audience",
+      "market": "Marché"
+    },
+    "fields": {
+      "valueProposition": "Proposition de valeur"
+    },
+    "editValueProposition": "Modifier la proposition de valeur",
+    "keywordPlaceholder": "Nouveau mot-clé…",
+    "labels": {
+      "semanticEntities": "ENTITÉS SÉMANTIQUES",
+      "categories": "CATÉGORIES"
+    },
+    "badges": {
+      "market": "Marché {{value}}",
+      "language": "Langue {{value}}",
+      "normalized": "Interprétation normalisée · Doc 6 §11"
+    },
+    "back": "← Retour",
+    "nextIntents": "Vérifier les intentions →"
+  },
+  "intents": {
+    "eyebrow": "Nouvel audit · Étape 3 sur 5",
+    "title": "Vérifier les intentions",
+    "intro": "Les intentions sont les vrais problèmes que les gens décrivent lorsqu’ils cherchent une solution — l’unité fondamentale de l’audit (Doc 3, §7). Sélectionnez celles qui seront analysées et corrigez tout ce qui est inexact.",
+    "include": "Inclure",
+    "relevance": "PERTINENCE",
+    "categories": {
+      "INFORMATIONAL": "Informationnel",
+      "EXPLORATORY": "Exploratoire",
+      "COMMERCIAL": "Commercial",
+      "TRANSACTIONAL": "Transactionnel",
+      "COMPARATIVE": "Comparatif",
+      "PROBLEM_SPECIFIC": "Problème spécifique"
+    },
+    "sources": {
+      "AI_GENERATED": "Généré par IA",
+      "USER_ADDED": "Ajouté par vous",
+      "USER_EDITED": "Modifié par vous",
+      "HISTORICAL": "Issu d’un audit précédent"
+    },
+    "priority": {
+      "HIGH": "Priorité de niveau élevé",
+      "MEDIUM": "Priorité de niveau moyen",
+      "LOW": "Priorité de niveau faible"
+    },
+    "confidence": {
+      "HIGH": "Confiance de niveau élevé",
+      "MEDIUM": "Confiance de niveau moyen",
+      "LOW": "Confiance de niveau faible"
+    },
+    "fields": {
+      "name": "Nom de l’intention",
+      "problem": "Problème de l’utilisateur"
+    },
+    "terms": {
+      "problem": "Problème",
+      "audience": "Audience",
+      "context": "Contexte"
+    },
+    "summary": {
+      "total_one": "intention au total",
+      "total_other": "intentions au total",
+      "selected": "sélectionnées",
+      "avgRelevance": "pertinence moyenne (sur 5)",
+      "plannedPrompts": "prompts prévus (5 par intention)"
+    },
+    "add": {
+      "label": "Ajouter une intention manuellement",
+      "placeholder": "Par ex. Comparer les offres de logiciels financiers",
+      "button": "Ajouter une intention",
+      "hint": "Un prompt direct est automatiquement créé avec l’intention."
+    },
+    "back": "← Retour au profil",
+    "validation": "Sélectionnez au moins une intention pour continuer.",
+    "next": "Vérifier les prompts →"
+  },
+  "prompts": {
+    "eyebrow": "Nouvel audit · Étape 4 sur 5",
+    "title": "Vérifier les prompts",
+    "intro": "Les prompts sont les questions réellement exécutées — <strong>Intention ≠ Prompt</strong> (Doc 6, §14). Chaque intention sélectionnée compte 5 variantes versionnées. Modifiez, désactivez ou supprimez tout ce qui ne doit pas être exécuté.",
+    "inactive": "Inactif — ne sera pas exécuté",
+    "perIntent_one": "{{count}} prompt pour cette intention",
+    "perIntent_other": "{{count}} prompts pour cette intention",
+    "fields": {
+      "text": "Texte du prompt"
+    },
+    "variations": {
+      "DIRECT": "Direct",
+      "CONVERSATIONAL": "Conversationnel",
+      "COMPARATIVE": "Comparatif",
+      "PROBLEM_BASED": "Orienté problème",
+      "ROLE_BASED": "Rôle utilisateur",
+      "CONTEXTUAL": "Contextuel"
+    },
+    "summary": {
+      "total_one": "prompt au total",
+      "total_other": "prompts au total",
+      "active": "actifs pour l’exécution",
+      "selectedIntents_one": "intention sélectionnée",
+      "selectedIntents_other": "intentions sélectionnées",
+      "setVersion": "version du jeu de prompts"
+    },
+    "add": {
+      "label": "Ajouter un prompt à cette intention",
+      "placeholder": "Nouvelle question à exécuter…"
+    },
+    "empty": {
+      "title": "Aucune intention sélectionnée",
+      "desc": "Revenez à l’étape précédente et sélectionnez au moins une intention pour générer les prompts.",
+      "action": "Aller aux intentions"
+    },
+    "back": "← Retour aux intentions",
+    "validation": "Aucun prompt actif à exécuter.",
+    "start": "Lancer l’audit"
+  },
+  "progress": {
+    "eyebrow": "Nouvel audit · Étape 5 sur 5",
+    "title": {
+      "done": "Audit terminé",
+      "running": "Exécution de l’audit"
+    },
+    "intro": {
+      "done": "Toutes les étapes ont été traitées. Le rapport avec les scores, les preuves et les opportunités est prêt.",
+      "running": "La collecte et l’analyse progressent à travers les étapes ci-dessous. Les données de cette démonstration sont simulées localement."
+    },
+    "net": {
+      "failed": "Exécution interrompue — relancez pour traiter à nouveau les mêmes étapes",
+      "done": "Toutes les étapes terminées · rapport prêt",
+      "idle": "Réseau inactif · aucune collecte en cours",
+      "running": "Collecte et analyse actives · le réseau avance étape par étape"
+    },
+    "status": {
+      "DRAFT": "Brouillon",
+      "QUEUED": "En attente",
+      "RUNNING": "Exécution",
+      "ANALYZING": "Analyse",
+      "COMPLETED": "Terminé",
+      "FAILED": "Échec",
+      "CANCELLED": "Annulé"
+    },
+    "sections": {
+      "progress": "Progression",
+      "context": "Contexte de l’audit"
+    },
+    "progressBar": "Étapes terminées",
+    "steps": {
+      "preparing": "Préparation de l’analyse",
+      "testing": "Test des environnements de découverte",
+      "analyzing": "Analyse des recommandations",
+      "evidence": "Analyse des preuves",
+      "gaps": "Identification des lacunes",
+      "opportunities": "Génération des opportunités",
+      "ready": "Rapport prêt"
+    },
+    "start": "Lancer l’exécution",
+    "back": "← Vérifier les prompts",
+    "processing": "Traitement… cela prend quelques secondes dans cette démonstration.",
+    "viewReport": "Voir le rapport maintenant →",
+    "autoOpen": "Ouverture automatique…",
+    "error": {
+      "title": "L’exécution ne s’est pas terminée",
+      "desc": "L’audit a été interrompu. Vous pouvez relancer l’exécution avec les mêmes intentions et les mêmes prompts."
+    },
+    "terms": {
+      "id": "ID",
+      "product": "Produit",
+      "market": "Marché",
+      "intents": "Intentions",
+      "activePrompts": "Prompts actifs",
+      "methodology": "Méthodologie",
+      "promptSet": "Jeu de prompts"
+    },
+    "selected_one": "{{count}} sélectionné",
+    "selected_other": "{{count}} sélectionnés",
+    "currentStep": "Étape actuelle :"
+  },
+  "wizard": {
+    "product": "Produit",
+    "profile": "Profil",
+    "intents": "Intentions",
+    "prompts": "Prompts",
+    "execution": "Exécution"
+  }
+}

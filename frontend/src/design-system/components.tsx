@@ -1,5 +1,6 @@
 import { useState, type ReactNode, type ButtonHTMLAttributes, type AnchorHTMLAttributes, type CSSProperties, type KeyboardEvent } from 'react';
 import { Link, type LinkProps } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import type { Confidence, Priority, PresenceLevel, RecommendationEventType } from '../domain/types';
 
 /* ---------------- Button ---------------- */
@@ -68,50 +69,43 @@ export function Badge({ tone = 'neutral', children }: { tone?: BadgeTone; childr
   return <span className={`badge badge-${tone}`}>{children}</span>;
 }
 
+const PRIORITY_TONE: Record<Priority, BadgeTone> = { HIGH: 'red', MEDIUM: 'amber', LOW: 'neutral' };
+const CONFIDENCE_TONE: Record<Confidence, BadgeTone> = { HIGH: 'green', MEDIUM: 'amber', LOW: 'red' };
+
 export function PriorityBadge({ value }: { value: Priority }) {
-  const map: Record<Priority, { label: string; tone: BadgeTone }> = {
-    HIGH: { label: 'Alta', tone: 'red' },
-    MEDIUM: { label: 'Média', tone: 'amber' },
-    LOW: { label: 'Baixa', tone: 'neutral' },
-  };
-  const { label, tone } = map[value];
-  return <Badge tone={tone}>Prioridade {label.toLowerCase()}</Badge>;
+  const { t } = useTranslation();
+  return <Badge tone={PRIORITY_TONE[value]}>{t('badge.priority', { level: t(`levels.${value}`) })}</Badge>;
 }
 
 export function ConfidenceBadge({ value }: { value: Confidence }) {
-  const map: Record<Confidence, { label: string; tone: BadgeTone }> = {
-    HIGH: { label: 'Alta', tone: 'green' },
-    MEDIUM: { label: 'Média', tone: 'amber' },
-    LOW: { label: 'Baixa', tone: 'red' },
-  };
-  const { label, tone } = map[value];
-  return <Badge tone={tone}>Confiança {label.toLowerCase()}</Badge>;
+  const { t } = useTranslation();
+  return <Badge tone={CONFIDENCE_TONE[value]}>{t('badge.confidence', { level: t(`levels.${value}`) })}</Badge>;
 }
 
-const EVENT_LABEL: Record<RecommendationEventType, { label: string; tone: BadgeTone }> = {
-  RECOMMENDATION: { label: 'Recomendado', tone: 'green' },
-  ALTERNATIVE: { label: 'Alternativa', tone: 'blue' },
-  COMPARISON: { label: 'Comparado', tone: 'neutral' },
-  MENTION: { label: 'Menção', tone: 'neutral' },
-  NEGATIVE: { label: 'Negativo', tone: 'red' },
-  IRRELEVANT: { label: 'Irrelevante', tone: 'outline' },
+const EVENT_TONE: Record<RecommendationEventType, BadgeTone> = {
+  RECOMMENDATION: 'green',
+  ALTERNATIVE: 'blue',
+  COMPARISON: 'neutral',
+  MENTION: 'neutral',
+  NEGATIVE: 'red',
+  IRRELEVANT: 'outline',
 };
 
 export function EventBadge({ value }: { value: RecommendationEventType }) {
-  const { label, tone } = EVENT_LABEL[value];
-  return <Badge tone={tone}>{label}</Badge>;
+  const { t } = useTranslation();
+  return <Badge tone={EVENT_TONE[value]}>{t(`events.${value}`)}</Badge>;
 }
 
-const PRESENCE_LABEL: Record<PresenceLevel, { label: string; tone: BadgeTone }> = {
-  ALTA: { label: 'Alta', tone: 'green' },
-  MEDIA: { label: 'Média', tone: 'blue' },
-  BAIXA: { label: 'Baixa', tone: 'amber' },
-  AUSENTE: { label: 'Ausente', tone: 'red' },
+const PRESENCE_TONE: Record<PresenceLevel, BadgeTone> = {
+  ALTA: 'green',
+  MEDIA: 'blue',
+  BAIXA: 'amber',
+  AUSENTE: 'red',
 };
 
 export function PresenceBadge({ value }: { value: PresenceLevel }) {
-  const { label, tone } = PRESENCE_LABEL[value];
-  return <Badge tone={tone}>Presença {label.toLowerCase()}</Badge>;
+  const { t } = useTranslation();
+  return <Badge tone={PRESENCE_TONE[value]}>{t('badge.presence', { level: t(`presenceLevels.${value}`) })}</Badge>;
 }
 
 /* ---------------- Card ---------------- */
@@ -250,26 +244,28 @@ export function Tabs({ items, ariaLabel }: { items: TabItem[]; ariaLabel: string
 
 /* ---------------- Estados ---------------- */
 
-export function LoadingState({ message = 'Carregando…' }: { message?: string }) {
+export function LoadingState({ message }: { message?: string }) {
+  const { t } = useTranslation();
   return (
     <div className="state-block" role="status" aria-live="polite">
       <div className="row" style={{ justifyContent: 'center' }}>
         <span className="spinner" aria-hidden="true" />
-        <strong>{message}</strong>
+        <strong>{message ?? t('state.loading')}</strong>
       </div>
     </div>
   );
 }
 
-export function ErrorState({ title = 'Algo deu errado', desc, onRetry }: { title?: string; desc?: string; onRetry?: () => void }) {
+export function ErrorState({ title, desc, onRetry }: { title?: string; desc?: string; onRetry?: () => void }) {
+  const { t } = useTranslation();
   return (
     <div className="state-block state-error" role="alert">
-      <h3>{title}</h3>
+      <h3>{title ?? t('state.errorTitle')}</h3>
       {desc && <p>{desc}</p>}
       {onRetry && (
         <div className="row" style={{ justifyContent: 'center', marginTop: 'var(--sp-4)' }}>
           <Button variant="secondary" onClick={onRetry}>
-            Tentar novamente
+            {t('state.retry')}
           </Button>
         </div>
       )}
@@ -341,11 +337,12 @@ export function Tooltip({ text, label }: { text: string; label: string }) {
 }
 
 export function Chip({ children, onRemove, removeLabel }: { children: ReactNode; onRemove?: () => void; removeLabel?: string }) {
+  const { t } = useTranslation();
   return (
     <li className="chip">
       {children}
       {onRemove && (
-        <button type="button" className="chip-remove" onClick={onRemove} aria-label={removeLabel ?? 'Remover'}>
+        <button type="button" className="chip-remove" onClick={onRemove} aria-label={removeLabel ?? t('state.remove')}>
           ×
         </button>
       )}
@@ -354,8 +351,9 @@ export function Chip({ children, onRemove, removeLabel }: { children: ReactNode;
 }
 
 export function RelevancePips({ value, max = 5 }: { value: number; max?: number }) {
+  const { t } = useTranslation();
   return (
-    <span className="relevance" aria-label={`Relevância ${value} de ${max}`}>
+    <span className="relevance" aria-label={t('aria.relevance', { value, max })}>
       {Array.from({ length: max }, (_, i) => (
         <span key={i} className="pip" data-on={i < value ? 'true' : 'false'} />
       ))}

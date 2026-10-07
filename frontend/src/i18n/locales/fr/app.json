@@ -1,0 +1,37 @@
+{
+  "skipToContent": "Aller au contenu",
+  "brand": {
+    "home": "Signal — page d’accueil"
+  },
+  "nav": {
+    "main": "Navigation principale",
+    "problem": "Problème",
+    "howItWorks": "Comment ça marche",
+    "metrics": "Métriques",
+    "startAudit": "Lancer l’audit",
+    "newAudit": "Nouvel audit",
+    "myReport": "Mon rapport",
+    "continueAudit": "Reprendre l’audit"
+  },
+  "language": {
+    "label": "Langue"
+  },
+  "footer": {
+    "description": "Intelligence de découvrabilité des logiciels — auditez la façon dont les assistants IA, la recherche et les marketplaces recommandent votre produit, avec des preuves traçables et des actions priorisées.",
+    "startAudit": "Lancer l’audit",
+    "product": {
+      "title": "Produit",
+      "problem": "Le problème",
+      "howItWorks": "Comment ça marche",
+      "metrics": "Métriques et preuves"
+    },
+    "demo": {
+      "title": "Démo",
+      "newAudit": "Nouvel audit",
+      "myReport": "Mon rapport",
+      "continueAudit": "Reprendre l’audit"
+    },
+    "bottom": "Méthodologie v1.0 · démo avec données simulées",
+    "copyright": "© 2026 Signal — signal.biz-flow.cloud"
+  }
+}

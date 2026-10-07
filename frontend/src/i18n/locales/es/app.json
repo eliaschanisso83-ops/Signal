@@ -1,0 +1,37 @@
+{
+  "skipToContent": "Saltar al contenido",
+  "brand": {
+    "home": "Signal — página de inicio"
+  },
+  "nav": {
+    "main": "Navegación principal",
+    "problem": "Problema",
+    "howItWorks": "Cómo funciona",
+    "metrics": "Métricas",
+    "startAudit": "Iniciar auditoría",
+    "newAudit": "Nueva auditoría",
+    "myReport": "Mi informe",
+    "continueAudit": "Continuar auditoría"
+  },
+  "language": {
+    "label": "Idioma"
+  },
+  "footer": {
+    "description": "Inteligencia de detectabilidad de software — audita cómo los asistentes de IA, la búsqueda y los marketplaces recomiendan tu producto, con evidencia trazable y acciones priorizadas.",
+    "startAudit": "Iniciar auditoría",
+    "product": {
+      "title": "Producto",
+      "problem": "El problema",
+      "howItWorks": "Cómo funciona",
+      "metrics": "Métricas y evidencia"
+    },
+    "demo": {
+      "title": "Demo",
+      "newAudit": "Nueva auditoría",
+      "myReport": "Mi informe",
+      "continueAudit": "Continuar auditoría"
+    },
+    "bottom": "Metodología v1.0 · demo con datos simulados",
+    "copyright": "© 2026 Signal — signal.biz-flow.cloud"
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "hero": {
+    "eyebrow": "Demo pubblica · dati simulati",
+    "title": "Il tuo prodotto viene <accent>trovato</accent>, capito e raccomandato dove si prendono le decisioni",
+    "lead": "Signal audita come i sistemi di discovery — assistenti IA, ricerca e marketplace — rispondono sulla tua categoria. Ottieni punteggi con formula esplicita e una catena tracciabile di osservazione, evidenza, ipotesi e azione.",
+    "cta": "Avvia audit",
+    "howItWorks": "Come funziona ↓",
+    "fine": "Audit completo in pochi secondi",
+    "previewLabel": "Anteprima dell'interfaccia del report",
+    "previewContext": "{{product}} · mercato BR · pt-BR",
+    "previewStatus": "Completato",
+    "previewCta": "Esegui questo audit →",
+    "previewFoot": "formula {{formula}} · metodologia {{methodology}}"
+  },
+  "marquee": {
+    "label": "Sistemi di discovery coperti dalla metodologia",
+    "title": "Segmentazione per sistema"
+  },
+  "facts": {
+    "traceability": {
+      "k": "Tracciabilità",
+      "v": "Osservazione → evidenza → ipotesi → azione"
+    },
+    "provenance": {
+      "k": "Provenienza",
+      "v": "Formula, versione e affidabilità per ogni punteggio"
+    },
+    "methodology": {
+      "k": "Metodologia",
+      "v": "{{version}} — versionata e documentata"
+    },
+    "execution": {
+      "k": "Esecuzione",
+      "v": "Flusso completo in pochi secondi"
+    }
+  },
+  "problem": {
+    "eyebrow": "Il problema",
+    "title": "La decisione inizia con una domanda — non con una ricerca",
+    "desc": "Prima del click, una catena di sistemi decide chi entra nella risposta, come viene caratterizzato e chi viene raccomandato. Se il tuo prodotto non supera ogni anello, sparisce dalla conversazione senza che tu te ne accorga. Signal misura esattamente questi cinque anelli.",
+    "funnel": {
+      "found": {
+        "name": "Trovato",
+        "gloss": "Found",
+        "desc": "Il prodotto entra nell'insieme dei candidati considerati dal sistema di discovery."
+      },
+      "understood": {
+        "name": "Compreso",
+        "gloss": "Understood",
+        "desc": "Categoria, pubblico e problema vengono associati correttamente al prodotto."
+      },
+      "evidenced": {
+        "name": "Supportato",
+        "gloss": "Evidenced",
+        "desc": "Le affermazioni sul prodotto sono sostenute da fonti esterne verificabili."
+      },
+      "recommended": {
+        "name": "Raccomandato",
+        "gloss": "Recommended",
+        "desc": "Il prodotto viene citato nelle risposte rilevanti osservate."
+      },
+      "converted": {
+        "name": "Convertito",
+        "gloss": "Converted",
+        "desc": "La menzione porta chi decide al passo successivo: visita, prova o acquisto."
+      }
+    }
+  },
+  "how": {
+    "eyebrow": "Come funziona",
+    "title": "Dalla configurazione all'azione prioritizzata",
+    "desc": "Sei passaggi tracciabili: configuri una volta, l'esecuzione raccoglie le risposte e il report indica cosa fare — con le evidenze per ogni conclusione.",
+    "stages": {
+      "profile": {
+        "title": "Profilo del prodotto",
+        "desc": "URL, piattaforma, mercato, lingua e concorrenti di riferimento."
+      },
+      "intents": {
+        "title": "Intenzioni",
+        "desc": "I problemi reali che le persone descrivono quando cercano una soluzione."
+      },
+      "prompts": {
+        "title": "Prompt",
+        "desc": "Le domande eseguite sui sistemi di discovery, versionate."
+      },
+      "execution": {
+        "title": "Esecuzione",
+        "desc": "Raccolta di risposte, raccomandazioni e menzioni."
+      },
+      "evidence": {
+        "title": "Evidenze",
+        "desc": "Fonti esterne che sostengono — o no — ogni affermazione."
+      },
+      "report": {
+        "title": "Report",
+        "desc": "Punteggi, lacune, opportunità e azioni prioritizzate con tracciabilità."
+      }
+    }
+  },
+  "results": {
+    "eyebrow": "Cosa ottieni",
+    "title": "Punteggi con provenienza ed evidenze tracciabili",
+    "desc": "Ogni numero del report riporta una formula, una versione e un livello di affidabilità. Ogni raccomandazione rimanda all'osservazione che l'ha generata.",
+    "figures": {
+      "recommendationShare": "Quanto il prodotto viene raccomandato tra le risposte rilevanti.",
+      "intentCoverage": "Intenzioni rilevanti nelle quali il prodotto compare almeno una volta.",
+      "evidenceCoverage": "Intenzioni con evidenze esterne sufficienti associate al prodotto.",
+      "semanticAlignment": "Posizionamento dichiarato vs. caratterizzazione osservata."
+    },
+    "traceable": {
+      "title": "Ogni raccomandazione è riconducibile alle evidenze",
+      "desc": "Il report separa visivamente ciò che è stato osservato, ciò che è un'evidenza verificabile, ciò che è un'ipotesi e ciò che è un'azione raccomandata. Nessun passaggio salta il precedente: senza osservazione non c'è evidenza; senza evidenza non c'è azione."
+    },
+    "chain": {
+      "title": "Catena delle evidenze — estratto",
+      "tag": "demo",
+      "steps": {
+        "observed": "Il prodotto non è apparso in nessuna delle risposte osservate per «monitorare la tesoreria».",
+        "evidence": "CaixaFácil e ContaSimples compaiono nel 68% delle risposte all'intenzione, supportate da un articolo, una pagina dedicata e una discussione di community.",
+        "hypothesis": "L'assenza di un'associazione esplicita tra il prodotto e il termine «flusso di cassa» nelle fonti osservate potrebbe ridurre la presenza.",
+        "action": "Creare una pagina dedicata al flusso di cassa per le piccole imprese e rafforzare l'associazione nel listing dello store — validare con un nuovo audit tra 2–4 settimane."
+      }
+    }
+  },
+  "finalCta": {
+    "title": "Esegui un audit completo in pochi secondi",
+    "desc": "Configura il prodotto, rivedi intenzioni e prompt, segui l'esecuzione ed esplora il report con evidenze, lacune e opportunità.",
+    "primary": "Inizia ora",
+    "secondary": "Vedi i passaggi dell'audit →",
+    "fine": "Nessuna registrazione · risultati in pochi secondi"
+  },
+  "cards": {
+    "ranking": {
+      "label": "Posizione",
+      "caption": "concorrenti osservati"
+    },
+    "confidence": {
+      "label": "Affidabilità"
+    }
+  }
+}

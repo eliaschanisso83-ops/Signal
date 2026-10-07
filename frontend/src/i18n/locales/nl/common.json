@@ -1,0 +1,74 @@
+{
+  "skipToContent": "Ga naar de inhoud",
+  "aria": {
+    "language": "Taal",
+    "remove": "Verwijderen",
+    "relevance": "Relevantie {{value}} van {{max}}",
+    "scoreGauge": "{{label}}: {{value}} van {{max}}",
+    "auditSteps": "Auditstappen",
+    "reportSections": "Secties van het rapport",
+    "inProgress": "(lopend)",
+    "done": "(voltooid)"
+  },
+  "state": {
+    "loading": "Laden…",
+    "errorTitle": "Er is iets misgegaan",
+    "retry": "Opnieuw proberen",
+    "remove": "Verwijderen",
+    "noData": "Geen gegevens beschikbaar."
+  },
+  "levels": {
+    "HIGH": "hoog",
+    "MEDIUM": "gemiddeld",
+    "LOW": "laag"
+  },
+  "presenceLevels": {
+    "ALTA": "hoog",
+    "MEDIA": "gemiddeld",
+    "BAIXA": "laag",
+    "AUSENTE": "afwezig"
+  },
+  "badge": {
+    "priority": "Prioriteit {{level}}",
+    "confidence": "Betrouwbaarheid {{level}}",
+    "presence": "Aanwezigheid {{level}}",
+    "impact": "Impact {{level}}",
+    "effort": "Inspanning {{level}}"
+  },
+  "events": {
+    "RECOMMENDATION": "Aanbevolen",
+    "ALTERNATIVE": "Alternatief",
+    "COMPARISON": "Vergelijking",
+    "MENTION": "Vermelding",
+    "NEGATIVE": "Negatief",
+    "IRRELEVANT": "Niet relevant"
+  },
+  "causal": {
+    "observed": "Observatie",
+    "evidence": "Bewijs",
+    "hypothesis": "Hypothese",
+    "action": "Actie"
+  },
+  "metrics": {
+    "discoverabilityScore": "Discoverability Score",
+    "recommendationShare": "Recommendation Share",
+    "intentCoverage": "Intent Coverage",
+    "evidenceCoverage": "Evidence Coverage",
+    "semanticAlignment": "Semantic Alignment",
+    "competitivePosition": "Competitive Position"
+  },
+  "confidenceLevel": {
+    "HIGH": "Hoog",
+    "MEDIUM": "Gemiddeld",
+    "LOW": "Laag"
+  },
+  "gauge": {
+    "of": "van {{max}}"
+  },
+  "net": {
+    "processing": "Verwerken",
+    "success": "Gereed",
+    "error": "Mislukt",
+    "idle": "Wachten"
+  }
+}

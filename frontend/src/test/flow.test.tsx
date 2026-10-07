@@ -21,57 +21,57 @@ describe('Fluxo completo da auditoria', () => {
 
     /* ---- Landing ---- */
     expect(screen.getByAltText('Signal — signal.biz-flow.cloud')).toBeTruthy();
-    click('Iniciar auditoria');
+    click('Start audit');
 
     /* ---- 1. Configurar produto ---- */
-    await expectHeading('Configurar o produto', 1);
-    click('Criar rascunho e continuar');
-    await expectHeading('Perfil interpretado do produto', 1);
+    await expectHeading('Configure the product', 1);
+    click('Create draft and continue');
+    await expectHeading('Interpreted product profile', 1);
 
     /* ---- 2. Perfil ---- */
-    click('Revisar intents →');
+    click('Review intents →');
 
     /* ---- 3. Intents ---- */
-    await expectHeading('Revisar intents', 1);
+    await expectHeading('Review intents', 1);
     expect(screen.getByText('Acompanhar fluxo de caixa')).toBeTruthy();
-    click('Revisar prompts →');
+    click('Review prompts →');
 
     /* ---- 4. Prompts ---- */
-    await expectHeading('Revisar prompts', 1);
+    await expectHeading('Review prompts', 1);
     expect(screen.getByText(/Intent ≠ Prompt/)).toBeTruthy();
 
     /* ---- 5. Execução ---- */
-    click('Iniciar auditoria');
-    await expectHeading('Executando a auditoria', 1);
+    click('Start audit');
+    await expectHeading('Running the audit', 1);
 
     /* máquina simulada: ~6s de pipeline + redirect automático de 1,8s */
-    await expectHeading('Auditoria concluída', 1);
+    await expectHeading('Audit completed', 1);
 
     /* ---- Relatório (resumo) ---- */
-    await expectHeading('Relatório de discoverability', 1);
+    await expectHeading('Discoverability report', 1);
 
     /* cadeia causal obrigatória: observação → evidência → hipótese → ação */
-    expect(screen.getAllByText('Observação').length).toBeGreaterThan(0);
-    expect(screen.getAllByText('Evidência').length).toBeGreaterThan(0);
-    expect(screen.getAllByText('Hipótese').length).toBeGreaterThan(0);
-    expect(screen.getAllByText('Ação').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('Observation').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('Evidence').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('Hypothesis').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('Action').length).toBeGreaterThan(0);
 
     /* scores com proveniência */
-    expect(screen.getByRole('img', { name: /Discoverability: \d+ de 100/ })).toBeTruthy();
+    expect(screen.getByRole('img', { name: /Discoverability: \d+ of 100/ })).toBeTruthy();
     expect(screen.getAllByText('Discoverability Score').length).toBeGreaterThan(0);
-    expect(screen.getAllByText(/fórmula v/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/formula v/).length).toBeGreaterThan(0);
 
     /* ---- Evidências ---- */
-    fireEvent.click(screen.getByRole('link', { name: 'Evidências' }));
-    await expectHeading('Força da evidência por intent', 2);
-    expect(screen.getByText('Lacunas identificadas', { selector: 'h2' })).toBeTruthy();
-    expect(screen.getByText('Evidência bruta observada', { selector: 'h2' })).toBeTruthy();
+    fireEvent.click(screen.getByRole('link', { name: 'Evidence' }));
+    await expectHeading('Evidence strength by intent', 2);
+    expect(screen.getByText('Gaps identified', { selector: 'h2' })).toBeTruthy();
+    expect(screen.getByText('Observed raw evidence', { selector: 'h2' })).toBeTruthy();
 
     /* ---- Oportunidades & ações ---- */
-    fireEvent.click(screen.getByRole('link', { name: 'Oportunidades & ações' }));
-    await expectHeading('Oportunidades priorizadas', 2);
-    expect(screen.getByText('Ações recomendadas com rastreabilidade', { selector: 'h2' })).toBeTruthy();
-    expect(screen.getAllByText('COMO VALIDAR').length).toBeGreaterThan(0);
+    fireEvent.click(screen.getByRole('link', { name: 'Opportunities & actions' }));
+    await expectHeading('Prioritized opportunities', 2);
+    expect(screen.getByText('Recommended actions with traceability', { selector: 'h2' })).toBeTruthy();
+    expect(screen.getAllByText('HOW TO VALIDATE').length).toBeGreaterThan(0);
 
     /* zero chamadas externas nesta fase */
     if (fetchSpy) expect(fetchSpy).not.toHaveBeenCalled();
@@ -82,18 +82,18 @@ describe('Guardas de sessão e rotas', () => {
   it('redireciona relatório sem sessão para a criação', async () => {
     window.history.replaceState({}, '', '/audit/desconhecido/report');
     render(<App />);
-    await expectHeading('Configurar o produto', 1);
+    await expectHeading('Configure the product', 1);
   });
 
   it('redireciona progresso sem sessão para a criação', async () => {
     window.history.replaceState({}, '', '/audit/desconhecido/progress');
     render(<App />);
-    await expectHeading('Configurar o produto', 1);
+    await expectHeading('Configure the product', 1);
   });
 
   it('exibe 404 para rota inexistente', async () => {
     window.history.replaceState({}, '', '/rota/que-nao-existe');
     render(<App />);
-    await expectHeading('Página não encontrada', 1);
+    await expectHeading('Page not found', 1);
   });
 });

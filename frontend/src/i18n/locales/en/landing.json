@@ -1,0 +1,141 @@
+{
+  "hero": {
+    "eyebrow": "Public demo · simulated data",
+    "title": "Your product is <accent>found</accent>, understood and recommended where decisions happen",
+    "lead": "Signal audits how discovery systems — AI assistants, search and marketplaces — answer about your category. You get scores with an explicit formula and a traceable chain of observation, evidence, hypothesis and action.",
+    "cta": "Start audit",
+    "howItWorks": "How it works ↓",
+    "fine": "Complete audit in seconds",
+    "previewLabel": "Report interface preview",
+    "previewContext": "{{product}} · BR market · pt-BR",
+    "previewStatus": "Completed",
+    "previewCta": "Run this audit →",
+    "previewFoot": "formula {{formula}} · methodology {{methodology}}"
+  },
+  "marquee": {
+    "label": "Discovery systems covered by the methodology",
+    "title": "Segmentation by system"
+  },
+  "facts": {
+    "traceability": {
+      "k": "Traceability",
+      "v": "Observation → evidence → hypothesis → action"
+    },
+    "provenance": {
+      "k": "Provenance",
+      "v": "Formula, version and confidence on every score"
+    },
+    "methodology": {
+      "k": "Methodology",
+      "v": "{{version}} — versioned and documented"
+    },
+    "execution": {
+      "k": "Execution",
+      "v": "Full flow in seconds"
+    }
+  },
+  "problem": {
+    "eyebrow": "The problem",
+    "title": "The decision starts with a question — not a search",
+    "desc": "Before the click, a chain of systems decides who gets into the answer, how it is characterized and who gets recommended. If your product doesn't pass through each link, it disappears from the conversation without you seeing it. Signal measures exactly these five links.",
+    "funnel": {
+      "found": {
+        "name": "Found",
+        "gloss": "Found",
+        "desc": "The product enters the set of candidates considered by the discovery system."
+      },
+      "understood": {
+        "name": "Understood",
+        "gloss": "Understood",
+        "desc": "Category, audience and problem are correctly associated with the product."
+      },
+      "evidenced": {
+        "name": "Evidenced",
+        "gloss": "Evidenced",
+        "desc": "Claims about the product are backed by verifiable external sources."
+      },
+      "recommended": {
+        "name": "Recommended",
+        "gloss": "Recommended",
+        "desc": "The product is cited in the relevant observed answers."
+      },
+      "converted": {
+        "name": "Converted",
+        "gloss": "Converted",
+        "desc": "The mention takes the decision-maker to the next step: visit, try or buy."
+      }
+    }
+  },
+  "how": {
+    "eyebrow": "How it works",
+    "title": "From setup to prioritized action",
+    "desc": "Six traceable steps: you configure once, the run collects the answers and the report delivers what to do — with evidence for every conclusion.",
+    "stages": {
+      "profile": {
+        "title": "Product profile",
+        "desc": "URL, platform, market, language and reference competitors."
+      },
+      "intents": {
+        "title": "Intents",
+        "desc": "The real problems people describe when looking for a solution."
+      },
+      "prompts": {
+        "title": "Prompts",
+        "desc": "The questions executed on the discovery systems, versioned."
+      },
+      "execution": {
+        "title": "Execution",
+        "desc": "Collection of answers, recommendations and mentions."
+      },
+      "evidence": {
+        "title": "Evidence",
+        "desc": "External sources that support — or not — each claim."
+      },
+      "report": {
+        "title": "Report",
+        "desc": "Scores, gaps, opportunities and prioritized actions with traceability."
+      }
+    }
+  },
+  "results": {
+    "eyebrow": "What you get",
+    "title": "Scores with provenance and traceable evidence",
+    "desc": "Every number in the report carries a formula, a version and a confidence. Every recommendation points back to the observation that originated it.",
+    "figures": {
+      "recommendationShare": "How much the product is recommended within the relevant answers.",
+      "intentCoverage": "Relevant intents in which the product appears at least once.",
+      "evidenceCoverage": "Intents with enough external evidence associated with the product.",
+      "semanticAlignment": "Declared positioning vs. observed characterization."
+    },
+    "traceable": {
+      "title": "Every recommendation is traceable back to the evidence",
+      "desc": "The report visually separates what was observed, what is verifiable evidence, what is a hypothesis and what is a recommended action. No step skips the previous one: without observation there is no evidence; without evidence there is no action."
+    },
+    "chain": {
+      "title": "Evidence chain — extract",
+      "tag": "demo",
+      "steps": {
+        "observed": "The product did not appear in any of the observed answers for “track cash flow”.",
+        "evidence": "CaixaFácil and ContaSimples appear in 68% of the intent's answers, backed by an article, a dedicated page and a community thread.",
+        "hypothesis": "The lack of an explicit association between the product and the term “cash flow” in the observed sources may be reducing presence.",
+        "action": "Create a dedicated cash flow page for small businesses and reinforce the association in the store listing — validate with a new audit in 2–4 weeks."
+      }
+    }
+  },
+  "finalCta": {
+    "title": "Run an end-to-end audit in seconds",
+    "desc": "Configure the product, review intents and prompts, follow the run and explore the report with evidence, gaps and opportunities.",
+    "primary": "Start now",
+    "secondary": "See the audit steps →",
+    "fine": "No sign-up · results in seconds"
+  },
+  "cards": {
+    "ranking": {
+      "label": "Position",
+      "caption": "observed competitors"
+    },
+    "confidence": {
+      "label": "Confidence"
+    }
+  }
+}

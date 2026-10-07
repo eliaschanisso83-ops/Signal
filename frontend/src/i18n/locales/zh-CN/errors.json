@@ -1,0 +1,10 @@
+{
+  "notFound": {
+    "eyebrow": "错误 404",
+    "title": "页面未找到",
+    "desc": "您访问的地址在此演示中不存在。",
+    "backToAudit": "返回审计",
+    "backHome": "返回首页",
+    "homeLink": "首页"
+  }
+}

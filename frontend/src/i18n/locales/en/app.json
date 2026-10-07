@@ -1,0 +1,37 @@
+{
+  "skipToContent": "Skip to content",
+  "brand": {
+    "home": "Signal — home page"
+  },
+  "nav": {
+    "main": "Main navigation",
+    "problem": "Problem",
+    "howItWorks": "How it works",
+    "metrics": "Metrics",
+    "startAudit": "Start audit",
+    "newAudit": "New audit",
+    "myReport": "My report",
+    "continueAudit": "Continue audit"
+  },
+  "language": {
+    "label": "Language"
+  },
+  "footer": {
+    "description": "Software Discoverability Intelligence — audit how AI assistants, search and marketplaces recommend your product, with traceable evidence and prioritized actions.",
+    "startAudit": "Start audit",
+    "product": {
+      "title": "Product",
+      "problem": "The problem",
+      "howItWorks": "How it works",
+      "metrics": "Metrics & evidence"
+    },
+    "demo": {
+      "title": "Demo",
+      "newAudit": "New audit",
+      "myReport": "My report",
+      "continueAudit": "Continue audit"
+    },
+    "bottom": "Methodology v1.0 · demo with simulated data",
+    "copyright": "© 2026 Signal — signal.biz-flow.cloud"
+  }
+}

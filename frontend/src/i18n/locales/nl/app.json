@@ -1,0 +1,37 @@
+{
+  "skipToContent": "Ga naar de inhoud",
+  "brand": {
+    "home": "Signal — startpagina"
+  },
+  "nav": {
+    "main": "Hoofdnavigatie",
+    "problem": "Het probleem",
+    "howItWorks": "Hoe het werkt",
+    "metrics": "Metrics",
+    "startAudit": "Audit starten",
+    "newAudit": "Nieuwe audit",
+    "myReport": "Mijn rapport",
+    "continueAudit": "Audit voortzetten"
+  },
+  "language": {
+    "label": "Taal"
+  },
+  "footer": {
+    "description": "Software Discoverability Intelligence — auditeer hoe AI-assistenten, zoekmachines en marktplaatsen je product aanbevelen, met herleidbaar bewijs en geprioriteerde acties.",
+    "startAudit": "Audit starten",
+    "product": {
+      "title": "Product",
+      "problem": "Het probleem",
+      "howItWorks": "Hoe het werkt",
+      "metrics": "Metrics & bewijs"
+    },
+    "demo": {
+      "title": "Demo",
+      "newAudit": "Nieuwe audit",
+      "myReport": "Mijn rapport",
+      "continueAudit": "Audit voortzetten"
+    },
+    "bottom": "Methodologie v1.0 · demo met gesimuleerde gegevens",
+    "copyright": "© 2026 Signal — signal.biz-flow.cloud"
+  }
+}

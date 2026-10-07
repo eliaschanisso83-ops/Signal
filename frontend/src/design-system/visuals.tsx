@@ -1,6 +1,7 @@
 import type { CSSProperties, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import type { Confidence, Priority, RecommendationEventType } from '../domain/types';
+import { useTranslation } from 'react-i18next';
+import type { Priority, RecommendationEventType } from '../domain/types';
 import { Badge, type BadgeTone } from './components';
 
 /* ---------------- Wizard steps ---------------- */
@@ -12,8 +13,9 @@ export interface WizardStep {
 }
 
 export function WizardSteps({ steps, currentIndex }: { steps: WizardStep[]; currentIndex: number }) {
+  const { t } = useTranslation();
   return (
-    <nav aria-label="Etapas da auditoria">
+    <nav aria-label={t('aria.auditSteps')}>
       <ol className="wizard-steps">
         {steps.map((s, i) => {
           const state = i < currentIndex ? 'done' : i === currentIndex ? 'current' : 'todo';
@@ -45,6 +47,7 @@ export function WizardSteps({ steps, currentIndex }: { steps: WizardStep[]; curr
 /* ---------------- Pipeline de execução ---------------- */
 
 export function PipelineSteps({ steps, currentIndex, done }: { steps: readonly string[]; currentIndex: number; done: boolean }) {
+  const { t } = useTranslation();
   return (
     <ol className="pipeline">
       {steps.map((label, i) => {
@@ -56,8 +59,8 @@ export function PipelineSteps({ steps, currentIndex, done }: { steps: readonly s
             </span>
             <span className="label">
               {label}
-              {state === 'current' && <span className="sr-only"> (em andamento)</span>}
-              {state === 'done' && <span className="sr-only"> (concluído)</span>}
+              {state === 'current' && <span className="sr-only">{t('aria.inProgress')}</span>}
+              {state === 'done' && <span className="sr-only">{t('aria.done')}</span>}
             </span>
           </li>
         );
@@ -91,6 +94,7 @@ function polar(cx: number, cy: number, r: number, deg: number): [number, number]
 }
 
 export function ScoreGauge({ value, label, max = 100 }: { value: number; label: string; max?: number }) {
+  const { t } = useTranslation();
   const cx = 100;
   const cy = 100;
   const r = 78;
@@ -113,7 +117,7 @@ export function ScoreGauge({ value, label, max = 100 }: { value: number; label: 
   const [l1x, l1y] = polar(cx, cy, r + 30, GAUGE_START + GAUGE_SWEEP);
 
   return (
-    <div className="gauge" role="img" aria-label={`${label}: ${value} de ${max}`}>
+    <div className="gauge" role="img" aria-label={t('aria.scoreGauge', { label, value, max })}>
       <svg viewBox="0 0 200 200" aria-hidden="true">
         <path className="track" d={arcPath} fill="none" strokeWidth={14} />
         <path
@@ -124,14 +128,14 @@ export function ScoreGauge({ value, label, max = 100 }: { value: number; label: 
           pathLength={100}
           style={{ ['--gauge-off' as string]: String(offset) } as CSSProperties}
         />
-        {ticks.map((t) => (
+        {ticks.map((tick) => (
           <line
-            key={t.key}
-            className={`tick${t.major ? ' major' : ''}`}
-            x1={t.x1}
-            y1={t.y1}
-            x2={t.x2}
-            y2={t.y2}
+            key={tick.key}
+            className={`tick${tick.major ? ' major' : ''}`}
+            x1={tick.x1}
+            y1={tick.y1}
+            x2={tick.x2}
+            y2={tick.y2}
           />
         ))}
         <text className="scale-label" x={l0x} y={l0y + 4} textAnchor="middle">
@@ -144,7 +148,7 @@ export function ScoreGauge({ value, label, max = 100 }: { value: number; label: 
       </svg>
       <div className="gauge-center">
         <span className="gauge-value">{value}</span>
-        <span className="gauge-of">de {max}</span>
+        <span className="gauge-of">{t('gauge.of', { max })}</span>
         <span className="gauge-label">{label}</span>
       </div>
     </div>
@@ -155,17 +159,11 @@ export function ScoreGauge({ value, label, max = 100 }: { value: number; label: 
 
 export type CausalKind = 'observed' | 'evidence' | 'hypothesis' | 'action';
 
-export const CAUSAL_LABEL: Record<CausalKind, string> = {
-  observed: 'Observação',
-  evidence: 'Evidência',
-  hypothesis: 'Hipótese',
-  action: 'Ação',
-};
-
 export function CausalItem({ kind, children, index = 0 }: { kind: CausalKind; children: ReactNode; index?: number }) {
+  const { t } = useTranslation();
   return (
     <div className="causal-item" data-kind={kind} style={{ ['--ci' as string]: String(index) } as CSSProperties}>
-      <span className="causal-tag">{CAUSAL_LABEL[kind]}</span>
+      <span className="causal-tag">{t(`causal.${kind}`)}</span>
       <p>{children}</p>
     </div>
   );
@@ -228,6 +226,7 @@ export function SignalNetwork({
   step?: string;
   caption?: string;
 }) {
+  const { t } = useTranslation();
   return (
     <div className="net" data-state={state}>
       <svg viewBox="0 0 1000 400" aria-hidden="true">
@@ -308,13 +307,7 @@ export function SignalNetwork({
       </svg>
       <span className="net-badge">
         <span className="net-led" aria-hidden="true" />
-        {state === 'processing'
-          ? 'Processando'
-          : state === 'success'
-            ? 'Concluído'
-            : state === 'error'
-              ? 'Falha'
-              : 'Aguardando'}
+        {t(`net.${state}`)}
       </span>
       {step && <span className="net-step">{step}</span>}
       {caption && <span className="net-caption">{caption}</span>}
@@ -335,17 +328,19 @@ export function DataTable<T extends { id: string }>({
   columns,
   rows,
   caption,
-  emptyMessage = 'Nenhum dado disponível.',
+  emptyMessage,
 }: {
   columns: Array<Column<T>>;
   rows: T[];
   caption: string;
   emptyMessage?: string;
 }) {
+  const { t } = useTranslation();
+  const empty = emptyMessage ?? t('state.noData');
   if (rows.length === 0) {
     return (
       <div className="state-block">
-        <p>{emptyMessage}</p>
+        <p>{empty}</p>
       </div>
     );
   }
@@ -380,22 +375,22 @@ export function DataTable<T extends { id: string }>({
 
 /* ---------------- Mapeamentos utilitários de domínio ---------------- */
 
-export const PRIORITY_LABEL: Record<Priority, string> = { HIGH: 'Alta', MEDIUM: 'Média', LOW: 'Baixa' };
-export const CONFIDENCE_LABEL: Record<Confidence, string> = { HIGH: 'Alta', MEDIUM: 'Média', LOW: 'Baixa' };
-
 export function ImpactBadge({ value }: { value: Priority }) {
+  const { t } = useTranslation();
   const tone: BadgeTone = value === 'HIGH' ? 'red' : value === 'MEDIUM' ? 'amber' : 'neutral';
-  return <Badge tone={tone}>Impacto {PRIORITY_LABEL[value].toLowerCase()}</Badge>;
+  return <Badge tone={tone}>{t('badge.impact', { level: t(`levels.${value}`) })}</Badge>;
 }
 
 export function EffortBadge({ value }: { value: Priority }) {
+  const { t } = useTranslation();
   const tone: BadgeTone = value === 'LOW' ? 'green' : value === 'MEDIUM' ? 'amber' : 'red';
-  return <Badge tone={tone}>Esforço {PRIORITY_LABEL[value].toLowerCase()}</Badge>;
+  return <Badge tone={tone}>{t('badge.effort', { level: t(`levels.${value}`) })}</Badge>;
 }
 
 export function PriorityTag({ value }: { value: Priority }) {
+  const { t } = useTranslation();
   const tone: BadgeTone = value === 'HIGH' ? 'red' : value === 'MEDIUM' ? 'amber' : 'neutral';
-  return <Badge tone={tone}>Prioridade {PRIORITY_LABEL[value].toLowerCase()}</Badge>;
+  return <Badge tone={tone}>{t('badge.priority', { level: t(`levels.${value}`) })}</Badge>;
 }
 
 export const EVENT_TYPE_TONE: Record<RecommendationEventType, BadgeTone> = {

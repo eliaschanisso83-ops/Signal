@@ -1,0 +1,288 @@
+{
+  "actions": {
+    "createDraft": "Concept aanmaken en doorgaan",
+    "save": "Opslaan",
+    "cancel": "Annuleren",
+    "add": "Toevoegen",
+    "edit": "Bewerken",
+    "remove": "Verwijderen",
+    "activate": "Activeren",
+    "deactivate": "Deactiveren"
+  },
+  "aria": {
+    "removeItem": "{{name}} verwijderen",
+    "includeIntent": "Intentie \"{{name}}\" opnemen in de audit",
+    "removeIntent": "Intentie {{name}} verwijderen",
+    "removePrompt": "Prompt {{preview}} verwijderen",
+    "enablePrompt": "Prompt inschakelen",
+    "disablePrompt": "Prompt uitschakelen",
+    "newKeyword": "Nieuw trefwoord",
+    "intentsSummary": "Overzicht van intenties",
+    "promptsSummary": "Overzicht van prompts",
+    "selectedIntentsTabs": "Geselecteerde intenties"
+  },
+  "newAudit": {
+    "eyebrow": "Nieuwe audit · Stap 1 van 5",
+    "title": "Configureer het product",
+    "intro": "Bepaal welk product er wordt geauditeerd en onder welke markt-, taal- en concurrentievoorwaarden de analyse plaatsvindt. De velden hieronder zijn gevuld met demonstratiedata.",
+    "sections": {
+      "product": "Product",
+      "conditions": "Auditvoorwaarden"
+    },
+    "fields": {
+      "url": "Product-URL",
+      "name": "Productnaam",
+      "platform": "Platform",
+      "category": "Categorie",
+      "audience": "Doelgroep",
+      "market": "Markt",
+      "language": "Taal",
+      "competitors": "Referentieconcurrenten"
+    },
+    "hints": {
+      "url": "Bijv. https://fluxoapp.com.br",
+      "name": "Optioneel — wordt uit de URL afgeleid als het veld leeg blijft.",
+      "market": "Bepaalt het land van de geobserveerde antwoorden.",
+      "language": "Taal van de uitgevoerde prompts."
+    },
+    "placeholders": {
+      "competitor": "Concurrent toevoegen…"
+    },
+    "empty": {
+      "competitors": "Geen concurrenten opgegeven — de standaardcatalogus wordt gebruikt."
+    },
+    "platforms": {
+      "GOOGLE_PLAY": "Google Play",
+      "APP_STORE": "App Store",
+      "WEB": "Website",
+      "SAAS": "SaaS",
+      "DESKTOP": "Desktop"
+    },
+    "markets": {
+      "BR": "Brazilië (BR)",
+      "US": "Verenigde Staten (US)",
+      "PT": "Portugal (PT)",
+      "ES": "Spanje (ES)",
+      "MX": "Mexico (MX)"
+    },
+    "languages": {
+      "ptBR": "Portugees (pt-BR)",
+      "enUS": "Engels (en-US)",
+      "esES": "Spaans (es-ES)"
+    },
+    "errors": {
+      "url": "Voer een geldige URL in die begint met http:// of https://.",
+      "create": "De audit kon niet worden aangemaakt. Probeer het opnieuw."
+    },
+    "footer": {
+      "next": "Volgende stap: het geïnterpreteerde productprofiel controleren."
+    }
+  },
+  "profile": {
+    "eyebrow": "Nieuwe audit · Stap 2 van 5",
+    "title": "Geïnterpreteerd productprofiel",
+    "intro": "Dit is de genormaliseerde interpretatie die de generatie van intenties en prompts aanstuurt. <strong>Het is geen absolute waarheid</strong> — controleer en corrigeer het voordat je verdergaat.",
+    "about": "Over {{title}}",
+    "sections": {
+      "provided": "Opgegeven gegevens",
+      "valueProposition": "Waardepropositie (geïnterpreteerd)",
+      "valuePropositionHint": "Tekst die automatisch uit de URL en de categorie wordt afgeleid — pas het aan als het niet klopt.",
+      "features": "Functies",
+      "featuresHint": "Geïnterpreteerde lijst — wordt gebruikt om taal in de prompts te genereren.",
+      "problems": "Opgeloste problemen",
+      "useCases": "Use-cases",
+      "audiences": "Doelgroepen",
+      "competitors": "Geobserveerde concurrenten",
+      "keywords": "Trefwoorden",
+      "keywordsHint": "Semantische entiteiten waarmee het product zich met je merk moet associëren.",
+      "entities": "Entiteiten en categorieën"
+    },
+    "terms": {
+      "product": "Product",
+      "url": "URL",
+      "platform": "Platform",
+      "category": "Categorie",
+      "audience": "Doelgroep",
+      "market": "Markt"
+    },
+    "fields": {
+      "valueProposition": "Waardepropositie"
+    },
+    "editValueProposition": "Waardepropositie bewerken",
+    "keywordPlaceholder": "Nieuw trefwoord…",
+    "labels": {
+      "semanticEntities": "SEMANTISCHE ENTITEITEN",
+      "categories": "CATEGORIEËN"
+    },
+    "badges": {
+      "market": "Markt {{value}}",
+      "language": "Taal {{value}}",
+      "normalized": "Genormaliseerde interpretatie · Doc 6 §11"
+    },
+    "back": "← Terug",
+    "nextIntents": "Intenties controleren →"
+  },
+  "intents": {
+    "eyebrow": "Nieuwe audit · Stap 3 van 5",
+    "title": "Intenties controleren",
+    "intro": "Intenties zijn de echte problemen die mensen beschrijven wanneer ze naar een oplossing zoeken — de fundamentele eenheid van de audit (Doc 3, §7). Selecteer welke worden geanalyseerd en pas alles aan wat niet klopt.",
+    "include": "Opnemen",
+    "relevance": "RELEVANTIE",
+    "categories": {
+      "INFORMATIONAL": "Informatief",
+      "EXPLORATORY": "Verkennend",
+      "COMMERCIAL": "Commercieel",
+      "TRANSACTIONAL": "Transactiegericht",
+      "COMPARATIVE": "Vergelijkend",
+      "PROBLEM_SPECIFIC": "Problemspecifiek"
+    },
+    "sources": {
+      "AI_GENERATED": "Gegenereerd met AI",
+      "USER_ADDED": "Door jou toegevoegd",
+      "USER_EDITED": "Door jou bewerkt",
+      "HISTORICAL": "Uit een eerdere audit"
+    },
+    "priority": {
+      "HIGH": "Prioriteit hoog",
+      "MEDIUM": "Prioriteit gemiddeld",
+      "LOW": "Prioriteit laag"
+    },
+    "confidence": {
+      "HIGH": "Betrouwbaarheid hoog",
+      "MEDIUM": "Betrouwbaarheid gemiddeld",
+      "LOW": "Betrouwbaarheid laag"
+    },
+    "fields": {
+      "name": "Naam van de intentie",
+      "problem": "Probleem van de gebruiker"
+    },
+    "terms": {
+      "problem": "Probleem",
+      "audience": "Doelgroep",
+      "context": "Context"
+    },
+    "summary": {
+      "total_one": "intentie in totaal",
+      "total_other": "intenties in totaal",
+      "selected": "geselecteerd",
+      "avgRelevance": "gemiddelde relevantie (van 5)",
+      "plannedPrompts": "geplande prompts (5 per intentie)"
+    },
+    "add": {
+      "label": "Intentie handmatig toevoegen",
+      "placeholder": "Bijv. Vergelijk abonnementen voor financiële software",
+      "button": "Intentie toevoegen",
+      "hint": "Samen met de intentie wordt automatisch een directe prompt aangemaakt."
+    },
+    "back": "← Terug naar het profiel",
+    "validation": "Selecteer minstens één intentie om door te gaan.",
+    "next": "Prompts controleren →"
+  },
+  "prompts": {
+    "eyebrow": "Nieuwe audit · Stap 4 van 5",
+    "title": "Prompts controleren",
+    "intro": "Prompts zijn de vragen die daadwerkelijk worden uitgevoerd — <strong>Intent ≠ Prompt</strong> (Doc 6, §14). Elke geselecteerde intentie heeft 5 varianten met versiebeheer. Bewerk, deactiveer of verwijder alles wat niet mag worden uitgevoerd.",
+    "inactive": "Inactief — wordt niet uitgevoerd",
+    "perIntent_one": "{{count}} prompt voor deze intentie",
+    "perIntent_other": "{{count}} prompts voor deze intentie",
+    "fields": {
+      "text": "Prompttekst"
+    },
+    "variations": {
+      "DIRECT": "Direct",
+      "CONVERSATIONAL": "Conversationeel",
+      "COMPARATIVE": "Vergelijkend",
+      "PROBLEM_BASED": "Probleemgericht",
+      "ROLE_BASED": "Gebruikersrol",
+      "CONTEXTUAL": "Contextueel"
+    },
+    "summary": {
+      "total_one": "prompt in totaal",
+      "total_other": "prompts in totaal",
+      "active": "actief voor uitvoering",
+      "selectedIntents_one": "geselecteerde intentie",
+      "selectedIntents_other": "geselecteerde intenties",
+      "setVersion": "versie van de promptset"
+    },
+    "add": {
+      "label": "Prompt aan deze intentie toevoegen",
+      "placeholder": "Nieuwe vraag om uit te voeren…"
+    },
+    "empty": {
+      "title": "Geen intentie geselecteerd",
+      "desc": "Ga terug naar de vorige stap en selecteer minstens één intentie om prompts te genereren.",
+      "action": "Naar de intenties"
+    },
+    "back": "← Terug naar de intenties",
+    "validation": "Geen actieve prompt om uit te voeren.",
+    "start": "Audit starten"
+  },
+  "progress": {
+    "eyebrow": "Nieuwe audit · Stap 5 van 5",
+    "title": {
+      "done": "Audit voltooid",
+      "running": "De audit wordt uitgevoerd"
+    },
+    "intro": {
+      "done": "Alle stappen zijn verwerkt. Het rapport met scores, bewijs en kansen is klaar.",
+      "running": "Verzameling en analyse doorlopen de stappen hieronder. De gegevens in deze demo zijn lokaal gesimuleerd."
+    },
+    "net": {
+      "failed": "Uitvoering onderbroken — start opnieuw om dezelfde stappen te verwerken",
+      "done": "Alle stappen voltooid · rapport gereed",
+      "idle": "Netwerk in rust · geen verzameling actief",
+      "running": "Verzameling en analyse actief · het netwerk vordert stap voor stap"
+    },
+    "status": {
+      "DRAFT": "Concept",
+      "QUEUED": "In de wachtrij",
+      "RUNNING": "Wordt uitgevoerd",
+      "ANALYZING": "Wordt geanalyseerd",
+      "COMPLETED": "Voltooid",
+      "FAILED": "Mislukt",
+      "CANCELLED": "Geannuleerd"
+    },
+    "sections": {
+      "progress": "Voortgang",
+      "context": "Auditcontext"
+    },
+    "progressBar": "Voltooide stappen",
+    "steps": {
+      "preparing": "Analyse voorbereiden",
+      "testing": "Discovery-omgevingen testen",
+      "analyzing": "Aanbevelingen analyseren",
+      "evidence": "Bewijs analyseren",
+      "gaps": "Tekorten in kaart brengen",
+      "opportunities": "Kansen genereren",
+      "ready": "Rapport gereed"
+    },
+    "start": "Run starten",
+    "back": "← Prompts controleren",
+    "processing": "Verwerken… dit duurt in deze demo enkele seconden.",
+    "viewReport": "Bekijk nu het rapport →",
+    "autoOpen": "Wordt automatisch geopend…",
+    "error": {
+      "title": "De run is niet voltooid",
+      "desc": "De audit is onderbroken. Je kunt de run opnieuw starten met dezelfde intenties en prompts."
+    },
+    "terms": {
+      "id": "ID",
+      "product": "Product",
+      "market": "Markt",
+      "intents": "Intenties",
+      "activePrompts": "Actieve prompts",
+      "methodology": "Methodologie",
+      "promptSet": "Promptset"
+    },
+    "selected_one": "{{count}} geselecteerd",
+    "selected_other": "{{count}} geselecteerd",
+    "currentStep": "Huidige stap:"
+  },
+  "wizard": {
+    "product": "Product",
+    "profile": "Profiel",
+    "intents": "Intenties",
+    "prompts": "Prompts",
+    "execution": "Run"
+  }
+}

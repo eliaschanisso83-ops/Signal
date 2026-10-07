@@ -1,0 +1,74 @@
+{
+  "skipToContent": "本文へスキップ",
+  "aria": {
+    "language": "言語",
+    "remove": "削除",
+    "relevance": "関連度 {{max}} 中 {{value}}",
+    "scoreGauge": "{{label}}：{{max}} 中 {{value}}",
+    "auditSteps": "監査ステップ",
+    "reportSections": "レポートのセクション",
+    "inProgress": "（進行中）",
+    "done": "（完了）"
+  },
+  "state": {
+    "loading": "読み込み中…",
+    "errorTitle": "エラーが発生しました",
+    "retry": "再試行",
+    "remove": "削除",
+    "noData": "データがありません。"
+  },
+  "levels": {
+    "HIGH": "高",
+    "MEDIUM": "中",
+    "LOW": "低"
+  },
+  "presenceLevels": {
+    "ALTA": "高",
+    "MEDIA": "中",
+    "BAIXA": "低",
+    "AUSENTE": "なし"
+  },
+  "badge": {
+    "priority": "優先度：{{level}}",
+    "confidence": "信頼度：{{level}}",
+    "presence": "存在度：{{level}}",
+    "impact": "影響度：{{level}}",
+    "effort": "工数：{{level}}"
+  },
+  "events": {
+    "RECOMMENDATION": "推奨",
+    "ALTERNATIVE": "代替",
+    "COMPARISON": "比較",
+    "MENTION": "言及",
+    "NEGATIVE": "否定的",
+    "IRRELEVANT": "無関係"
+  },
+  "causal": {
+    "observed": "観察",
+    "evidence": "証拠",
+    "hypothesis": "仮説",
+    "action": "アクション"
+  },
+  "metrics": {
+    "discoverabilityScore": "Discoverability Score",
+    "recommendationShare": "Recommendation Share",
+    "intentCoverage": "Intent Coverage",
+    "evidenceCoverage": "Evidence Coverage",
+    "semanticAlignment": "Semantic Alignment",
+    "competitivePosition": "Competitive Position"
+  },
+  "confidenceLevel": {
+    "HIGH": "高",
+    "MEDIUM": "中",
+    "LOW": "低"
+  },
+  "gauge": {
+    "of": "/ {{max}}"
+  },
+  "net": {
+    "processing": "処理中",
+    "success": "完了",
+    "error": "失敗",
+    "idle": "待機"
+  }
+}

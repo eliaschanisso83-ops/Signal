@@ -1,35 +1,37 @@
 import { useState, type FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAuditSession } from '../state/session';
 import { Button, Card, Chip, Field } from '../design-system/components';
 import { WizardHeader } from '../components/layout/WizardHeader';
 import type { Platform } from '../domain/types';
 
-const PLATFORMS: Array<{ value: Platform; label: string }> = [
-  { value: 'GOOGLE_PLAY', label: 'Google Play' },
-  { value: 'APP_STORE', label: 'App Store' },
-  { value: 'WEB', label: 'Site / Web' },
-  { value: 'SAAS', label: 'SaaS' },
-  { value: 'DESKTOP', label: 'Desktop' },
-];
-
-const MARKETS = [
-  { value: 'BR', label: 'Brasil (BR)' },
-  { value: 'US', label: 'Estados Unidos (US)' },
-  { value: 'PT', label: 'Portugal (PT)' },
-  { value: 'ES', label: 'Espanha (ES)' },
-  { value: 'MX', label: 'México (MX)' },
-];
-
-const LANGUAGES = [
-  { value: 'pt-BR', label: 'Português (pt-BR)' },
-  { value: 'en-US', label: 'Inglês (en-US)' },
-  { value: 'es-ES', label: 'Espanhol (es-ES)' },
-];
-
 export function NewAuditPage() {
+  const { t } = useTranslation('audit');
   const { createAudit, isRestoring } = useAuditSession();
   const navigate = useNavigate();
+
+  const PLATFORMS: Array<{ value: Platform; label: string }> = [
+    { value: 'GOOGLE_PLAY', label: t('newAudit.platforms.GOOGLE_PLAY') },
+    { value: 'APP_STORE', label: t('newAudit.platforms.APP_STORE') },
+    { value: 'WEB', label: t('newAudit.platforms.WEB') },
+    { value: 'SAAS', label: t('newAudit.platforms.SAAS') },
+    { value: 'DESKTOP', label: t('newAudit.platforms.DESKTOP') },
+  ];
+
+  const MARKETS = [
+    { value: 'BR', label: t('newAudit.markets.BR') },
+    { value: 'US', label: t('newAudit.markets.US') },
+    { value: 'PT', label: t('newAudit.markets.PT') },
+    { value: 'ES', label: t('newAudit.markets.ES') },
+    { value: 'MX', label: t('newAudit.markets.MX') },
+  ];
+
+  const LANGUAGES = [
+    { value: 'pt-BR', label: t('newAudit.languages.ptBR') },
+    { value: 'en-US', label: t('newAudit.languages.enUS') },
+    { value: 'es-ES', label: t('newAudit.languages.esES') },
+  ];
 
   const [productUrl, setProductUrl] = useState('https://fluxoapp.com.br');
   const [productName, setProductName] = useState('FluxoCaixa');
@@ -64,7 +66,7 @@ export function NewAuditPage() {
       const parsed = new URL(productUrl.trim());
       if (!/^https?:$/.test(parsed.protocol)) throw new Error('protocolo');
     } catch {
-      setUrlError('Informe uma URL válida, começando com http:// ou https://.');
+      setUrlError(t('newAudit.errors.url'));
       return;
     }
 
@@ -82,7 +84,7 @@ export function NewAuditPage() {
       });
       navigate(`/audit/${id}/profile`);
     } catch {
-      setError('Não foi possível criar a auditoria. Tente novamente.');
+      setError(t('newAudit.errors.create'));
     } finally {
       setSubmitting(false);
     }
@@ -93,20 +95,17 @@ export function NewAuditPage() {
       <WizardHeader currentIndex={0} />
 
       <div className="page-head">
-        <div className="page-eyebrow">Nova auditoria · Etapa 1 de 5</div>
-        <h1>Configurar o produto</h1>
-        <p>
-          Defina qual produto será auditado e em quais condições de mercado, idioma e concorrência a análise deve
-          acontecer. Os campos abaixo vêm pré-preenchidos com dados de demonstração.
-        </p>
+        <div className="page-eyebrow">{t('newAudit.eyebrow')}</div>
+        <h1>{t('newAudit.title')}</h1>
+        <p>{t('newAudit.intro')}</p>
       </div>
 
       <form onSubmit={onSubmit} noValidate>
         <div className="grid-2" style={{ alignItems: 'start' }}>
           <Card>
-            <h2 style={{ marginBottom: 'var(--sp-4)' }}>Produto</h2>
+            <h2 style={{ marginBottom: 'var(--sp-4)' }}>{t('newAudit.sections.product')}</h2>
             <div className="stack stack-4">
-              <Field label="URL do produto" htmlFor="productUrl" required error={urlError} hint="Ex.: https://fluxoapp.com.br">
+              <Field label={t('newAudit.fields.url')} htmlFor="productUrl" required error={urlError} hint={t('newAudit.hints.url')}>
                 <input
                   id="productUrl"
                   className="input"
@@ -119,7 +118,7 @@ export function NewAuditPage() {
                 />
               </Field>
 
-              <Field label="Nome do produto" htmlFor="productName" hint="Opcional — derivado da URL se vazio.">
+              <Field label={t('newAudit.fields.name')} htmlFor="productName" hint={t('newAudit.hints.name')}>
                 <input
                   id="productName"
                   className="input"
@@ -128,7 +127,7 @@ export function NewAuditPage() {
                 />
               </Field>
 
-              <Field label="Plataforma" htmlFor="platform">
+              <Field label={t('newAudit.fields.platform')} htmlFor="platform">
                 <select id="platform" className="select" value={platform} onChange={(e) => setPlatform(e.target.value as Platform)}>
                   {PLATFORMS.map((p) => (
                     <option key={p.value} value={p.value}>
@@ -138,20 +137,20 @@ export function NewAuditPage() {
                 </select>
               </Field>
 
-              <Field label="Categoria" htmlFor="category">
+              <Field label={t('newAudit.fields.category')} htmlFor="category">
                 <input id="category" className="input" value={category} onChange={(e) => setCategory(e.target.value)} />
               </Field>
 
-              <Field label="Público-alvo" htmlFor="audience">
+              <Field label={t('newAudit.fields.audience')} htmlFor="audience">
                 <input id="audience" className="input" value={audience} onChange={(e) => setAudience(e.target.value)} />
               </Field>
             </div>
           </Card>
 
           <Card>
-            <h2 style={{ marginBottom: 'var(--sp-4)' }}>Condições da auditoria</h2>
+            <h2 style={{ marginBottom: 'var(--sp-4)' }}>{t('newAudit.sections.conditions')}</h2>
             <div className="stack stack-4">
-              <Field label="Mercado" htmlFor="market" hint="Determina o país das respostas observadas.">
+              <Field label={t('newAudit.fields.market')} htmlFor="market" hint={t('newAudit.hints.market')}>
                 <select id="market" className="select" value={market} onChange={(e) => setMarket(e.target.value)}>
                   {MARKETS.map((m) => (
                     <option key={m.value} value={m.value}>
@@ -161,7 +160,7 @@ export function NewAuditPage() {
                 </select>
               </Field>
 
-              <Field label="Idioma" htmlFor="language" hint="Idioma dos prompts executados.">
+              <Field label={t('newAudit.fields.language')} htmlFor="language" hint={t('newAudit.hints.language')}>
                 <select id="language" className="select" value={language} onChange={(e) => setLanguage(e.target.value)}>
                   {LANGUAGES.map((l) => (
                     <option key={l.value} value={l.value}>
@@ -173,13 +172,13 @@ export function NewAuditPage() {
 
               <div className="field">
                 <label className="field-label" htmlFor="competitorInput">
-                  Concorrentes de referência
+                  {t('newAudit.fields.competitors')}
                 </label>
                 <div className="row" style={{ gap: 'var(--sp-2)' }}>
                   <input
                     id="competitorInput"
                     className="input"
-                    placeholder="Adicionar concorrente…"
+                    placeholder={t('newAudit.placeholders.competitor')}
                     value={competitorDraft}
                     onChange={(e) => setCompetitorDraft(e.target.value)}
                     onKeyDown={(e) => {
@@ -190,18 +189,18 @@ export function NewAuditPage() {
                     }}
                   />
                   <Button type="button" variant="secondary" onClick={addCompetitor}>
-                    Adicionar
+                    {t('actions.add')}
                   </Button>
                 </div>
                 <ul className="chip-list" style={{ marginTop: 'var(--sp-3)' }}>
                   {competitors.map((c) => (
-                    <Chip key={c} onRemove={() => removeCompetitor(c)} removeLabel={`Remover ${c}`}>
+                    <Chip key={c} onRemove={() => removeCompetitor(c)} removeLabel={t('aria.removeItem', { name: c })}>
                       {c}
                     </Chip>
                   ))}
                 </ul>
                 {competitors.length === 0 && (
-                  <span className="field-hint">Sem concorrentes informados — o catálogo padrão será usado.</span>
+                  <span className="field-hint">{t('newAudit.empty.competitors')}</span>
                 )}
               </div>
             </div>
@@ -216,9 +215,9 @@ export function NewAuditPage() {
 
         <div className="page-actions">
           <Button type="submit" size="lg" loading={submitting || isRestoring}>
-            Criar rascunho e continuar
+            {t('actions.createDraft')}
           </Button>
-          <span className="small muted">Próxima etapa: revisar o perfil interpretado do produto.</span>
+          <span className="small muted">{t('newAudit.footer.next')}</span>
         </div>
       </form>
     </div>

@@ -1,0 +1,221 @@
+{
+  "head": {
+    "title": "Vindbaarheidsrapport",
+    "eyebrow": "Vindbaarheidsaudit · {{name}}",
+    "market": "Markt {{value}}",
+    "language": "Taal {{value}}",
+    "methodology": "Methodologie v{{version}}",
+    "prompts": "Prompts v{{version}}",
+    "completed": "Audit voltooid",
+    "sectionsNav": "Secties van het rapport"
+  },
+  "nav": {
+    "summary": "Samenvatting & diagnose",
+    "evidence": "Bewijs",
+    "actions": "Kansen & acties"
+  },
+  "scoreCard": {
+    "formulaLabel": "Formule {{metric}}",
+    "formulaText": "{{explanation}} · formule v{{formula}} · methodologie v{{methodology}}"
+  },
+  "summary": {
+    "eyebrow": "Managementsamenvatting"
+  },
+  "scores": {
+    "eyebrow": "Scores",
+    "title": "Kwantitatieve diagnose",
+    "desc": "Elke score toont de waarde, de formule, de versie en de betrouwbaarheid — geen getal zonder herkomst.",
+    "gaugeLabel": "Vindbaarheid",
+    "heroNote": "<strong>{{metric}}</strong> — samengestelde score (formule v{{formula}}, methodologie v{{methodology}}).",
+    "experimental": "Experimenteel"
+  },
+  "coverage": {
+    "eyebrow": "Dekking van intenties",
+    "title": "Intentielandschap",
+    "desc": "Aanwezigheid van het product per relevante intentie, de leidende intentie en de omvang van het tekort (relevantie × afwezigheid).",
+    "tableCaption": "Aanwezigheid per intentie",
+    "empty": "Geen intentie geselecteerd.",
+    "relevance": "Relevantie {{level}}",
+    "gap": {
+      "low": "Laag",
+      "medium": "Gemiddeld",
+      "high": "Hoog"
+    },
+    "columns": {
+      "intent": "Intentie",
+      "presence": "Aanwezigheid",
+      "leader": "Leidende intentie",
+      "share": "Aandeel van het product",
+      "gap": "Tekort"
+    }
+  },
+  "reco": {
+    "eyebrow": "Analyse van aanbevelingen",
+    "title": "Aanbevelingen en concurrentiepositie",
+    "desc_one": "Verdeling van de vermeldingsclassificaties over {{count}} observatie en een vergelijking tussen de geanalyseerde producten.",
+    "desc_other": "Verdeling van de vermeldingsclassificaties over {{count}} observaties en een vergelijking tussen de geanalyseerde producten.",
+    "distributionTitle": "Verdeling van de classificaties",
+    "distributionNote": "Classificatie volgens Document 3, §27. “Niet relevant” valt buiten de reikwijdte van het product.",
+    "positionTitle": "Concurrentiepositie",
+    "auditedProduct": "(geauditeerd product)",
+    "coverageLine": "Dekking {{coverage}}/{{total}} intenties · gemiddelde positie {{position}}",
+    "rankingNote_one": "Gerangschikt op Recommendation Share. {{product}} staat op nummer {{rank}} van de {{count}}.",
+    "rankingNote_other": "Gerangschikt op Recommendation Share. {{product}} staat op nummer {{rank}} van de {{count}} producten.",
+    "breakdownTitle": "Uitsplitsing per concurrent",
+    "tableCaption": "Overzicht van de concurrenten",
+    "columns": {
+      "product": "Product",
+      "topIntents": "Belangrijkste intenties",
+      "characterization": "Geobserveerde karakterisering",
+      "sources": "Terugkerende bronnen",
+      "avgPosition": "Gemiddelde positie"
+    }
+  },
+  "semantic": {
+    "eyebrow": "Semantische afstemming",
+    "title": "Gedeclareerde positionering × geobserveerde karakterisering",
+    "declared": "Gedeclareerd",
+    "observed": "Geobserveerd",
+    "verdict": "Oordeel: {{value}}",
+    "verdictPartial": "PARTIEEL",
+    "verdictAligned": "IN LIJN",
+    "termsTitle": "Termen die aan elk product zijn gekoppeld",
+    "audited": "(GEAUDITEERD)"
+  },
+  "methodology": {
+    "eyebrow": "Methodologie",
+    "title": "Hoe deze audit tot stand is gekomen",
+    "intentsOf": "{{analyzed}} van {{total}} geanalyseerd",
+    "limitations": "Beperkingen",
+    "fields": {
+      "methodology": "Methodologie",
+      "promptSet": "Promptset",
+      "scoring": "Scoring",
+      "provider": "Provider",
+      "model": "Model",
+      "marketLanguage": "Markt / taal",
+      "analysisDate": "Datum van de analyse",
+      "intents": "Intenties",
+      "prompts": "Prompts",
+      "relevantResponses": "Relevante antwoorden",
+      "sampleSize": "Steekproefomvang"
+    }
+  },
+  "dimensions": {
+    "relevance": "Relevantie",
+    "specificity": "Specificiteit",
+    "credibility": "Geloofwaardigheid",
+    "freshness": "Actualiteit",
+    "independence": "Onafhankelijkheid"
+  },
+  "sourceCategories": {
+    "OWNED": "Eigen",
+    "EARNED": "Pers / content",
+    "COMMUNITY": "Community",
+    "PLATFORM": "Platform",
+    "OTHER": "Overig"
+  },
+  "gapTypes": {
+    "RECOMMENDATION_GAP": "Aanbevelingstekort",
+    "COVERAGE_GAP": "Dekkingstekort",
+    "EVIDENCE_GAP": "Bewijstekort",
+    "SEMANTIC_GAP": "Semantisch tekort",
+    "COMPETITIVE_GAP": "Concurrentietekort",
+    "SOURCE_GAP": "Brontekort",
+    "POSITIONING_GAP": "Positioneringstekort",
+    "CONVERSION_GAP": "Conversietekort"
+  },
+  "evidenceLandscape": {
+    "eyebrow": "Bewijslandschap",
+    "title": "Sterkte van het bewijs per intentie",
+    "desc": "Hoeveel extern bewijs over het product er per relevante intentie bestaat (schaal 0–1). Waarden onder 0.5 tellen als onvoldoende dekking."
+  },
+  "evidenceStats": {
+    "total": "Totaal aan bewijs",
+    "aboutProduct": "Over het product",
+    "aboutCompetitors": "Over concurrenten",
+    "sources": "Geobserveerde bronnen",
+    "byCategory": "Bronnen per categorie"
+  },
+  "gaps": {
+    "eyebrow": "Bewijstekorten",
+    "title": "Geïdentificeerde tekorten",
+    "desc": "Elk tekort draagt het bewijs erachter, de impact en de betrouwbaarheid mee — geen bewering zonder onderbouwing.",
+    "evidenceLabel": "BEWIJS"
+  },
+  "raw": {
+    "eyebrow": "Onbewerkt bewijs",
+    "title": "Geobserveerd onbewerkt bewijs",
+    "desc": "Steekproef van de antwoorden en bronnen die de conclusies onderbouwen (Doc 4, §36).",
+    "tableCaption": "Steekproef van de geobserveerde antwoorden",
+    "position_ordinal_one": "{{count}}e",
+    "position_ordinal_two": "{{count}}e",
+    "position_ordinal_few": "{{count}}e",
+    "position_ordinal_other": "{{count}}e",
+    "columns": {
+      "prompt": "Prompt",
+      "excerpt": "Fragment uit het antwoord",
+      "products": "Vermelde producten",
+      "position": "Positie",
+      "event": "Classificatie",
+      "sources": "Bronnen"
+    }
+  },
+  "evidenceLists": {
+    "product": "Bewijs over het product",
+    "competitors": "Bewijs over concurrenten"
+  },
+  "evidenceItem": {
+    "source": "Bron: {{source}} · {{contextText}}"
+  },
+  "evidenceTrace": {
+    "eyebrow": "Traceerbaarheid",
+    "title": "Van bewijs naar beslissingen",
+    "desc": "Voorbeeld van het tekort met de hoogste impact: van de observatie naar de aanbevolen actie.",
+    "hypothesis": "Hypothese: het ontbrekende verband tussen het product en het onderwerp van de intentie kan de aanwezigheid in de antwoorden verlagen.",
+    "action": "Actie: zie “Kansen & acties” voor de geprioriteerde interventie en het validatieplan."
+  },
+  "opportunities": {
+    "eyebrow": "Topkansen",
+    "title": "Geprioriteerde kansen",
+    "desc": "Elke kans verwijst naar het tekort waaruit die is ontstaan en wordt ingedeeld op impact, relevantie, betrouwbaarheid, inspanning en uiteindelijke prioriteit.",
+    "rank": "Positie {{rank}}",
+    "relevance": "Relevantie {{level}}",
+    "sourceGap": "BRONTEKORT"
+  },
+  "actions": {
+    "eyebrow": "Aanbevolen acties",
+    "title": "Aanbevolen acties met traceerbaarheid",
+    "desc": "Elke actie volgt de keten <strong>geobserveerd probleem → bewijs → hypothese → actie</strong>, met een vastgestelde validatie. Dit is het tegenovergestelde van een aanbeveling zonder onderbouwing.",
+    "fallbackTitle": "Actie",
+    "validationLabel": "HOE TE VALIDEREN"
+  },
+  "actionCategories": {
+    "POSITIONING": "Positionering",
+    "STORE": "Winkelvermelding",
+    "WEBSITE": "Website / content",
+    "EVIDENCE": "Extern bewijs",
+    "COMMUNITY": "Community",
+    "PRODUCT": "Product",
+    "DISTRIBUTION": "Distributie"
+  },
+  "trace": {
+    "eyebrow": "Traceerbaarheid",
+    "title": "Actie → Kans → Tekort",
+    "desc": "Tabulaire weergave van de volledige keten, voor interne controle van het resultaat.",
+    "tableCaption": "Traceerbaarheid van de acties",
+    "columns": {
+      "action": "Actie",
+      "opportunity": "Kans",
+      "gap": "Tekort",
+      "priority": "Prioriteit",
+      "confidence": "Betrouwbaarheid"
+    }
+  },
+  "cta": {
+    "eyebrow": "Volgende cyclus",
+    "title": "Validatie uitvoeren en opnieuw auditen",
+    "desc": "Voer na 2–4 weken met wijzigingen een nieuwe audit uit om aanwezigheid, aandeel en karakterisering te vergelijken.",
+    "button": "Nieuwe audit starten"
+  }
+}

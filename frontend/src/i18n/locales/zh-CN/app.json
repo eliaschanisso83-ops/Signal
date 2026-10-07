@@ -1,0 +1,37 @@
+{
+  "skipToContent": "跳到主要内容",
+  "brand": {
+    "home": "Signal — 首页"
+  },
+  "nav": {
+    "main": "主导航",
+    "problem": "问题",
+    "howItWorks": "工作原理",
+    "metrics": "指标",
+    "startAudit": "开始审计",
+    "newAudit": "新建审计",
+    "myReport": "我的报告",
+    "continueAudit": "继续审计"
+  },
+  "language": {
+    "label": "语言"
+  },
+  "footer": {
+    "description": "软件可发现性智能 — 审计 AI 助手、搜索与市场如何推荐您的产品，并给出可追溯的证据与优先级行动。",
+    "startAudit": "开始审计",
+    "product": {
+      "title": "产品",
+      "problem": "问题",
+      "howItWorks": "工作原理",
+      "metrics": "指标与证据"
+    },
+    "demo": {
+      "title": "演示",
+      "newAudit": "新建审计",
+      "myReport": "我的报告",
+      "continueAudit": "继续审计"
+    },
+    "bottom": "方法论 v1.0 · 模拟数据演示",
+    "copyright": "© 2026 Signal — signal.biz-flow.cloud"
+  }
+}

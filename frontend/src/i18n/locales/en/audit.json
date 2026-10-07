@@ -1,0 +1,288 @@
+{
+  "actions": {
+    "createDraft": "Create draft and continue",
+    "save": "Save",
+    "cancel": "Cancel",
+    "add": "Add",
+    "edit": "Edit",
+    "remove": "Remove",
+    "activate": "Activate",
+    "deactivate": "Deactivate"
+  },
+  "aria": {
+    "removeItem": "Remove {{name}}",
+    "includeIntent": "Include intent \"{{name}}\" in the audit",
+    "removeIntent": "Remove intent {{name}}",
+    "removePrompt": "Remove prompt {{preview}}",
+    "enablePrompt": "Enable prompt",
+    "disablePrompt": "Disable prompt",
+    "newKeyword": "New keyword",
+    "intentsSummary": "Intents summary",
+    "promptsSummary": "Prompts summary",
+    "selectedIntentsTabs": "Selected intents"
+  },
+  "newAudit": {
+    "eyebrow": "New audit · Step 1 of 5",
+    "title": "Configure the product",
+    "intro": "Define which product will be audited and under which market, language and competition conditions the analysis should take place. The fields below are pre-filled with demonstration data.",
+    "sections": {
+      "product": "Product",
+      "conditions": "Audit conditions"
+    },
+    "fields": {
+      "url": "Product URL",
+      "name": "Product name",
+      "platform": "Platform",
+      "category": "Category",
+      "audience": "Target audience",
+      "market": "Market",
+      "language": "Language",
+      "competitors": "Reference competitors"
+    },
+    "hints": {
+      "url": "E.g. https://fluxoapp.com.br",
+      "name": "Optional — derived from the URL if empty.",
+      "market": "Determines the country of the observed answers.",
+      "language": "Language of the executed prompts."
+    },
+    "placeholders": {
+      "competitor": "Add competitor…"
+    },
+    "empty": {
+      "competitors": "No competitors informed — the default catalog will be used."
+    },
+    "platforms": {
+      "GOOGLE_PLAY": "Google Play",
+      "APP_STORE": "App Store",
+      "WEB": "Website",
+      "SAAS": "SaaS",
+      "DESKTOP": "Desktop"
+    },
+    "markets": {
+      "BR": "Brazil (BR)",
+      "US": "United States (US)",
+      "PT": "Portugal (PT)",
+      "ES": "Spain (ES)",
+      "MX": "Mexico (MX)"
+    },
+    "languages": {
+      "ptBR": "Portuguese (pt-BR)",
+      "enUS": "English (en-US)",
+      "esES": "Spanish (es-ES)"
+    },
+    "errors": {
+      "url": "Enter a valid URL starting with http:// or https://.",
+      "create": "Could not create the audit. Try again."
+    },
+    "footer": {
+      "next": "Next step: review the interpreted product profile."
+    }
+  },
+  "profile": {
+    "eyebrow": "New audit · Step 2 of 5",
+    "title": "Interpreted product profile",
+    "intro": "This is the normalized interpretation that guides the generation of intents and prompts. <strong>It is not an absolute truth</strong> — review and correct it before continuing.",
+    "about": "About {{title}}",
+    "sections": {
+      "provided": "Provided data",
+      "valueProposition": "Value proposition (interpreted)",
+      "valuePropositionHint": "Text automatically derived from the URL and the category — edit it if it is inaccurate.",
+      "features": "Features",
+      "featuresHint": "Interpreted list — used to generate language in the prompts.",
+      "problems": "Problems solved",
+      "useCases": "Use cases",
+      "audiences": "Audiences",
+      "competitors": "Observed competitors",
+      "keywords": "Keywords",
+      "keywordsHint": "Semantic entities the product should associate with your brand.",
+      "entities": "Entities and categories"
+    },
+    "terms": {
+      "product": "Product",
+      "url": "URL",
+      "platform": "Platform",
+      "category": "Category",
+      "audience": "Audience",
+      "market": "Market"
+    },
+    "fields": {
+      "valueProposition": "Value proposition"
+    },
+    "editValueProposition": "Edit value proposition",
+    "keywordPlaceholder": "New keyword…",
+    "labels": {
+      "semanticEntities": "SEMANTIC ENTITIES",
+      "categories": "CATEGORIES"
+    },
+    "badges": {
+      "market": "Market {{value}}",
+      "language": "Language {{value}}",
+      "normalized": "Normalized interpretation · Doc 6 §11"
+    },
+    "back": "← Back",
+    "nextIntents": "Review intents →"
+  },
+  "intents": {
+    "eyebrow": "New audit · Step 3 of 5",
+    "title": "Review intents",
+    "intro": "Intents are the real problems people describe when looking for a solution — the fundamental unit of the audit (Doc 3, §7). Select which ones will be analyzed and edit anything that is inaccurate.",
+    "include": "Include",
+    "relevance": "RELEVANCE",
+    "categories": {
+      "INFORMATIONAL": "Informational",
+      "EXPLORATORY": "Exploratory",
+      "COMMERCIAL": "Commercial",
+      "TRANSACTIONAL": "Transactional",
+      "COMPARATIVE": "Comparative",
+      "PROBLEM_SPECIFIC": "Problem-specific"
+    },
+    "sources": {
+      "AI_GENERATED": "AI generated",
+      "USER_ADDED": "Added by you",
+      "USER_EDITED": "Edited by you",
+      "HISTORICAL": "From a previous audit"
+    },
+    "priority": {
+      "HIGH": "Priority high",
+      "MEDIUM": "Priority medium",
+      "LOW": "Priority low"
+    },
+    "confidence": {
+      "HIGH": "Confidence high",
+      "MEDIUM": "Confidence medium",
+      "LOW": "Confidence low"
+    },
+    "fields": {
+      "name": "Intent name",
+      "problem": "User problem"
+    },
+    "terms": {
+      "problem": "Problem",
+      "audience": "Audience",
+      "context": "Context"
+    },
+    "summary": {
+      "total_one": "intent in total",
+      "total_other": "intents in total",
+      "selected": "selected",
+      "avgRelevance": "average relevance (out of 5)",
+      "plannedPrompts": "planned prompts (5/intent)"
+    },
+    "add": {
+      "label": "Add intent manually",
+      "placeholder": "E.g. Compare financial software plans",
+      "button": "Add intent",
+      "hint": "A direct prompt is automatically created along with the intent."
+    },
+    "back": "← Back to profile",
+    "validation": "Select at least one intent to continue.",
+    "next": "Review prompts →"
+  },
+  "prompts": {
+    "eyebrow": "New audit · Step 4 of 5",
+    "title": "Review prompts",
+    "intro": "Prompts are the questions actually executed — <strong>Intent ≠ Prompt</strong> (Doc 6, §14). Each selected intent has 5 versioned variations. Edit, deactivate or remove anything that should not be executed.",
+    "inactive": "Inactive — it will not be executed",
+    "perIntent_one": "{{count}} prompt for this intent",
+    "perIntent_other": "{{count}} prompts for this intent",
+    "fields": {
+      "text": "Prompt text"
+    },
+    "variations": {
+      "DIRECT": "Direct",
+      "CONVERSATIONAL": "Conversational",
+      "COMPARATIVE": "Comparative",
+      "PROBLEM_BASED": "Problem-based",
+      "ROLE_BASED": "User role",
+      "CONTEXTUAL": "Contextual"
+    },
+    "summary": {
+      "total_one": "prompt in total",
+      "total_other": "prompts in total",
+      "active": "active for execution",
+      "selectedIntents_one": "selected intent",
+      "selectedIntents_other": "selected intents",
+      "setVersion": "set version"
+    },
+    "add": {
+      "label": "Add prompt to this intent",
+      "placeholder": "New question to run…"
+    },
+    "empty": {
+      "title": "No intent selected",
+      "desc": "Go back to the previous step and select at least one intent to generate prompts.",
+      "action": "Go to intents"
+    },
+    "back": "← Back to intents",
+    "validation": "No active prompt to run.",
+    "start": "Start audit"
+  },
+  "progress": {
+    "eyebrow": "New audit · Step 5 of 5",
+    "title": {
+      "done": "Audit completed",
+      "running": "Running the audit"
+    },
+    "intro": {
+      "done": "All steps have been processed. The report with scores, evidence and opportunities is ready.",
+      "running": "Collection and analysis advance through the steps below. The data in this demonstration is simulated locally."
+    },
+    "net": {
+      "failed": "Run interrupted — restart to reprocess the same steps",
+      "done": "All steps completed · report ready",
+      "idle": "Network idle · no collection in progress",
+      "running": "Collection and analysis active · the network advances step by step"
+    },
+    "status": {
+      "DRAFT": "Draft",
+      "QUEUED": "Queued",
+      "RUNNING": "Running",
+      "ANALYZING": "Analyzing",
+      "COMPLETED": "Completed",
+      "FAILED": "Failed",
+      "CANCELLED": "Cancelled"
+    },
+    "sections": {
+      "progress": "Progress",
+      "context": "Audit context"
+    },
+    "progressBar": "Completed steps",
+    "steps": {
+      "preparing": "Preparing the analysis",
+      "testing": "Testing discovery environments",
+      "analyzing": "Analyzing recommendations",
+      "evidence": "Analyzing evidence",
+      "gaps": "Identifying gaps",
+      "opportunities": "Generating opportunities",
+      "ready": "Report ready"
+    },
+    "start": "Start run",
+    "back": "← Review prompts",
+    "processing": "Processing… this takes a few seconds in this demonstration.",
+    "viewReport": "View report now →",
+    "autoOpen": "Opening automatically…",
+    "error": {
+      "title": "The run was not completed",
+      "desc": "The audit was interrupted. You can restart the run with the same intents and prompts."
+    },
+    "terms": {
+      "id": "ID",
+      "product": "Product",
+      "market": "Market",
+      "intents": "Intents",
+      "activePrompts": "Active prompts",
+      "methodology": "Methodology",
+      "promptSet": "Prompt set"
+    },
+    "selected_one": "{{count}} selected",
+    "selected_other": "{{count}} selected",
+    "currentStep": "Current step:"
+  },
+  "wizard": {
+    "product": "Product",
+    "profile": "Profile",
+    "intents": "Intents",
+    "prompts": "Prompts",
+    "execution": "Run"
+  }
+}

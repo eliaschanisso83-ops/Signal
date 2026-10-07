@@ -1,24 +1,26 @@
 import { useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
+import { Trans, useTranslation } from 'react-i18next';
 import { useAuditSession } from '../state/session';
 import { Badge, Button, Card, EmptyState, Field, Tabs } from '../design-system/components';
 import { WizardHeader } from '../components/layout/WizardHeader';
 import { RequireDraft } from '../components/layout/Guards';
 import type { Prompt, PromptVariationType } from '../domain/types';
 
-const VARIATIONS: Record<PromptVariationType, string> = {
-  DIRECT: 'Direto',
-  CONVERSATIONAL: 'Conversacional',
-  COMPARATIVE: 'Comparativo',
-  PROBLEM_BASED: 'Baseado em problema',
-  ROLE_BASED: 'Papel do usuário',
-  CONTEXTUAL: 'Contextual',
-};
-
 function PromptRow({ prompt }: { prompt: Prompt }) {
+  const { t } = useTranslation('audit');
   const { updatePrompt, removePrompt } = useAuditSession();
   const [editing, setEditing] = useState(false);
   const [text, setText] = useState(prompt.text);
+
+  const VARIATIONS: Record<PromptVariationType, string> = {
+    DIRECT: t('prompts.variations.DIRECT'),
+    CONVERSATIONAL: t('prompts.variations.CONVERSATIONAL'),
+    COMPARATIVE: t('prompts.variations.COMPARATIVE'),
+    PROBLEM_BASED: t('prompts.variations.PROBLEM_BASED'),
+    ROLE_BASED: t('prompts.variations.ROLE_BASED'),
+    CONTEXTUAL: t('prompts.variations.CONTEXTUAL'),
+  };
 
   function save() {
     updatePrompt(prompt.id, { text: text.trim() || prompt.text });
@@ -30,7 +32,7 @@ function PromptRow({ prompt }: { prompt: Prompt }) {
       <div className="prompt-main">
         {editing ? (
           <div className="stack stack-3">
-            <Field label="Texto do prompt" htmlFor={`p-${prompt.id}`}>
+            <Field label={t('prompts.fields.text')} htmlFor={`p-${prompt.id}`}>
               <textarea
                 id={`p-${prompt.id}`}
                 className="textarea"
@@ -41,10 +43,10 @@ function PromptRow({ prompt }: { prompt: Prompt }) {
             </Field>
             <div className="row">
               <Button size="sm" onClick={save}>
-                Salvar
+                {t('actions.save')}
               </Button>
               <Button size="sm" variant="ghost" onClick={() => setEditing(false)}>
-                Cancelar
+                {t('actions.cancel')}
               </Button>
             </div>
           </div>
@@ -57,30 +59,30 @@ function PromptRow({ prompt }: { prompt: Prompt }) {
           <Badge tone="neutral">
             {prompt.language} · {prompt.market}
           </Badge>
-          {!prompt.active && <Badge tone="amber">Inativo — não será executado</Badge>}
+          {!prompt.active && <Badge tone="amber">{t('prompts.inactive')}</Badge>}
         </div>
       </div>
       <div className="prompt-actions">
         {!editing && (
           <Button size="sm" variant="secondary" onClick={() => setEditing(true)}>
-            Editar
+            {t('actions.edit')}
           </Button>
         )}
         <Button
           size="sm"
           variant="ghost"
           onClick={() => updatePrompt(prompt.id, { active: !prompt.active })}
-          aria-label={prompt.active ? 'Desativar prompt' : 'Ativar prompt'}
+          aria-label={prompt.active ? t('aria.disablePrompt') : t('aria.enablePrompt')}
         >
-          {prompt.active ? 'Desativar' : 'Ativar'}
+          {prompt.active ? t('actions.deactivate') : t('actions.activate')}
         </Button>
         <Button
           size="sm"
           variant="ghost"
           onClick={() => removePrompt(prompt.id)}
-          aria-label={`Remover prompt ${prompt.text.slice(0, 30)}`}
+          aria-label={t('aria.removePrompt', { preview: prompt.text.slice(0, 30) })}
         >
-          Remover
+          {t('actions.remove')}
         </Button>
       </div>
     </li>
@@ -88,6 +90,7 @@ function PromptRow({ prompt }: { prompt: Prompt }) {
 }
 
 export function PromptsPage() {
+  const { t } = useTranslation('audit');
   const { draft, startAudit, addPrompt } = useAuditSession();
   const navigate = useNavigate();
   // Rascunho de novo prompt, isolado por intent (evita vazamento entre abas).
@@ -116,47 +119,46 @@ export function PromptsPage() {
         <WizardHeader currentIndex={3} />
 
         <div className="page-head">
-          <div className="page-eyebrow">Nova auditoria · Etapa 4 de 5</div>
-          <h1>Revisar prompts</h1>
+          <div className="page-eyebrow">{t('prompts.eyebrow')}</div>
+          <h1>{t('prompts.title')}</h1>
           <p>
-            Prompts são as perguntas efetivamente executadas — <strong>Intent ≠ Prompt</strong> (Doc 6, §14). Cada intent
-            selecionado possui 5 variações versionadas. Edite, desative ou remova o que não deva ser executado.
+            <Trans<'prompts.intro', 'audit'> i18nKey="prompts.intro" ns="audit" components={{ strong: <strong /> }} />
           </p>
         </div>
 
-        <div className="summary-strip" aria-label="Resumo dos prompts">
+        <div className="summary-strip" aria-label={t('aria.promptsSummary')}>
           <div>
             <span className="mono metric-mini">{draft.prompts.length}</span>
-            <span className="xsmall muted"> prompts no total</span>
+            <span className="xsmall muted"> {t('prompts.summary.total', { count: draft.prompts.length })}</span>
           </div>
           <div>
             <span className="mono metric-mini">{activePrompts.length}</span>
-            <span className="xsmall muted"> ativos para execução</span>
+            <span className="xsmall muted"> {t('prompts.summary.active')}</span>
           </div>
           <div>
             <span className="mono metric-mini">{selectedIntents.length}</span>
-            <span className="xsmall muted"> intents selecionados</span>
+            <span className="xsmall muted"> {t('prompts.summary.selectedIntents', { count: selectedIntents.length })}</span>
           </div>
           <div>
             <span className="mono metric-mini">{draft.audit.promptSetVersion}</span>
-            <span className="xsmall muted"> versão do conjunto</span>
+            <span className="xsmall muted"> {t('prompts.summary.setVersion')}</span>
           </div>
         </div>
 
         {selectedIntents.length === 0 ? (
           <EmptyState
-            title="Nenhum intent selecionado"
-            desc="Volte à etapa anterior e selecione ao menos um intent para gerar prompts."
+            title={t('prompts.empty.title')}
+            desc={t('prompts.empty.desc')}
             action={
               <Button variant="secondary" onClick={() => navigate(`/audit/${draft.audit.id}/intents`)}>
-                Ir para intents
+                {t('prompts.empty.action')}
               </Button>
             }
           />
         ) : (
           <Card>
             <Tabs
-              ariaLabel="Intents selecionados"
+              ariaLabel={t('aria.selectedIntentsTabs')}
               items={selectedIntents.map((intent) => ({
                 id: intent.id,
                 label: intent.name,
@@ -165,7 +167,9 @@ export function PromptsPage() {
                     <div className="row-between">
                       <div className="row">
                         <span className="small muted">
-                          {draft.prompts.filter((p) => p.intentId === intent.id).length} prompts para este intent
+                          {t('prompts.perIntent', {
+                            count: draft.prompts.filter((p) => p.intentId === intent.id).length,
+                          })}
                         </span>
                       </div>
                     </div>
@@ -178,13 +182,13 @@ export function PromptsPage() {
                     </ul>
                     <div className="field">
                       <label className="field-label" htmlFor={`add-${intent.id}`}>
-                        Adicionar prompt neste intent
+                        {t('prompts.add.label')}
                       </label>
                       <div className="row" style={{ gap: 'var(--sp-2)' }}>
                         <input
                           id={`add-${intent.id}`}
                           className="input"
-                          placeholder="Nova pergunta a executar…"
+                          placeholder={t('prompts.add.placeholder')}
                           value={drafts[intent.id] ?? ''}
                           onChange={(e) => setText(intent.id, e.target.value)}
                           onKeyDown={(e) => {
@@ -195,7 +199,7 @@ export function PromptsPage() {
                           }}
                         />
                         <Button variant="secondary" onClick={() => handleAddPrompt(intent.id)}>
-                          Adicionar
+                          {t('actions.add')}
                         </Button>
                       </div>
                     </div>
@@ -208,12 +212,12 @@ export function PromptsPage() {
 
         <div className="page-actions between">
           <Button variant="secondary" onClick={() => navigate(`/audit/${draft.audit.id}/intents`)}>
-            ← Voltar aos intents
+            {t('prompts.back')}
           </Button>
           <div className="row">
             {activePrompts.length === 0 && (
               <span className="small" style={{ color: 'var(--c-gap)' }} role="alert">
-                Nenhum prompt ativo para executar.
+                {t('prompts.validation')}
               </span>
             )}
             <Button
@@ -224,7 +228,7 @@ export function PromptsPage() {
                 navigate(`/audit/${draft.audit.id}/progress`);
               }}
             >
-              Iniciar auditoria
+              {t('prompts.start')}
             </Button>
           </div>
         </div>

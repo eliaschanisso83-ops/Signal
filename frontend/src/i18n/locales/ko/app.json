@@ -1,0 +1,37 @@
+{
+  "skipToContent": "본문으로 건너뛰기",
+  "brand": {
+    "home": "Signal — 홈 페이지"
+  },
+  "nav": {
+    "main": "주요 메뉴",
+    "problem": "문제",
+    "howItWorks": "동작 방식",
+    "metrics": "지표",
+    "startAudit": "감사 시작",
+    "newAudit": "새 감사",
+    "myReport": "내 리포트",
+    "continueAudit": "감사 이어하기"
+  },
+  "language": {
+    "label": "언어"
+  },
+  "footer": {
+    "description": "Software Discoverability Intelligence — AI 어시스턴트, 검색, 마켓플레이스가 당신의 제품을 어떻게 추천하는지 감사하고, 추적 가능한 근거와 우선순위가 정해진 조치를 제공합니다.",
+    "startAudit": "감사 시작",
+    "product": {
+      "title": "제품",
+      "problem": "문제",
+      "howItWorks": "동작 방식",
+      "metrics": "지표와 근거"
+    },
+    "demo": {
+      "title": "데모",
+      "newAudit": "새 감사",
+      "myReport": "내 리포트",
+      "continueAudit": "감사 이어하기"
+    },
+    "bottom": "방법론 v1.0 · 시뮬레이션 데이터 데모",
+    "copyright": "© 2026 Signal — signal.biz-flow.cloud"
+  }
+}
