@@ -33,6 +33,11 @@
       "myReport": "내 리포트",
       "continueAudit": "감사 이어하기"
     },
+    "legal": {
+      "title": "법적 안내",
+      "privacy": "개인정보 보호정책",
+      "terms": "이용약관"
+    },
     "bottom": "방법론 v1.0 · 시뮬레이션 데이터 데모",
     "copyright": "© 2026 Signal — signal.biz-flow.cloud"
   }

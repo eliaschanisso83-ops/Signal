@@ -33,6 +33,11 @@
       "myReport": "我的报告",
       "continueAudit": "继续审计"
     },
+    "legal": {
+      "title": "法律信息",
+      "privacy": "隐私政策",
+      "terms": "使用条款"
+    },
     "bottom": "方法论 v1.0 · 模拟数据演示",
     "copyright": "© 2026 Signal — signal.biz-flow.cloud"
   }

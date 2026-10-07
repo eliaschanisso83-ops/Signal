@@ -33,6 +33,11 @@
       "myReport": "Il mio report",
       "continueAudit": "Continua audit"
     },
+    "legal": {
+      "title": "Note legali",
+      "privacy": "Privacy",
+      "terms": "Condizioni d'uso"
+    },
     "bottom": "Metodologia v1.0 · demo con dati simulati",
     "copyright": "© 2026 Signal — signal.biz-flow.cloud"
   }

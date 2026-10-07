@@ -179,6 +179,18 @@ export function AppShell() {
                 )}
               </ul>
             </nav>
+
+            <nav className="footer-col" aria-label={t('footer.legal.title')}>
+              <h2 className="footer-title">{t('footer.legal.title')}</h2>
+              <ul className="footer-links">
+                <li>
+                  <Link to="/privacy">{t('footer.legal.privacy')}</Link>
+                </li>
+                <li>
+                  <Link to="/terms">{t('footer.legal.terms')}</Link>
+                </li>
+              </ul>
+            </nav>
           </div>
 
           <div className="footer-bottom">

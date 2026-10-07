@@ -33,6 +33,11 @@
       "myReport": "マイレポート",
       "continueAudit": "監査を続ける"
     },
+    "legal": {
+      "title": "法的情報",
+      "privacy": "プライバシーポリシー",
+      "terms": "利用規約"
+    },
     "bottom": "方法論 v1.0 · シミュレーションデータによるデモ",
     "copyright": "© 2026 Signal — signal.biz-flow.cloud"
   }

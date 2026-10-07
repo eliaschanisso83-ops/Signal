@@ -19,6 +19,8 @@ import { RegisterPage } from './pages/auth/RegisterPage';
 import { ForgotPasswordPage } from './pages/auth/ForgotPasswordPage';
 import { ResetPasswordPage } from './pages/auth/ResetPasswordPage';
 import { AuthCallbackPage } from './pages/auth/AuthCallbackPage';
+import { PrivacyPage } from './pages/legal/PrivacyPage';
+import { TermsPage } from './pages/legal/TermsPage';
 
 /** /audit/:auditId → progress ou report conforme o status. */
 function AuditIndexRedirect() {
@@ -41,6 +43,8 @@ export default function App() {
               <Route path="/forgot-password" element={<ForgotPasswordPage />} />
               <Route path="/reset-password" element={<ResetPasswordPage />} />
               <Route path="/auth/callback" element={<AuthCallbackPage />} />
+              <Route path="/privacy" element={<PrivacyPage />} />
+              <Route path="/terms" element={<TermsPage />} />
               <Route path="/audit/new" element={<RequireAuth><NewAuditPage /></RequireAuth>} />
               <Route
                 path="/audit/:auditId"
