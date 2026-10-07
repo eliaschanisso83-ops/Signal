@@ -19,5 +19,6 @@ import { MockAuditService } from './mock/auditService';
 export const auditService: AuditService = new MockAuditService();
 
 export { getSupabase, supabaseEnabled } from './supabase';
+export { saveAuditRun } from './auditRuns';
 export { buildAuditBundle } from './mock/report';
 export type { AuditService };

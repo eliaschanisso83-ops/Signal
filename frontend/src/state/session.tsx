@@ -26,7 +26,7 @@ import type {
   ProductProfile,
   Prompt,
 } from '../domain/types';
-import { auditService, buildAuditBundle } from '../services';
+import { auditService, buildAuditBundle, saveAuditRun } from '../services';
 
 export interface SessionDraft {
   audit: Audit;
@@ -169,6 +169,17 @@ export function AuditSessionProvider({ children }: { children: ReactNode }) {
         ? { ...s.draft, audit: { ...s.draft.audit, status: 'COMPLETED', completedAt: new Date().toISOString() } }
         : s.draft,
     }));
+    // Persistência opcional (Supabase `public.audit_runs`): fire-and-forget,
+    // sem env/em teste é no-op — nunca atrasa nem quebra a conclusão.
+    void saveAuditRun({
+      auditId: draft.audit.id,
+      productUrl: draft.product.url,
+      platform: draft.product.platform,
+      market: draft.audit.market,
+      language: draft.audit.language,
+      competitors: draft.product.competitors,
+      bundle,
+    });
     finishingRef.current = false;
     setIsRestoring(false);
   }, [state.draft]);
