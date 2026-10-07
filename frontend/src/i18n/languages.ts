@@ -34,7 +34,7 @@ export const DEFAULT_LANGUAGE = 'en';
 export const SUPPORTED_LANGUAGES: readonly string[] = LANGUAGES.map((l) => l.code);
 
 /** Namespaces (domínios) de tradução — separação lógica, nunca um JSON gigante. */
-export const NAMESPACES = ['common', 'landing', 'app', 'audit', 'report', 'errors'] as const;
+export const NAMESPACES = ['common', 'landing', 'app', 'audit', 'report', 'errors', 'auth'] as const;
 
 export type Namespace = (typeof NAMESPACES)[number];
 

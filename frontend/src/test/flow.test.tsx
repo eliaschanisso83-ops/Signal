@@ -1,5 +1,10 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
+
+/* O env de teste tem Supabase configurado: sem este mock a UI tentaria falar
+   com a rede e os guardas de rota bloqueariam o percurso de demonstração. */
+vi.mock('../services/auth', async () => (await import('./authStub')).authModule);
+
 import App from '../App';
 
 /** Clica no primeiro elemento com o texto indicado. */

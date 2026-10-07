@@ -1,6 +1,11 @@
-import { describe, it, expect, beforeAll } from 'vitest';
+import { describe, it, expect, beforeAll, vi } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import i18next from 'i18next';
+
+/* O env de teste tem Supabase configurado: sem este mock a UI tentaria falar
+   com a rede (AuthProvider) durante os testes de idioma. */
+vi.mock('../services/auth', async () => (await import('./authStub')).authModule);
+
 import App from '../App';
 import { LANGUAGES, LANGUAGE_STORAGE_KEY, NAMESPACES, matchLanguage, resolveLanguage } from '../i18n/languages';
 import { useFormat } from '../i18n/format';
@@ -104,6 +109,7 @@ describe('Catálogo de idiomas e formatação', () => {
       audit: paths((await import('../i18n/locales/en/audit.json')).default as Json),
       report: paths((await import('../i18n/locales/en/report.json')).default as Json),
       errors: paths((await import('../i18n/locales/en/errors.json')).default as Json),
+      auth: paths((await import('../i18n/locales/en/auth.json')).default as Json),
     };
 
     for (const lang of LANGUAGES) {

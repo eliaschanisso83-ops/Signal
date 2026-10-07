@@ -637,6 +637,29 @@
 @media (max-width: 760px) {
   /* header compacto: domínio sai para não comprimir CTA em telas pequenas */
   .brand .brand-domain { display: none; }
+
+  /* topbar compacto: conta + idioma + CTA sem quebrar palavra nem transbordar
+     (idiomas longos como alemão/chinês cabem por causa do padding menor) */
+  .topbar-inner { padding: 0 var(--sp-3); gap: var(--sp-2); }
+  .topnav { gap: 4px; }
+  .topnav .nav-link,
+  .topnav .btn { white-space: nowrap; }
+  .topnav a.nav-link { padding: 6px 7px; font-size: var(--fs-xs); }
+  .topnav .btn { padding: 8px 9px; font-size: var(--fs-xs); }
+  .topnav select {
+    width: auto;
+    min-width: 62px;
+    max-width: 92px;
+    padding: 6px 18px 6px 6px;
+    font-size: var(--fs-xs);
+  }
+  .topnav .nav-user { max-width: 90px; white-space: nowrap; }
+}
+@media (max-width: 440px) {
+  /* telas muito estreitas: só o ícone da marca (aria-label mantém o nome acessível)
+     para caber conta + idioma + CTA em idiomas longos (es/fr/de) */
+  .topbar-inner .brand-mark { display: none; }
+  .topnav select { max-width: 80px; padding-right: 14px; }
 }
 
 /* ---------- Shell / conteúdo ---------- */

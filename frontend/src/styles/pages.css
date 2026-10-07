@@ -391,3 +391,77 @@
   background: linear-gradient(180deg, color-mix(in srgb, var(--c-accent) 7%, transparent), transparent 70%), var(--cv-surf);
   border-color: color-mix(in srgb, var(--c-accent) 25%, var(--cv-line));
 }
+
+/* ---------- Autenticação (/login, /register, recuperação, callback) ---------- */
+.auth-shell {
+  display: flex;
+  justify-content: center;
+  padding-top: clamp(24px, 7vh, 72px);
+  padding-bottom: var(--sp-8);
+}
+.auth-card { width: min(440px, 100%); }
+.auth-head { margin-bottom: var(--sp-5); }
+.auth-head h1 { letter-spacing: -0.02em; }
+.auth-sub { margin-top: 6px; max-width: 46ch; }
+.auth-row { display: flex; justify-content: center; }
+.auth-rule {
+  border: 0;
+  height: 1px;
+  background: var(--c-border);
+  margin: var(--sp-2) 0;
+}
+.auth-alt {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: var(--sp-5);
+  text-align: center;
+  font-size: var(--fs-sm);
+}
+.auth-state { text-align: center; padding: var(--sp-8) var(--sp-5); }
+.form-alert {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: var(--fs-sm);
+  color: var(--c-danger);
+  background: var(--c-danger-soft);
+  border: 1px solid color-mix(in srgb, var(--c-danger) 25%, transparent);
+}
+.form-note {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: var(--fs-sm);
+  color: var(--c-ink-2);
+  background: var(--c-surface-alt);
+  border: 1px solid var(--c-border);
+}
+.input-wrap { position: relative; display: block; }
+.input-wrap .input { padding-right: 5.75rem; }
+.input-eye {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 6px 8px;
+  border: 0;
+  background: none;
+  color: var(--c-muted);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  cursor: pointer;
+}
+.input-eye:hover { color: var(--c-ink); }
+.btn-google { justify-content: center; }
+.google-g { width: 18px; height: 18px; flex-shrink: 0; }
+.nav-user {
+  max-width: 170px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--fs-sm);
+  color: var(--c-muted);
+}

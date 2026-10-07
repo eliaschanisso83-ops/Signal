@@ -11,7 +11,9 @@
     "startAudit": "監査を開始",
     "newAudit": "新規監査",
     "myReport": "マイレポート",
-    "continueAudit": "監査を続ける"
+    "continueAudit": "監査を続ける",
+    "login": "ログイン",
+    "logout": "ログアウト"
   },
   "language": {
     "label": "言語"

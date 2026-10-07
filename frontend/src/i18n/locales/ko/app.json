@@ -11,7 +11,9 @@
     "startAudit": "감사 시작",
     "newAudit": "새 감사",
     "myReport": "내 리포트",
-    "continueAudit": "감사 이어하기"
+    "continueAudit": "감사 이어하기",
+    "login": "로그인",
+    "logout": "로그아웃"
   },
   "language": {
     "label": "언어"

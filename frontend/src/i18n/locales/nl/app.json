@@ -11,7 +11,9 @@
     "startAudit": "Audit starten",
     "newAudit": "Nieuwe audit",
     "myReport": "Mijn rapport",
-    "continueAudit": "Audit voortzetten"
+    "continueAudit": "Audit voortzetten",
+    "login": "Inloggen",
+    "logout": "Uitloggen"
   },
   "language": {
     "label": "Taal"

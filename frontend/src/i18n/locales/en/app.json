@@ -11,7 +11,9 @@
     "startAudit": "Start audit",
     "newAudit": "New audit",
     "myReport": "My report",
-    "continueAudit": "Continue audit"
+    "continueAudit": "Continue audit",
+    "login": "Sign in",
+    "logout": "Sign out"
   },
   "language": {
     "label": "Language"

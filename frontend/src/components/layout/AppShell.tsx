@@ -1,7 +1,9 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuditSession } from '../../state/session';
+import { useAuth } from '../../state/auth';
+import { isAuthEnabled, signOut } from '../../services/auth';
 import { Button, LinkButton } from '../../design-system/components';
 import { LanguageSwitcher } from '../LanguageSwitcher';
 
@@ -11,9 +13,12 @@ import { LanguageSwitcher } from '../LanguageSwitcher';
  */
 export function AppShell() {
   const { draft, status, resetSession } = useAuditSession();
+  const { status: authStatus, email, displayName } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
   const { t } = useTranslation('app');
+  const [signingOut, setSigningOut] = useState(false);
+  const authOn = isAuthEnabled();
 
   const completed = status === 'COMPLETED';
 
@@ -57,6 +62,17 @@ export function AppShell() {
     navigate('/audit/new');
   }
 
+  async function onSignOut() {
+    setSigningOut(true);
+    try {
+      await signOut();
+      resetSession();
+      navigate('/');
+    } finally {
+      setSigningOut(false);
+    }
+  }
+
   return (
     <div className={onLanding ? 'lp-chrome' : 'app-chrome'}>
       <a className="skip-link" href="#main">
@@ -87,6 +103,22 @@ export function AppShell() {
                   {t('nav.metrics')}
                 </a>
               </>
+            )}
+            {authOn && (
+              authStatus === 'authenticated' ? (
+                <>
+                  <span className="nav-user" title={email ?? undefined}>
+                    {displayName}
+                  </span>
+                  <Button variant="ghost" size="sm" onClick={onSignOut} loading={signingOut}>
+                    {t('nav.logout')}
+                  </Button>
+                </>
+              ) : (
+                <Link className="nav-link" to="/login">
+                  {t('nav.login')}
+                </Link>
+              )
             )}
             <LanguageSwitcher id="lang-topbar" />
             {onLanding ? (

@@ -1,7 +1,8 @@
 import { BrowserRouter, Navigate, Route, Routes, useParams } from 'react-router-dom';
 import { AuditSessionProvider, useAuditSession } from './state/session';
+import { AuthProvider } from './state/auth';
 import { AppShell } from './components/layout/AppShell';
-import { RequireDraft, RequireReport } from './components/layout/Guards';
+import { RequireAnonymous, RequireAuth, RequireDraft, RequireReport } from './components/layout/Guards';
 import { ReportShell } from './components/layout/ReportShell';
 import { LandingPage } from './pages/LandingPage';
 import { NewAuditPage } from './pages/NewAuditPage';
@@ -13,6 +14,11 @@ import { AuditReportPage } from './pages/report/AuditReportPage';
 import { EvidencePage } from './pages/report/EvidencePage';
 import { OpportunitiesPage } from './pages/report/OpportunitiesPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { LoginPage } from './pages/auth/LoginPage';
+import { RegisterPage } from './pages/auth/RegisterPage';
+import { ForgotPasswordPage } from './pages/auth/ForgotPasswordPage';
+import { ResetPasswordPage } from './pages/auth/ResetPasswordPage';
+import { AuthCallbackPage } from './pages/auth/AuthCallbackPage';
 
 /** /audit/:auditId → progress ou report conforme o status. */
 function AuditIndexRedirect() {
@@ -25,60 +31,84 @@ function AuditIndexRedirect() {
 export default function App() {
   return (
     <AuditSessionProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<AppShell />}>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/audit/new" element={<NewAuditPage />} />
-            <Route path="/audit/:auditId" element={<AuditIndexRedirect />} />
-            <Route
-              path="/audit/:auditId/profile"
-              element={
-                <RequireDraft>
-                  <ProductProfilePage />
-                </RequireDraft>
-              }
-            />
-            <Route
-              path="/audit/:auditId/intents"
-              element={
-                <RequireDraft>
-                  <IntentsPage />
-                </RequireDraft>
-              }
-            />
-            <Route
-              path="/audit/:auditId/prompts"
-              element={
-                <RequireDraft>
-                  <PromptsPage />
-                </RequireDraft>
-              }
-            />
-            <Route
-              path="/audit/:auditId/progress"
-              element={
-                <RequireDraft>
-                  <AuditProgressPage />
-                </RequireDraft>
-              }
-            />
-            <Route
-              path="/audit/:auditId/report"
-              element={
-                <RequireReport>
-                  <ReportShell />
-                </RequireReport>
-              }
-            >
-              <Route index element={<AuditReportPage />} />
-              <Route path="evidence" element={<EvidencePage />} />
-              <Route path="opportunities" element={<OpportunitiesPage />} />
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<AppShell />}>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/login" element={<RequireAnonymous><LoginPage /></RequireAnonymous>} />
+              <Route path="/register" element={<RequireAnonymous><RegisterPage /></RequireAnonymous>} />
+              <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+              <Route path="/reset-password" element={<ResetPasswordPage />} />
+              <Route path="/auth/callback" element={<AuthCallbackPage />} />
+              <Route path="/audit/new" element={<RequireAuth><NewAuditPage /></RequireAuth>} />
+              <Route
+                path="/audit/:auditId"
+                element={
+                  <RequireAuth>
+                    <AuditIndexRedirect />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="/audit/:auditId/profile"
+                element={
+                  <RequireAuth>
+                    <RequireDraft>
+                      <ProductProfilePage />
+                    </RequireDraft>
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="/audit/:auditId/intents"
+                element={
+                  <RequireAuth>
+                    <RequireDraft>
+                      <IntentsPage />
+                    </RequireDraft>
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="/audit/:auditId/prompts"
+                element={
+                  <RequireAuth>
+                    <RequireDraft>
+                      <PromptsPage />
+                    </RequireDraft>
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="/audit/:auditId/progress"
+                element={
+                  <RequireAuth>
+                    <RequireDraft>
+                      <AuditProgressPage />
+                    </RequireDraft>
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="/audit/:auditId/report"
+                element={
+                  <RequireAuth>
+                    <RequireReport>
+                      <ReportShell />
+                    </RequireReport>
+                  </RequireAuth>
+                }
+              >
+                <Route index element={<AuditReportPage />} />
+                <Route path="evidence" element={<EvidencePage />} />
+                <Route path="opportunities" element={<OpportunitiesPage />} />
+              </Route>
+              <Route path="*" element={<NotFoundPage />} />
             </Route>
-            <Route path="*" element={<NotFoundPage />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
     </AuditSessionProvider>
   );
 }

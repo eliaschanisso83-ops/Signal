@@ -31,6 +31,7 @@ import enApp from './locales/en/app.json';
 import enAudit from './locales/en/audit.json';
 import enReport from './locales/en/report.json';
 import enErrors from './locales/en/errors.json';
+import enAuth from './locales/en/auth.json';
 
 /** Bundle do idioma-fonte: garante texto na tela mesmo antes de qualquer troca. */
 const enResources = {
@@ -40,6 +41,7 @@ const enResources = {
   audit: enAudit,
   report: enReport,
   errors: enErrors,
+  auth: enAuth,
 };
 
 type EnResources = typeof enResources;

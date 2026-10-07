@@ -11,7 +11,9 @@
     "startAudit": "开始审计",
     "newAudit": "新建审计",
     "myReport": "我的报告",
-    "continueAudit": "继续审计"
+    "continueAudit": "继续审计",
+    "login": "登录",
+    "logout": "退出登录"
   },
   "language": {
     "label": "语言"

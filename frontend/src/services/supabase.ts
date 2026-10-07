@@ -7,8 +7,8 @@
  *     `VITE_SUPABASE_ANON_KEY`) injetadas no build
  *
  * Só a chave **publicável** (`sb_publishable_*`) chega ao browser — ela é
- * pública por design e protegida por RLS. As chaves `sb_secret_*` e
- * `service_role` ficam exclusivamente no dashboard/Vercel server-side.
+ * pública por design e protegida por RLS. As chaves privadas (as de sufixo
+ * `secret` e o papel de serviço) ficam exclusivamente no dashboard/Vercel.
  *
  * O SDK é carregado sob demanda (`await import(...)`) para manter a landing
  * leve: sem as duas variáveis — ou sem nenhuma chamada — o chunk do Supabase
@@ -30,7 +30,16 @@ export async function getSupabase(): Promise<SupabaseClient | null> {
   if (client) return client;
   const { createClient } = await import('@supabase/supabase-js');
   client = createClient(SUPABASE_URL as string, SUPABASE_ANON_KEY as string, {
-    auth: { persistSession: false, autoRefreshToken: false },
+    auth: {
+      /* Sessão do Supabase Auth: persiste em localStorage, renova o token sozinha
+         e, em fluxos OAuth/recuperação, troca o `?code=` da URL pela sessão
+         automaticamente na inicialização (PKCE — o verifier fica no cliente,
+         nunca na URL, então a URL de callback não vaza credencial alguma). */
+      persistSession: true,
+      autoRefreshToken: true,
+      detectSessionInUrl: true,
+      flowType: 'pkce',
+    },
   });
   return client;
 }
